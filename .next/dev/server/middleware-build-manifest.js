@@ -1,50 +1,13 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
-    "/_app": [
-      "static/chunks/0~-9_next_dist_compiled_0oduefp._.js",
-      "static/chunks/0~-9_next_dist_shared_lib_0bigs0n._.js",
-      "static/chunks/0~-9_next_dist_client_05lm-xo._.js",
-      "static/chunks/0~-9_next_dist_0pfywt-._.js",
-      "static/chunks/0~-9_next_app_0hfldsj.js",
-      "static/chunks/[next]_entry_page-loader_ts_0pb.iug._.js",
-      "static/chunks/0~-9_react-dom_0j9qrt2._.js",
-      "static/chunks/0~-9_0o144nq._.js",
-      "static/chunks/[root-of-the-server]__09ckuwf._.js",
-      "static/chunks/Desktop_websites folder_pawel-development_pages__app_07xvfw~._.js",
-      "static/chunks/turbopack-Desktop_websites folder_pawel-development_pages__app_0x9f-pz._.js"
-    ],
-    "/_error": [
-      "static/chunks/0~-9_next_dist_compiled_0oduefp._.js",
-      "static/chunks/0~-9_next_dist_shared_lib_0lexzy5._.js",
-      "static/chunks/0~-9_next_dist_client_05lm-xo._.js",
-      "static/chunks/0~-9_next_dist_0~o9~.d._.js",
-      "static/chunks/[next]_entry_page-loader_ts_0kta9sx._.js",
-      "static/chunks/0~-9_react-dom_0j9qrt2._.js",
-      "static/chunks/0~-9_0o144nq._.js",
-      "static/chunks/[root-of-the-server]__04wlk0c._.js",
-      "static/chunks/Desktop_websites folder_pawel-development_pages__error_07xvfw~._.js",
-      "static/chunks/turbopack-Desktop_websites folder_pawel-development_pages__error_0qwknnu._.js"
-    ]
+    "/_app": []
   },
   "devFiles": [],
-  "polyfillFiles": [
-    "static/chunks/0~-9_next_dist_build_polyfills_polyfill-nomodule.js"
-  ],
+  "polyfillFiles": [],
   "lowPriorityFiles": [
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js",
     "static/development/_clientMiddlewareManifest.js"
   ],
-  "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0w4-d15._.js",
-    "static/chunks/0~-9_next_dist_compiled_next-devtools_index_0u_~t5_.js",
-    "static/chunks/0~-9_next_dist_compiled_react-dom_0gle3~h._.js",
-    "static/chunks/0~-9_next_dist_compiled_react-server-dom-turbopack_0k3i1rj._.js",
-    "static/chunks/0~-9_next_dist_compiled_04148mq._.js",
-    "static/chunks/0~-9_next_dist_client_0sy4t3d._.js",
-    "static/chunks/0~-9_next_dist_04egnwa._.js",
-    "static/chunks/0~-9_@swc_helpers_cjs_10f2ngg._.js",
-    "static/chunks/Desktop_websites folder_pawel-development_0rqeker._.js",
-    "static/chunks/turbopack-Desktop_websites folder_pawel-development_0s_-j2n._.js"
-  ]
+  "rootMainFiles": []
 };
