@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/filipborowski/Desktop/websites%20folder/pawel-development/src/app/page.tsx"],"sourcesContent":["import HeroSlider from \"@/components/HeroSlider\";\nimport Categories from \"@/components/Categories\";\nimport LatestOffers from \"@/components/LatestOffers\";\nimport AboutUs from \"@/components/AboutUs\";\nimport ContactForm from \"@/components/ContactForm\";\nimport Footer from \"@/components/Footer\";\n\nexport default function Home() {\n  return (\n    <main>\n      <HeroSlider />\n      <Categories />\n      <LatestOffers />\n      <AboutUs />\n      <ContactForm />\n      <Footer />\n    </main>\n  );\n}\n"],"names":["Home","HeroSlider","Categories","LatestOffers","AboutUs","ContactForm","Footer"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAOe,SAASA;IACtB,qBACE,qSAAC;;0BACC,qSAACC;;;;;0BACD,qSAACC;;;;;0BACD,qSAACC;;;;;0BACD,qSAACC;;;;;0BACD,qSAACC;;;;;0BACD,qSAACC;;;;;;;;;;;AAGP"}}]
+}
