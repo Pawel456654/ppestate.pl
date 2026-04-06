@@ -65,7 +65,7 @@ export default function ContactForm() {
         />
         <div className="relative grid grid-cols-1 md:grid-cols-3 min-h-0 divide-y md:divide-y-0 md:divide-x divide-sky-300/55">
           <a
-            href="tel:+48987654321"
+            href="tel:+48123456789"
             className="flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-sky-200/50 hover:bg-sky-300/55 transition-colors"
           >
             <div className="w-14 h-14 rounded-2xl bg-sky-300/90 text-sky-800 shadow-sm shadow-sky-300/40 flex items-center justify-center shrink-0">
@@ -76,7 +76,7 @@ export default function ContactForm() {
             <div>
               <h3 className="text-slate-800 font-semibold mb-2">Telefon</h3>
               <span className="text-sky-800/80 hover:text-primary transition-colors">
-                +48 987 654 321
+                +48 123 456 789
               </span>
             </div>
           </a>
@@ -171,7 +171,7 @@ export default function ContactForm() {
                 <input
                   id="phone"
                   type="tel"
-                  placeholder="+48 987 654 321"
+                  placeholder="+48 123 456 789"
                   className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 />
               </div>
