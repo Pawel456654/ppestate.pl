@@ -1,0 +1,47 @@
+[
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 580141,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/0~j0djru37u85.js",
+      ".next/static/chunks/0h5w8x~ce~4a_.js",
+      ".next/static/chunks/0j.c174tcoh3-.js",
+      ".next/static/chunks/068aw4t9-h~n4.js",
+      ".next/static/chunks/12-bmtf799147.js",
+      ".next/static/chunks/0mqeixv97pelk.js",
+      ".next/static/chunks/0e.2tc5pslaqk.js",
+      ".next/static/chunks/17v--.61wej-c.js",
+      ".next/static/chunks/0obm6o8x3ikmw.js",
+      ".next/static/chunks/turbopack-0gu1l6~hzv6fd.js"
+    ]
+  },
+  {
+    "route": "/oferty",
+    "firstLoadUncompressedJsBytes": 552271,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/0~j0djru37u85.js",
+      ".next/static/chunks/0h5w8x~ce~4a_.js",
+      ".next/static/chunks/0.bpywuiblpf~.js",
+      ".next/static/chunks/12-bmtf799147.js",
+      ".next/static/chunks/0mqeixv97pelk.js",
+      ".next/static/chunks/0e.2tc5pslaqk.js",
+      ".next/static/chunks/17v--.61wej-c.js",
+      ".next/static/chunks/0obm6o8x3ikmw.js",
+      ".next/static/chunks/turbopack-0gu1l6~hzv6fd.js"
+    ]
+  },
+  {
+    "route": "/_not-found",
+    "firstLoadUncompressedJsBytes": 522261,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/0~j0djru37u85.js",
+      ".next/static/chunks/0h5w8x~ce~4a_.js",
+      ".next/static/chunks/12-bmtf799147.js",
+      ".next/static/chunks/0mqeixv97pelk.js",
+      ".next/static/chunks/0e.2tc5pslaqk.js",
+      ".next/static/chunks/17v--.61wej-c.js",
+      ".next/static/chunks/0obm6o8x3ikmw.js",
+      ".next/static/chunks/turbopack-0gu1l6~hzv6fd.js"
+    ]
+  }
+]

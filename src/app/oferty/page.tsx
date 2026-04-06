@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import OffersSearch from "@/components/OffersSearch";
 import SampleOffersGrid from "@/components/SampleOffersGrid";
 import Footer from "@/components/Footer";
@@ -30,7 +31,16 @@ export default function OffersPage() {
 
         <section className="relative z-10 px-6 py-10 sm:py-14">
           <div className="max-w-7xl mx-auto">
-            <OffersSearch />
+            <Suspense
+              fallback={
+                <div
+                  className="relative overflow-hidden bg-gradient-to-br from-white via-pastel-sky/70 to-pastel-blue/50 rounded-2xl border border-primary-lighter p-5 sm:p-7 shadow-sm min-h-[280px] animate-pulse"
+                  aria-hidden
+                />
+              }
+            >
+              <OffersSearch />
+            </Suspense>
           </div>
         </section>
 

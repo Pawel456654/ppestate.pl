@@ -168,6 +168,7 @@
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+    --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-2xl: 40px;
@@ -802,6 +803,10 @@
     min-height: 120px;
   }
 
+  .min-h-\[280px\] {
+    min-height: 280px;
+  }
+
   .min-h-full {
     min-height: 100%;
   }
@@ -1096,6 +1101,10 @@
 
   .animate-\[slide-in-left_2s_ease-out\] {
     animation: 2s ease-out slide-in-left;
+  }
+
+  .animate-pulse {
+    animation: var(--animate-pulse);
   }
 
   .cursor-pointer {
