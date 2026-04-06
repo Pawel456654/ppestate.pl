@@ -295,12 +295,15 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 const categories = [
     {
         title: "Domy",
+        queryType: "domy",
         description: "Komfortowe domy jednorodzinne i bliźniaki w najlepszych lokalizacjach",
         count: 48,
         gradient: "from-blue-400 via-blue-500 to-indigo-500",
@@ -310,6 +313,7 @@ const categories = [
     },
     {
         title: "Mieszkania",
+        queryType: "mieszkania",
         description: "Nowoczesne apartamenty i mieszkania w prestiżowych inwestycjach",
         count: 124,
         gradient: "from-violet-400 via-purple-500 to-indigo-500",
@@ -319,6 +323,7 @@ const categories = [
     },
     {
         title: "Działki",
+        queryType: "dzialki",
         description: "Atrakcyjne działki budowlane, rolne i inwestycyjne",
         count: 67,
         gradient: "from-emerald-400 via-teal-500 to-cyan-500",
@@ -328,6 +333,7 @@ const categories = [
     },
     {
         title: "Przemysłowe",
+        queryType: "przemyslowe",
         description: "Hale, magazyny i obiekty komercyjne dla Twojego biznesu",
         count: 31,
         gradient: "from-amber-400 via-orange-400 to-rose-400",
@@ -350,7 +356,7 @@ function HouseIllustration() {
                 className: "fill-white/10"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 48,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -362,7 +368,7 @@ function HouseIllustration() {
                 className: "fill-white/20 animate-[fade-in_0.8s_ease-out]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 51,
+                lineNumber: 56,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -374,7 +380,7 @@ function HouseIllustration() {
                 className: "fill-white/10"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 52,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -382,7 +388,7 @@ function HouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 55,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -390,7 +396,7 @@ function HouseIllustration() {
                 className: "fill-white/15"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 56,
+                lineNumber: 61,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -402,7 +408,7 @@ function HouseIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 59,
+                lineNumber: 64,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -412,7 +418,7 @@ function HouseIllustration() {
                 className: "fill-white/15 animate-[float_3s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 61,
+                lineNumber: 66,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -422,7 +428,7 @@ function HouseIllustration() {
                 className: "fill-white/10 animate-[float_3s_ease-in-out_infinite_0.5s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 62,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -432,7 +438,7 @@ function HouseIllustration() {
                 className: "fill-white/8 animate-[float_3s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -444,7 +450,7 @@ function HouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 66,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -454,7 +460,7 @@ function HouseIllustration() {
                 className: "fill-white/40"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 67,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -466,7 +472,7 @@ function HouseIllustration() {
                 className: "fill-white/30"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 70,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -478,7 +484,7 @@ function HouseIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 71,
+                lineNumber: 76,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -490,7 +496,7 @@ function HouseIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 72,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -502,7 +508,7 @@ function HouseIllustration() {
                 className: "fill-white/30"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 74,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -514,7 +520,7 @@ function HouseIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 75,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -526,7 +532,7 @@ function HouseIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 76,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -536,7 +542,7 @@ function HouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 79,
+                lineNumber: 84,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -546,7 +552,7 @@ function HouseIllustration() {
                 className: "fill-white/15"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 80,
+                lineNumber: 85,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -556,7 +562,7 @@ function HouseIllustration() {
                 className: "fill-white/8 animate-[float_4s_ease-in-out_infinite_0.3s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 83,
+                lineNumber: 88,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -566,7 +572,7 @@ function HouseIllustration() {
                 className: "fill-white/10 animate-[float_4s_ease-in-out_infinite_0.6s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 84,
+                lineNumber: 89,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -578,7 +584,7 @@ function HouseIllustration() {
                 className: "fill-white/12"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 85,
+                lineNumber: 90,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -588,7 +594,7 @@ function HouseIllustration() {
                 className: "fill-white/8 animate-[float_4s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 87,
+                lineNumber: 92,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -598,7 +604,7 @@ function HouseIllustration() {
                 className: "fill-white/10 animate-[float_4s_ease-in-out_infinite_1.3s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 88,
+                lineNumber: 93,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -610,13 +616,13 @@ function HouseIllustration() {
                 className: "fill-white/12"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 89,
+                lineNumber: 94,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 46,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }
@@ -634,7 +640,7 @@ function ApartmentIllustration() {
                 className: "fill-white/10"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 98,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -646,7 +652,7 @@ function ApartmentIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 101,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -658,7 +664,7 @@ function ApartmentIllustration() {
                 className: "fill-white/10"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 102,
+                lineNumber: 107,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -670,7 +676,7 @@ function ApartmentIllustration() {
                 className: "fill-white/15"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 105,
+                lineNumber: 110,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -682,7 +688,7 @@ function ApartmentIllustration() {
                 className: "fill-white/8"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 106,
+                lineNumber: 111,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -694,7 +700,7 @@ function ApartmentIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 109,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -706,7 +712,7 @@ function ApartmentIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 110,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             [
@@ -731,7 +737,7 @@ function ApartmentIllustration() {
                         }
                     }, `main-${row}-${col}`, false, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                        lineNumber: 115,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this))),
             [
@@ -748,7 +754,7 @@ function ApartmentIllustration() {
                     className: `fill-white/${row % 2 === 0 ? "30" : "18"}`
                 }, `side-${row}`, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 134,
+                    lineNumber: 139,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -760,7 +766,7 @@ function ApartmentIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 146,
+                lineNumber: 151,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -770,7 +776,7 @@ function ApartmentIllustration() {
                 className: "fill-white/15 animate-[float_5s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 149,
+                lineNumber: 154,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -780,7 +786,7 @@ function ApartmentIllustration() {
                 className: "fill-white/12 animate-[float_4s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 150,
+                lineNumber: 155,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -790,13 +796,13 @@ function ApartmentIllustration() {
                 className: "fill-white/10 animate-[float_6s_ease-in-out_infinite_2s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 151,
+                lineNumber: 156,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 96,
+        lineNumber: 101,
         columnNumber: 5
     }, this);
 }
@@ -811,7 +817,7 @@ function LandIllustration() {
                 className: "fill-white/12"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 160,
+                lineNumber: 165,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -819,7 +825,7 @@ function LandIllustration() {
                 className: "fill-white/8"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 161,
+                lineNumber: 166,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -832,7 +838,7 @@ function LandIllustration() {
                 strokeDasharray: "4 4"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 164,
+                lineNumber: 169,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -845,7 +851,7 @@ function LandIllustration() {
                 strokeDasharray: "4 4"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 165,
+                lineNumber: 170,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -858,7 +864,7 @@ function LandIllustration() {
                 strokeDasharray: "4 4"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 166,
+                lineNumber: 171,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -870,7 +876,7 @@ function LandIllustration() {
                 strokeWidth: "2"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 169,
+                lineNumber: 174,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -878,7 +884,7 @@ function LandIllustration() {
                 className: "fill-white/30 animate-[pulse_2s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 170,
+                lineNumber: 175,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -888,7 +894,7 @@ function LandIllustration() {
                 className: "fill-white/25 animate-[pulse_3s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 173,
+                lineNumber: 178,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -898,7 +904,7 @@ function LandIllustration() {
                 className: "fill-white/25 animate-[pulse_3s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 174,
+                lineNumber: 179,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -908,7 +914,7 @@ function LandIllustration() {
                 className: "fill-white/25 animate-[pulse_3s_ease-in-out_infinite_0.5s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 175,
+                lineNumber: 180,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -918,7 +924,7 @@ function LandIllustration() {
                 className: "fill-white/25 animate-[pulse_3s_ease-in-out_infinite_1.5s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 176,
+                lineNumber: 181,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -928,7 +934,7 @@ function LandIllustration() {
                 strokeDasharray: "6 3"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 179,
+                lineNumber: 184,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -938,7 +944,7 @@ function LandIllustration() {
                 className: "fill-white/12 animate-[float_4s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 182,
+                lineNumber: 187,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -948,7 +954,7 @@ function LandIllustration() {
                 className: "fill-white/15 animate-[float_4s_ease-in-out_infinite_0.5s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 183,
+                lineNumber: 188,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -958,7 +964,7 @@ function LandIllustration() {
                 className: "fill-white/10 animate-[float_4s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 184,
+                lineNumber: 189,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -970,7 +976,7 @@ function LandIllustration() {
                 className: "fill-white/15"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 185,
+                lineNumber: 190,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -980,7 +986,7 @@ function LandIllustration() {
                 className: "fill-white/15 animate-[pulse_4s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 188,
+                lineNumber: 193,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -990,7 +996,7 @@ function LandIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 189,
+                lineNumber: 194,
                 columnNumber: 7
             }, this),
             [
@@ -1012,7 +1018,7 @@ function LandIllustration() {
                     strokeLinecap: "round"
                 }, angle, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 191,
+                    lineNumber: 196,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1021,7 +1027,7 @@ function LandIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 204,
+                lineNumber: 209,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1030,7 +1036,7 @@ function LandIllustration() {
                 strokeWidth: "1"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 205,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1039,13 +1045,13 @@ function LandIllustration() {
                 strokeWidth: "1.5"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 206,
+                lineNumber: 211,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 158,
+        lineNumber: 163,
         columnNumber: 5
     }, this);
 }
@@ -1063,7 +1069,7 @@ function WarehouseIllustration() {
                 className: "fill-white/10"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 215,
+                lineNumber: 220,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1075,7 +1081,7 @@ function WarehouseIllustration() {
                 className: "fill-white/18"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 218,
+                lineNumber: 223,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1083,7 +1089,7 @@ function WarehouseIllustration() {
                 className: "fill-white/22"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 221,
+                lineNumber: 226,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1092,7 +1098,7 @@ function WarehouseIllustration() {
                 strokeWidth: "1"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 222,
+                lineNumber: 227,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1101,7 +1107,7 @@ function WarehouseIllustration() {
                 strokeWidth: "1"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 223,
+                lineNumber: 228,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1110,7 +1116,7 @@ function WarehouseIllustration() {
                 strokeWidth: "1"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 224,
+                lineNumber: 229,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1122,7 +1128,7 @@ function WarehouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 227,
+                lineNumber: 232,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1134,7 +1140,7 @@ function WarehouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 228,
+                lineNumber: 233,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1146,7 +1152,7 @@ function WarehouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 229,
+                lineNumber: 234,
                 columnNumber: 7
             }, this),
             [
@@ -1164,7 +1170,7 @@ function WarehouseIllustration() {
                     strokeWidth: "1"
                 }, `panel-${i}`, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 233,
+                    lineNumber: 238,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1176,7 +1182,7 @@ function WarehouseIllustration() {
                 className: "fill-white/25"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 245,
+                lineNumber: 250,
                 columnNumber: 7
             }, this),
             [
@@ -1193,7 +1199,7 @@ function WarehouseIllustration() {
                     strokeWidth: "1"
                 }, `door-${i}`, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 247,
+                    lineNumber: 252,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1205,7 +1211,7 @@ function WarehouseIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 259,
+                lineNumber: 264,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -1215,7 +1221,7 @@ function WarehouseIllustration() {
                 className: "fill-white/30"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 260,
+                lineNumber: 265,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1227,7 +1233,7 @@ function WarehouseIllustration() {
                 className: "fill-white/15 animate-[slide-in-left_2s_ease-out]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 263,
+                lineNumber: 268,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1239,7 +1245,7 @@ function WarehouseIllustration() {
                 className: "fill-white/12"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 264,
+                lineNumber: 269,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -1249,7 +1255,7 @@ function WarehouseIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 265,
+                lineNumber: 270,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -1259,7 +1265,7 @@ function WarehouseIllustration() {
                 className: "fill-white/20"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 266,
+                lineNumber: 271,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1271,7 +1277,7 @@ function WarehouseIllustration() {
                 className: "fill-white/15 animate-[float_3s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 269,
+                lineNumber: 274,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1283,7 +1289,7 @@ function WarehouseIllustration() {
                 className: "fill-white/12 animate-[float_3s_ease-in-out_infinite_0.5s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 270,
+                lineNumber: 275,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1295,7 +1301,7 @@ function WarehouseIllustration() {
                 className: "fill-white/10 animate-[float_3s_ease-in-out_infinite_1s]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 271,
+                lineNumber: 276,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -1307,7 +1313,7 @@ function WarehouseIllustration() {
                 strokeWidth: "2"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 274,
+                lineNumber: 279,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -1319,7 +1325,7 @@ function WarehouseIllustration() {
                 strokeWidth: "2"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 275,
+                lineNumber: 280,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -1332,7 +1338,7 @@ function WarehouseIllustration() {
                 strokeDasharray: "3 2"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 276,
+                lineNumber: 281,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1344,13 +1350,13 @@ function WarehouseIllustration() {
                 className: "fill-white/15 animate-[float_2s_ease-in-out_infinite]"
             }, void 0, false, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                lineNumber: 277,
+                lineNumber: 282,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 213,
+        lineNumber: 218,
         columnNumber: 5
     }, this);
 }
@@ -1377,8 +1383,9 @@ function CategoryCard({ category, index }) {
         return ()=>observer.disconnect();
     }, []);
     const Illustration = illustrations[category.illustration];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         ref: ref,
+        href: `/oferty?typ=${category.queryType}`,
         onMouseEnter: ()=>setHovered(true),
         onMouseLeave: ()=>setHovered(false),
         className: `group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`,
@@ -1392,21 +1399,21 @@ function CategoryCard({ category, index }) {
                     className: `absolute top-6 right-6 w-24 h-24 rounded-full ${category.iconBg} transition-all duration-700 ${hovered ? "scale-150 opacity-50" : "scale-100 opacity-100"}`
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 330,
+                    lineNumber: 336,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: `absolute top-20 right-20 w-12 h-12 rounded-full ${category.iconBg} transition-all duration-700 delay-100 ${hovered ? "scale-125 translate-x-4 translate-y-4" : ""}`
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 335,
+                    lineNumber: 341,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: `absolute bottom-32 left-4 w-8 h-8 rounded-full ${category.iconBg} transition-all duration-500 ${hovered ? "scale-150" : ""}`
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 340,
+                    lineNumber: 346,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1415,17 +1422,17 @@ function CategoryCard({ category, index }) {
                         className: "w-48 h-44",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Illustration, {}, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 353,
+                            lineNumber: 359,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                        lineNumber: 352,
+                        lineNumber: 358,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 347,
+                    lineNumber: 353,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1441,12 +1448,12 @@ function CategoryCard({ category, index }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                                lineNumber: 360,
+                                lineNumber: 366,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 359,
+                            lineNumber: 365,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1454,7 +1461,7 @@ function CategoryCard({ category, index }) {
                             children: category.title
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 368,
+                            lineNumber: 374,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1462,7 +1469,7 @@ function CategoryCard({ category, index }) {
                             children: category.description
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 369,
+                            lineNumber: 375,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1472,7 +1479,7 @@ function CategoryCard({ category, index }) {
                                     children: "Zobacz oferty"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                                    lineNumber: 381,
+                                    lineNumber: 387,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1487,35 +1494,35 @@ function CategoryCard({ category, index }) {
                                         d: "M9 5l7 7-7 7"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                                        lineNumber: 390,
+                                        lineNumber: 396,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                                    lineNumber: 382,
+                                    lineNumber: 388,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 376,
+                            lineNumber: 382,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 358,
+                    lineNumber: 364,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-            lineNumber: 326,
+            lineNumber: 332,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 317,
+        lineNumber: 322,
         columnNumber: 5
     }, this);
 }
@@ -1534,7 +1541,7 @@ function Categories() {
                             children: "Nasza oferta"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 404,
+                            lineNumber: 410,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1542,7 +1549,7 @@ function Categories() {
                             children: "Czego szukasz?"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 407,
+                            lineNumber: 413,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1550,13 +1557,13 @@ function Categories() {
                             children: "Wybierz kategorię i przeglądaj setki ofert bezpośrednio od sprawdzonych deweloperów"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 410,
+                            lineNumber: 416,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 403,
+                    lineNumber: 409,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1566,23 +1573,23 @@ function Categories() {
                             index: i
                         }, category.title, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                            lineNumber: 418,
+                            lineNumber: 424,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-                    lineNumber: 416,
+                    lineNumber: 422,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-            lineNumber: 402,
+            lineNumber: 408,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/Categories.tsx",
-        lineNumber: 401,
+        lineNumber: 407,
         columnNumber: 5
     }, this);
 }
@@ -1597,7 +1604,9 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/image.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -1702,7 +1711,7 @@ function OfferCard({ offer, index }) {
                         sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 108,
+                        lineNumber: 109,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1713,7 +1722,7 @@ function OfferCard({ offer, index }) {
                                 children: offer.type
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 116,
+                                lineNumber: 117,
                                 columnNumber: 11
                             }, this),
                             offer.badge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1721,19 +1730,19 @@ function OfferCard({ offer, index }) {
                                 children: offer.badge
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 120,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 115,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                lineNumber: 107,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1755,7 +1764,7 @@ function OfferCard({ offer, index }) {
                                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 131,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1765,20 +1774,20 @@ function OfferCard({ offer, index }) {
                                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 129,
+                                lineNumber: 130,
                                 columnNumber: 11
                             }, this),
                             offer.location
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 128,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1786,7 +1795,7 @@ function OfferCard({ offer, index }) {
                         children: offer.title
                     }, void 0, false, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 135,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1807,19 +1816,19 @@ function OfferCard({ offer, index }) {
                                             d: "M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                            lineNumber: 141,
+                                            lineNumber: 142,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, this),
                                     offer.area
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 139,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             offer.rooms && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1837,12 +1846,12 @@ function OfferCard({ offer, index }) {
                                             d: "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 149,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 148,
                                         columnNumber: 15
                                     }, this),
                                     offer.rooms,
@@ -1850,13 +1859,13 @@ function OfferCard({ offer, index }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 146,
+                                lineNumber: 147,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 138,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1867,7 +1876,7 @@ function OfferCard({ offer, index }) {
                                 children: offer.price
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 155,
+                                lineNumber: 156,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1886,36 +1895,36 @@ function OfferCard({ offer, index }) {
                                             d: "M9 5l7 7-7 7"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 160,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 159,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                lineNumber: 156,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                        lineNumber: 154,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                lineNumber: 127,
+                lineNumber: 128,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-        lineNumber: 100,
+        lineNumber: 101,
         columnNumber: 5
     }, this);
 }
@@ -1936,7 +1945,7 @@ function LatestOffers() {
                                     children: "Najnowsze oferty"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 175,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1944,7 +1953,7 @@ function LatestOffers() {
                                     children: "Świeżo dodane"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 178,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1952,16 +1961,17 @@ function LatestOffers() {
                                     children: "Sprawdź najnowsze nieruchomości dodane do naszej bazy"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 181,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                            lineNumber: 173,
+                            lineNumber: 174,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/oferty",
                             className: "text-primary font-semibold text-sm hover:text-primary-dark transition-colors flex items-center gap-2 shrink-0",
                             children: [
                                 "Zobacz wszystkie",
@@ -1977,24 +1987,24 @@ function LatestOffers() {
                                         d: "M17 8l4 4m0 0l-4 4m4-4H3"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                        lineNumber: 187,
+                                        lineNumber: 191,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                            lineNumber: 184,
+                            lineNumber: 185,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                    lineNumber: 172,
+                    lineNumber: 173,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2004,23 +2014,23 @@ function LatestOffers() {
                             index: i
                         }, offer.id, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                            lineNumber: 194,
+                            lineNumber: 198,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-                    lineNumber: 192,
+                    lineNumber: 196,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-            lineNumber: 171,
+            lineNumber: 172,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/LatestOffers.tsx",
-        lineNumber: 170,
+        lineNumber: 171,
         columnNumber: 5
     }, this);
 }
@@ -2159,7 +2169,17 @@ function AboutUs() {
                                                     lineNumber: 73,
                                                     columnNumber: 17
                                                 }, this),
-                                                " to firma specjalizująca się w profesjonalnym pośrednictwie między deweloperami a klientami poszukującymi idealnej nieruchomości. Dzięki wieloletniemu doświadczeniu na rynku nieruchomości doskonale rozumiemy potrzeby obu stron transakcji."
+                                                " z",
+                                                " ",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                    className: "text-slate-800",
+                                                    children: "Wrocławia"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
+                                                    lineNumber: 74,
+                                                    columnNumber: 17
+                                                }, this),
+                                                " łączy klientów z renomowanymi deweloperami i prowadzi transakcje na rynku pierwotnym i wtórnym — od pierwszej rozmowy po podpisanie umowy."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
@@ -2167,17 +2187,10 @@ function AboutUs() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Współpracujemy z najlepszymi deweloperami w Polsce, oferując naszym klientom dostęp do ekskluzywnych inwestycji jeszcze przed ich oficjalną premierą. Nasz zespół ekspertów zapewnia pełne wsparcie na każdym etapie procesu zakupu — od wyboru nieruchomości, przez negocjacje warunków, aż po finalizację transakcji."
+                                            children: "Dzięki sieci partnerów deweloperskich często udostępniamy inwestycje zanim trafią do szerokiej sprzedaży. Szczegóły zakresu usług i rodzajów nieruchomości znajdziesz w sekcji poniżej."
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
                                             lineNumber: 79,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Stawiamy na transparentność, profesjonalizm i indywidualne podejście do każdego klienta. Niezależnie czy szukasz wymarzowego domu, nowoczesnego mieszkania, działki pod inwestycję czy obiektu komercyjnego — jesteśmy tutaj, aby pomóc Ci podjąć najlepszą decyzję."
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                            lineNumber: 87,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -2205,7 +2218,7 @@ function AboutUs() {
                                                     children: stat.value
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 100,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2213,18 +2226,18 @@ function AboutUs() {
                                                     children: stat.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 103,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, stat.label, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 94,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2247,12 +2260,12 @@ function AboutUs() {
                                                     ][i]
                                                 }, i, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                                    lineNumber: 123,
+                                                    lineNumber: 113,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 111,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2263,7 +2276,7 @@ function AboutUs() {
                                                     children: "Nasz zespół"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 122,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2271,25 +2284,25 @@ function AboutUs() {
                                                     children: "Doświadczeni specjaliści do Twojej dyspozycji"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 123,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 121,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/AboutUs.tsx",
-                            lineNumber: 97,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2320,7 +2333,9 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/websites folder/pawel-development/node_modules/next/image.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 function ContactForm() {
@@ -2340,542 +2355,541 @@ function ContactForm() {
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "kontakt",
-        className: "py-24 sm:py-32 px-6 bg-pastel-sky",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            ref: ref,
-            className: "max-w-7xl mx-auto",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-16",
+        className: "relative overflow-hidden bg-gradient-to-b from-sky-100/95 via-pastel-sky to-pastel-blue/90",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-sky-300/35 blur-3xl sm:h-96 sm:w-96",
+                "aria-hidden": true
+            }, void 0, false, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 29,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pointer-events-none absolute -bottom-16 -left-12 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl",
+                "aria-hidden": true
+            }, void 0, false, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 33,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(59,130,246,0.09)_1px,transparent_1px)] bg-[length:22px_22px]",
+                "aria-hidden": true
+            }, void 0, false, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: ref,
+                className: "relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-12 sm:pt-16 pb-6 sm:pb-8",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "text-center mb-6 sm:mb-8",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-primary text-sm font-semibold tracking-[0.15em] uppercase",
+                            className: "text-sky-600 text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase",
                             children: "Kontakt"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                            lineNumber: 27,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mt-4 mb-6",
+                            className: "text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mt-2 mb-3",
                             children: "Porozmawiajmy"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                            lineNumber: 30,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-slate-500 text-lg max-w-2xl mx-auto",
+                            className: "text-sky-900/65 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed",
                             children: "Masz pytania dotyczące nieruchomości? Skontaktuj się z nami — chętnie pomożemy"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                            lineNumber: 33,
+                            lineNumber: 50,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                    lineNumber: 26,
+                    lineNumber: 43,
                     columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: `grid grid-cols-1 lg:grid-cols-5 gap-10 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "lg:col-span-2 space-y-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-start gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                className: "w-5 h-5",
-                                                fill: "none",
-                                                viewBox: "0 0 24 24",
-                                                stroke: "currentColor",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                    strokeLinecap: "round",
-                                                    strokeLinejoin: "round",
-                                                    strokeWidth: 2,
-                                                    d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 48,
-                                                    columnNumber: 19
-                                                }, this)
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 42,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `relative z-10 w-full overflow-hidden border-y border-sky-300/55 bg-gradient-to-r from-sky-200/75 via-blue-100/85 to-indigo-100/80 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_20%_50%,rgba(125,211,252,0.45),transparent_50%),radial-gradient(ellipse_90%_60%_at_80%_40%,rgba(165,180,252,0.4),transparent_48%)]",
+                        "aria-hidden": true
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                        lineNumber: 62,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative grid grid-cols-1 md:grid-cols-3 min-h-0 divide-y md:divide-y-0 md:divide-x divide-sky-300/55",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                href: "tel:+48987654321",
+                                className: "flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-sky-200/50 hover:bg-sky-300/55 transition-colors",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-14 h-14 rounded-2xl bg-sky-300/90 text-sky-800 shadow-sm shadow-sky-300/40 flex items-center justify-center shrink-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-6 h-6",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 73,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 46,
+                                            lineNumber: 72,
                                             columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 71,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-slate-800 font-semibold mb-2",
+                                                children: "Telefon"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                lineNumber: 77,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sky-800/80 hover:text-primary transition-colors",
+                                                children: "+48 987 654 321"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                lineNumber: 78,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 76,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                lineNumber: 67,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                href: "mailto:kontakt@paweldevelopment.pl",
+                                className: "flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-blue-200/45 hover:bg-blue-300/50 transition-colors",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-14 h-14 rounded-2xl bg-blue-300/85 text-blue-900 shadow-sm shadow-blue-300/35 flex items-center justify-center shrink-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-6 h-6",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                lineNumber: 90,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                            lineNumber: 89,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 88,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-slate-800 font-semibold mb-2",
+                                                children: "Email"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                lineNumber: 94,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-blue-950/80 hover:text-primary transition-colors break-all",
+                                                children: "kontakt@paweldevelopment.pl"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                lineNumber: 95,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 93,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                lineNumber: 84,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-indigo-200/40 hover:bg-indigo-300/45 transition-colors",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-14 h-14 rounded-2xl bg-indigo-300/80 text-indigo-900 shadow-sm shadow-indigo-300/35 flex items-center justify-center shrink-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-6 h-6",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-slate-800 font-semibold mb-1",
-                                                    children: "Telefon"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                    strokeLinecap: "round",
+                                                    strokeLinejoin: "round",
+                                                    strokeWidth: 2,
+                                                    d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 52,
+                                                    lineNumber: 104,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "tel:+48123456789",
-                                                    className: "text-slate-500 hover:text-primary transition-colors",
-                                                    children: "+48 123 456 789"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                    strokeLinecap: "round",
+                                                    strokeLinejoin: "round",
+                                                    strokeWidth: 2,
+                                                    d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 53,
+                                                    lineNumber: 105,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 103,
                                             columnNumber: 15
                                         }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-start gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                className: "w-5 h-5",
-                                                fill: "none",
-                                                viewBox: "0 0 24 24",
-                                                stroke: "currentColor",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                    strokeLinecap: "round",
-                                                    strokeLinejoin: "round",
-                                                    strokeWidth: 2,
-                                                    d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 62,
-                                                    columnNumber: 19
-                                                }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 102,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-slate-800 font-semibold mb-2",
+                                                children: "Adres"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                lineNumber: 61,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 60,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-slate-800 font-semibold mb-1",
-                                                    children: "Email"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 66,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "mailto:kontakt@paweldevelopment.pl",
-                                                    className: "text-slate-500 hover:text-primary transition-colors",
-                                                    children: "kontakt@paweldevelopment.pl"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 67,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 65,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 59,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-start gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                className: "w-5 h-5",
-                                                fill: "none",
-                                                viewBox: "0 0 24 24",
-                                                stroke: "currentColor",
+                                                lineNumber: 109,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-indigo-950/80",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                        strokeLinecap: "round",
-                                                        strokeLinejoin: "round",
-                                                        strokeWidth: 2,
-                                                        d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                    }, void 0, false, {
+                                                    "ul. Świdnicka 40",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                        lineNumber: 76,
-                                                        columnNumber: 19
+                                                        lineNumber: 112,
+                                                        columnNumber: 17
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                        strokeLinecap: "round",
-                                                        strokeLinejoin: "round",
-                                                        strokeWidth: 2,
-                                                        d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                        lineNumber: 77,
-                                                        columnNumber: 19
-                                                    }, this)
+                                                    "50-030 Wrocław"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                lineNumber: 75,
-                                                columnNumber: 17
+                                                lineNumber: 110,
+                                                columnNumber: 15
                                             }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 74,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-slate-800 font-semibold mb-1",
-                                                    children: "Biuro"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 81,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-slate-500",
-                                                    children: [
-                                                        "ul. Nieruchomości 15",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                            lineNumber: 84,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        "00-001 Warszawa"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 82,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 80,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 73,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-start gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                className: "w-5 h-5",
-                                                fill: "none",
-                                                viewBox: "0 0 24 24",
-                                                stroke: "currentColor",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                    strokeLinecap: "round",
-                                                    strokeLinejoin: "round",
-                                                    strokeWidth: 2,
-                                                    d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 93,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                lineNumber: 92,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 91,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-slate-800 font-semibold mb-1",
-                                                    children: "Godziny pracy"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 97,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-slate-500",
-                                                    children: [
-                                                        "Pon - Pt: 9:00 - 18:00",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                            lineNumber: 100,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        "Sob: 10:00 - 14:00"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 98,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 96,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 90,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                            lineNumber: 44,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                        lineNumber: 108,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                lineNumber: 101,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                        lineNumber: 66,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 57,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `relative w-full overflow-hidden border-b border-slate-200/60 transition-all duration-1000 delay-150 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        src: "/contact-section-background.jpg",
+                        alt: "",
+                        fill: true,
+                        className: "object-cover",
+                        sizes: "100vw",
+                        priority: false,
+                        "aria-hidden": true
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                        lineNumber: 125,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/70 to-slate-950/80",
+                        "aria-hidden": true
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                        lineNumber: 135,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative z-10 w-full px-6 sm:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 lg:py-24",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: (e)=>e.preventDefault(),
-                            className: "lg:col-span-3 bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-100",
+                            className: "w-full max-w-none mx-auto space-y-5",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5",
+                                    className: "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "name",
-                                                    className: "block text-sm font-medium text-slate-700 mb-2",
+                                                    className: "block text-sm font-medium text-slate-100 mb-2",
                                                     children: "Imię i nazwisko"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 146,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     id: "name",
                                                     type: "text",
                                                     placeholder: "Jan Kowalski",
-                                                    className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all"
+                                                    className: "w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 116,
+                                                    lineNumber: 149,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 145,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "email",
-                                                    className: "block text-sm font-medium text-slate-700 mb-2",
+                                                    className: "block text-sm font-medium text-slate-100 mb-2",
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 157,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     id: "email",
                                                     type: "email",
                                                     placeholder: "jan@email.pl",
-                                                    className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all"
+                                                    className: "w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 160,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 123,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 111,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mb-5",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            htmlFor: "phone",
-                                            className: "block text-sm font-medium text-slate-700 mb-2",
-                                            children: "Telefon"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 156,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                            id: "phone",
-                                            type: "tel",
-                                            placeholder: "+48 123 456 789",
-                                            className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all"
-                                        }, void 0, false, {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "sm:col-span-2 xl:col-span-1",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    htmlFor: "phone",
+                                                    className: "block text-sm font-medium text-slate-100 mb-2",
+                                                    children: "Telefon"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                    lineNumber: 168,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    id: "phone",
+                                                    type: "tel",
+                                                    placeholder: "+48 987 654 321",
+                                                    className: "w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                                                    lineNumber: 171,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 167,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mb-5",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "subject",
-                                            className: "block text-sm font-medium text-slate-700 mb-2",
+                                            className: "block text-sm font-medium text-slate-100 mb-2",
                                             children: "Temat"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 147,
+                                            lineNumber: 180,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                             id: "subject",
-                                            className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all appearance-none cursor-pointer",
+                                            className: "w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all appearance-none cursor-pointer",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     children: "Zapytanie ogólne"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 187,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     children: "Kupno nieruchomości"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 188,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     children: "Współpraca deweloperska"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 156,
+                                                    lineNumber: 189,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     children: "Wycena nieruchomości"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 157,
+                                                    lineNumber: 190,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     children: "Inne"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                                    lineNumber: 158,
+                                                    lineNumber: 191,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 183,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 179,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mb-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "message",
-                                            className: "block text-sm font-medium text-slate-700 mb-2",
+                                            className: "block text-sm font-medium text-slate-100 mb-2",
                                             children: "Wiadomość"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 195,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                             id: "message",
                                             rows: 4,
                                             placeholder: "Opisz swoje potrzeby...",
-                                            className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all resize-none"
+                                            className: "w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all resize-none min-h-[120px]"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 198,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$websites__folder$2f$pawel$2d$development$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "submit",
-                                    className: "w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98]",
+                                    className: "w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary-dark text-white py-4 px-10 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/35 active:scale-[0.98]",
                                     children: "Wyślij wiadomość"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 205,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                            lineNumber: 107,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-            lineNumber: 25,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                        lineNumber: 139,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
+                lineNumber: 120,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/Desktop/websites folder/pawel-development/src/components/ContactForm.tsx",
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }

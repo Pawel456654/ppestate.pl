@@ -58,7 +58,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="tel:+48123456789"
+            href="tel:+48987654321"
             className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
             Zadzwoń
