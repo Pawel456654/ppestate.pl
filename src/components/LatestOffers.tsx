@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const offers = [
   {
@@ -181,12 +182,15 @@ export default function LatestOffers() {
               Sprawdź najnowsze nieruchomości dodane do naszej bazy
             </p>
           </div>
-          <button className="text-primary font-semibold text-sm hover:text-primary-dark transition-colors flex items-center gap-2 shrink-0">
+          <Link
+            href="/oferty"
+            className="text-primary font-semibold text-sm hover:text-primary-dark transition-colors flex items-center gap-2 shrink-0"
+          >
             Zobacz wszystkie
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">

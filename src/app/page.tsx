@@ -2,6 +2,7 @@ import HeroSlider from "@/components/HeroSlider";
 import Categories from "@/components/Categories";
 import LatestOffers from "@/components/LatestOffers";
 import AboutUs from "@/components/AboutUs";
+import AboutExtendedContent from "@/components/AboutExtendedContent";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Categories />
       <LatestOffers />
       <AboutUs />
+      <AboutExtendedContent />
       <ContactForm />
       <Footer />
     </main>

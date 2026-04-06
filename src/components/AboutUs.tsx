@@ -70,26 +70,16 @@ export default function AboutUs() {
             </h2>
             <div className="space-y-5 text-slate-600 leading-relaxed">
               <p>
-                <strong className="text-slate-800">Paweł Development</strong> to
-                firma specjalizująca się w profesjonalnym pośrednictwie między
-                deweloperami a klientami poszukującymi idealnej nieruchomości.
-                Dzięki wieloletniemu doświadczeniu na rynku nieruchomości
-                doskonale rozumiemy potrzeby obu stron transakcji.
+                <strong className="text-slate-800">Paweł Development</strong> z{" "}
+                <strong className="text-slate-800">Wrocławia</strong> łączy
+                klientów z renomowanymi deweloperami i prowadzi transakcje na
+                rynku pierwotnym i wtórnym — od pierwszej rozmowy po podpisanie
+                umowy.
               </p>
               <p>
-                Współpracujemy z najlepszymi deweloperami w Polsce, oferując
-                naszym klientom dostęp do ekskluzywnych inwestycji jeszcze przed
-                ich oficjalną premierą. Nasz zespół ekspertów zapewnia pełne
-                wsparcie na każdym etapie procesu zakupu — od wyboru
-                nieruchomości, przez negocjacje warunków, aż po finalizację
-                transakcji.
-              </p>
-              <p>
-                Stawiamy na transparentność, profesjonalizm i indywidualne
-                podejście do każdego klienta. Niezależnie czy szukasz
-                wymarzowego domu, nowoczesnego mieszkania, działki pod
-                inwestycję czy obiektu komercyjnego — jesteśmy tutaj, aby
-                pomóc Ci podjąć najlepszą decyzję.
+                Dzięki sieci partnerów deweloperskich często udostępniamy
+                inwestycje zanim trafią do szerokiej sprzedaży. Szczegóły
+                zakresu usług i rodzajów nieruchomości znajdziesz w sekcji poniżej.
               </p>
             </div>
           </div>

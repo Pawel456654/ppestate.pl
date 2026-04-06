@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const categories = [
   {
     title: "Domy",
+    queryType: "domy",
     description: "Komfortowe domy jednorodzinne i bliźniaki w najlepszych lokalizacjach",
     count: 48,
     gradient: "from-blue-400 via-blue-500 to-indigo-500",
@@ -14,6 +16,7 @@ const categories = [
   },
   {
     title: "Mieszkania",
+    queryType: "mieszkania",
     description: "Nowoczesne apartamenty i mieszkania w prestiżowych inwestycjach",
     count: 124,
     gradient: "from-violet-400 via-purple-500 to-indigo-500",
@@ -23,6 +26,7 @@ const categories = [
   },
   {
     title: "Działki",
+    queryType: "dzialki",
     description: "Atrakcyjne działki budowlane, rolne i inwestycyjne",
     count: 67,
     gradient: "from-emerald-400 via-teal-500 to-cyan-500",
@@ -32,6 +36,7 @@ const categories = [
   },
   {
     title: "Przemysłowe",
+    queryType: "przemyslowe",
     description: "Hale, magazyny i obiekty komercyjne dla Twojego biznesu",
     count: 31,
     gradient: "from-amber-400 via-orange-400 to-rose-400",
@@ -293,7 +298,7 @@ function CategoryCard({
   category: (typeof categories)[0];
   index: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLAnchorElement>(null);
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
 
@@ -314,8 +319,9 @@ function CategoryCard({
   const Illustration = illustrations[category.illustration];
 
   return (
-    <div
+    <Link
       ref={ref}
+      href={`/oferty?typ=${category.queryType}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 ${
@@ -392,7 +398,7 @@ function CategoryCard({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
