@@ -21,13 +21,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 h-24 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-500">
       <div className="w-full mx-auto h-full px-10 lg:px-14 flex items-stretch justify-between">
-        <Link href="/" className="flex items-center self-stretch">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo-duze.png"
             alt="PP Estate logo"
             width={72}
             height={72}
-            className="h-full w-auto object-contain"
+            className="h-16 w-auto object-contain"
             priority
           />
         </Link>
