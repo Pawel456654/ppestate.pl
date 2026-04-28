@@ -4,7 +4,7 @@ globalThis.__BUILD_MANIFEST = {
   },
   "devFiles": [],
   "polyfillFiles": [
-    "static/chunks/0~-9_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/0qdc_next_dist_build_polyfills_polyfill-nomodule.js"
   ],
   "lowPriorityFiles": [
     "static/development/_buildManifest.js",
@@ -12,15 +12,15 @@ globalThis.__BUILD_MANIFEST = {
     "static/development/_clientMiddlewareManifest.js"
   ],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0w4-d15._.js",
-    "static/chunks/0~-9_next_dist_compiled_next-devtools_index_0u_~t5_.js",
-    "static/chunks/0~-9_next_dist_compiled_react-dom_0gle3~h._.js",
-    "static/chunks/0~-9_next_dist_compiled_react-server-dom-turbopack_0k3i1rj._.js",
-    "static/chunks/0~-9_next_dist_compiled_04148mq._.js",
-    "static/chunks/0~-9_next_dist_client_0sy4t3d._.js",
-    "static/chunks/0~-9_next_dist_04egnwa._.js",
-    "static/chunks/0~-9_@swc_helpers_cjs_10f2ngg._.js",
-    "static/chunks/Desktop_websites folder_pawel-development_0rqeker._.js",
-    "static/chunks/turbopack-Desktop_websites folder_pawel-development_0s_-j2n._.js"
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_04ofgrq._.js",
+    "static/chunks/0qdc_next_dist_compiled_next-devtools_index_12r9--e.js",
+    "static/chunks/0qdc_next_dist_compiled_react-dom_0aoj-eb._.js",
+    "static/chunks/0qdc_next_dist_compiled_react-server-dom-turbopack_0e659mn._.js",
+    "static/chunks/0qdc_next_dist_compiled_0htw5wm._.js",
+    "static/chunks/0qdc_next_dist_client_07vaw.x._.js",
+    "static/chunks/0qdc_next_dist_0m4m.oj._.js",
+    "static/chunks/0qdc_@swc_helpers_cjs_0x3q3f~._.js",
+    "static/chunks/websites_pawel-development_0rqeker._.js",
+    "static/chunks/turbopack-websites_pawel-development_0o8pwi5._.js"
   ]
 };
