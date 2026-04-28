@@ -34,23 +34,36 @@ export default function HeroSlider() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {slides.map((slide, i) => (
-        <div
-          key={slide.src}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            i === current ? "opacity-100 scale-100" : "opacity-0 scale-105"
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            className="object-cover"
-            priority={i === 0}
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      {slides.map((slide, i) => {
+        // Only mount the current slide and its immediate neighbors. This
+        // prevents the dev server from being asked to optimize all 5 large
+        // hero images on first paint (which can OOM low-RAM machines when
+        // one of them is a 1.7 MB JPEG).
+        const isActive = i === current;
+        const isNeighbor =
+          i === (current + 1) % slides.length ||
+          i === (current - 1 + slides.length) % slides.length;
+        if (!isActive && !isNeighbor) return null;
+
+        return (
+          <div
+            key={slide.src}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              className="object-cover"
+              preload={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
+              sizes="100vw"
+            />
+          </div>
+        );
+      })}
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[min(92vw,52rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-gradient-to-b from-slate-900/72 via-slate-900/52 to-slate-900/20 blur-2xl" />

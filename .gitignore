@@ -11,6 +11,14 @@ dist
 dist-ssr
 *.local
 
+# Next.js
+.next
+out
+.turbo
+.vercel
+next-env.d.ts
+
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -20,4 +28,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Env
 .env
+.env*.local

@@ -1,3 +1,0 @@
-module.exports=[59488,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(44087);a.n(d("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},59829,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(44087);a.n(d("[project]/Desktop/websites folder/pawel-development/node_modules/next/dist/client/components/builtin/global-error.js"))},54256,a=>{"use strict";a.i(59488);var b=a.i(59829);a.n(b)},12789,a=>{a.n(a.i(54256))}];
-
-//# sourceMappingURL=0~-9_next_dist_client_components_builtin_global-error_113-zz0.js.map

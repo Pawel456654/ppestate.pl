@@ -25,19 +25,12 @@ self.__SERVER_FILES_MANIFEST={
     "images": {
       "deviceSizes": [
         640,
-        750,
         828,
-        1080,
         1200,
-        1920,
-        2048,
-        3840
+        1920
       ],
       "imageSizes": [
-        32,
-        48,
         64,
-        96,
         128,
         256,
         384
@@ -47,7 +40,7 @@ self.__SERVER_FILES_MANIFEST={
       "loaderFile": "",
       "domains": [],
       "disableStaticImages": false,
-      "minimumCacheTTL": 14400,
+      "minimumCacheTTL": 604800,
       "formats": [
         "image/webp"
       ],
@@ -104,7 +97,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/filipborowski",
+    "outputFileTracingRoot": "/Users/filipborowski/Desktop/websites folder/pawel-development",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -159,7 +152,7 @@ self.__SERVER_FILES_MANIFEST={
       "dynamicOnHover": false,
       "varyParams": false,
       "prefetchInlining": false,
-      "preloadEntriesOnStart": true,
+      "preloadEntriesOnStart": false,
       "clientRouterFilter": true,
       "clientRouterFilterRedirects": false,
       "fetchCacheKeyPrefix": "",
@@ -304,12 +297,12 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/filipborowski"
+      "root": "/Users/filipborowski/Desktop/websites folder/pawel-development"
     },
     "distDirRoot": ".next"
   },
   "appDir": "/Users/filipborowski/Desktop/websites folder/pawel-development",
-  "relativeAppDir": "Desktop/websites folder/pawel-development",
+  "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",
