@@ -70,16 +70,10 @@ export default function AboutUs() {
             </h2>
             <div className="space-y-5 text-slate-600 leading-relaxed">
               <p>
-                <strong className="text-slate-800">Paweł Development</strong> z{" "}
-                <strong className="text-slate-800">Wrocławia</strong> łączy
-                klientów z renomowanymi deweloperami i prowadzi transakcje na
-                rynku pierwotnym i wtórnym — od pierwszej rozmowy po podpisanie
-                umowy.
-              </p>
-              <p>
-                Dzięki sieci partnerów deweloperskich często udostępniamy
-                inwestycje zanim trafią do szerokiej sprzedaży. Szczegóły
-                zakresu usług i rodzajów nieruchomości znajdziesz w sekcji poniżej.
+                PP Estate z Wrocławia łączy klientów chcących sprzedać, kupić
+                lub wynająć nieruchomość i prowadzi kompleksowo transakcje
+                począwszy od pierwszej rozmowy po podpisanie umowy i przekazanie
+                protokolarne nieruchomości drugiej stronie.
               </p>
             </div>
           </div>

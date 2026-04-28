@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Paweł Development | Nieruchomości od Deweloperów",
+  title: "PP Estate | Nieruchomości od Deweloperów",
   description:
-    "Paweł Development - Twój zaufany pośrednik nieruchomości. Domy, mieszkania, działki i obiekty przemysłowe bezpośrednio od deweloperów. Najlepsze oferty w jednym miejscu.",
+    "PP Estate - Twój zaufany pośrednik nieruchomości. Domy, mieszkania, działki i obiekty przemysłowe bezpośrednio od deweloperów. Najlepsze oferty w jednym miejscu.",
   keywords:
-    "nieruchomości, deweloper, domy, mieszkania, działki, przemysłowe, pośrednik, Paweł Development",
+    "nieruchomości, deweloper, domy, mieszkania, działki, przemysłowe, pośrednik, PP Estate",
 };
 
 export default function RootLayout({

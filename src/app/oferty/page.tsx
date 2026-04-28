@@ -5,7 +5,7 @@ import SampleOffersGrid from "@/components/SampleOffersGrid";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Oferty | Paweł Development",
+  title: "Oferty | PP Estate",
   description:
     "Przeglądaj oferty nieruchomości: domy, mieszkania, działki i obiekty przemysłowe. Zaawansowane filtrowanie pomaga szybko znaleźć odpowiednią ofertę.",
 };

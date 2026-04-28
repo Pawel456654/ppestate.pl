@@ -8,6 +8,7 @@ const slides = [
   { src: "/hero/mieszkania.png", alt: "Nowoczesne mieszkania", label: "Mieszkania" },
   { src: "/hero/dzialki.png", alt: "Działki budowlane", label: "Działki" },
   { src: "/hero/magazyny.png", alt: "Obiekty przemysłowe", label: "Przemysłowe" },
+  { src: "/hero/biura.jpg", alt: "Nowoczesne powierzchnie biurowe", label: "Biura" },
 ];
 
 export default function HeroSlider() {
@@ -51,12 +52,12 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/70" />
-
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <div className="text-center mb-12 animate-fade-in-up">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[min(92vw,52rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-gradient-to-b from-slate-900/72 via-slate-900/52 to-slate-900/20 blur-2xl" />
+
+        <div className="relative z-10 text-center mb-12 animate-fade-in-up">
           <p className="text-primary-light text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-            Twój zaufany partner w nieruchomościach
+            Twój zaufany doradca w nieruchomościach
           </p>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
             Znajdź swoją
@@ -66,13 +67,12 @@ export default function HeroSlider() {
             </span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">
-            Bezpośrednio od deweloperów. Najlepsze oferty domów, mieszkań,
-            działek i obiektów przemysłowych.
+            Najlepsze oferty domów, mieszkań, działek i obiektów przemysłowych.
           </p>
         </div>
 
         {/* Search bar placeholder */}
-        <div className="w-full max-w-3xl animate-fade-in-up animation-delay-400">
+        <div className="relative z-10 w-full max-w-3xl animate-fade-in-up animation-delay-400">
           <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/10 p-3">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 relative">

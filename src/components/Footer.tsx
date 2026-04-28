@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="text-2xl font-bold mb-4">
-              Paweł
-              <span className="font-light"> Development</span>
+              PP
+              <span className="font-light"> Estate</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Profesjonalne pośrednictwo w obrocie nieruchomościami. Łączymy
@@ -93,7 +93,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} Paweł Development. Wszelkie prawa
+            &copy; {new Date().getFullYear()} PP Estate. Wszelkie prawa
             zastrzeżone.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">

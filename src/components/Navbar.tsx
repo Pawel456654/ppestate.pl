@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isInnerPage = pathname !== "/";
-  const solidNavbar = scrolled || isInnerPage;
   const toHomeSection = (hash: string) => (isInnerPage ? `/${hash}` : hash);
   const navItems = [
     { label: "Oferta", href: "/oferty" },
@@ -19,30 +18,18 @@ export default function Navbar() {
     { label: "Kariera", href: "/kariera" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        solidNavbar
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div
-            className={`text-2xl font-bold tracking-tight transition-colors duration-500 ${
-              solidNavbar ? "text-primary" : "text-white"
-            }`}
-          >
-            Paweł
-            <span className="font-light"> Development</span>
-          </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 h-24 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-500">
+      <div className="w-full mx-auto h-full px-10 lg:px-14 flex items-stretch justify-between">
+        <Link href="/" className="flex items-center self-stretch">
+          <Image
+            src="/logo-duze.png"
+            alt="PP Estate logo"
+            width={72}
+            height={72}
+            className="h-full w-auto object-contain"
+            priority
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -50,15 +37,13 @@ export default function Navbar() {
             <Link
               key={`${item.label}-${item.href}`}
               href={item.href}
-              className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                solidNavbar ? "text-slate-700" : "text-white/90"
-              }`}
+              className="text-sm font-medium text-slate-700 transition-colors duration-300 hover:text-primary"
             >
               {item.label}
             </Link>
           ))}
           <a
-            href="tel:+48123456789"
+            href="tel:+48601782517"
             className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
             Zadzwoń
@@ -67,9 +52,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden p-2 transition-colors ${
-            solidNavbar ? "text-slate-700" : "text-white"
-          }`}
+          className="md:hidden p-2 text-slate-700 transition-colors"
           aria-label="Menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -5,7 +5,7 @@ export default function AboutExtendedContent() {
         <div className="space-y-12 md:space-y-14">
           <div>
             <h2 className="mb-5 text-2xl font-bold leading-tight text-black md:mb-6 md:text-3xl lg:text-[2rem] lg:leading-snug">
-              Biuro nieruchomości Wrocław – Paweł Development
+              Biuro nieruchomości Wrocław – PP Estate
             </h2>
             <div className="space-y-4 text-base leading-[1.62] md:text-lg md:leading-relaxed">
               <p>
@@ -26,7 +26,7 @@ export default function AboutExtendedContent() {
             </h2>
             <div className="space-y-4 text-base leading-[1.62] md:text-lg md:leading-relaxed">
               <p>
-                W <strong>Paweł Development</strong> proces ma być dla Klienta{" "}
+                W <strong>PP Estate</strong> proces ma być dla Klienta{" "}
                 <strong>prosty, przejrzysty i bezpieczny</strong>. Działamy na{" "}
                 <strong>rynku pierwotnym i wtórnym</strong> — dopasowując
                 działania do sytuacji rynkowej i celu (sprzedaż, wynajem, zakup,
@@ -78,8 +78,8 @@ export default function AboutExtendedContent() {
               </ul>
               <p>
                 <strong>Skontaktuj się z nami</strong>, jeśli planujesz
-                nieruchomości we <strong>Wrocławiu</strong> — pomożemy ustalić
-                kolejny krok.
+                nieruchomości w <strong>województwie dolnośląskim</strong> —
+                pomożemy ustalić kolejny krok.
               </p>
             </div>
           </div>

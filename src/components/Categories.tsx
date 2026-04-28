@@ -35,7 +35,7 @@ const categories = [
     illustration: "land",
   },
   {
-    title: "Przemysłowe",
+    title: "Komercyjne",
     queryType: "przemyslowe",
     description: "Hale, magazyny i obiekty komercyjne dla Twojego biznesu",
     count: 31,

@@ -3,13 +3,13 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-const PROPERTY_TYPES = ["Dom", "Mieszkanie", "Działka", "Przemysłowe"] as const;
+const PROPERTY_TYPES = ["Dom", "Mieszkanie", "Działka", "Komercyjne"] as const;
 
 const CATEGORY_TO_TYPE: Record<string, (typeof PROPERTY_TYPES)[number]> = {
   domy: "Dom",
   mieszkania: "Mieszkanie",
   dzialki: "Działka",
-  przemyslowe: "Przemysłowe",
+  przemyslowe: "Komercyjne",
 };
 
 function normalize(value: string) {

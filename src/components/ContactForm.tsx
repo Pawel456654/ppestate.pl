@@ -1,11 +1,56 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type FormEvent } from "react";
 import Image from "next/image";
+
+const CONTACT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL ??
+  "http://localhost:5678/webhook-test/1446e493-54e0-4d34-a105-1849f129f8cf";
 
 export default function ContactForm() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("Zapytanie ogólne");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorText, setErrorText] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorText("");
+    try {
+      const res = await fetch(CONTACT_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          subject,
+          message: message.trim(),
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setSubject("Zapytanie ogólne");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      setErrorText(
+        "Nie udało się wysłać wiadomości. Spróbuj ponownie lub skontaktuj się telefonicznie."
+      );
+    }
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,7 +110,7 @@ export default function ContactForm() {
         />
         <div className="relative grid grid-cols-1 md:grid-cols-3 min-h-0 divide-y md:divide-y-0 md:divide-x divide-sky-300/55">
           <a
-            href="tel:+48123456789"
+            href="tel:+48601782517"
             className="flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-sky-200/50 hover:bg-sky-300/55 transition-colors"
           >
             <div className="w-14 h-14 rounded-2xl bg-sky-300/90 text-sky-800 shadow-sm shadow-sky-300/40 flex items-center justify-center shrink-0">
@@ -76,7 +121,7 @@ export default function ContactForm() {
             <div>
               <h3 className="text-slate-800 font-semibold mb-2">Telefon</h3>
               <span className="text-sky-800/80 hover:text-primary transition-colors">
-                +48 123 456 789
+                +48 601 782 517
               </span>
             </div>
           </a>
@@ -137,10 +182,7 @@ export default function ContactForm() {
           aria-hidden
         />
         <div className="relative z-10 w-full px-6 sm:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 lg:py-24">
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="w-full max-w-none mx-auto space-y-5"
-          >
+          <form onSubmit={handleSubmit} className="w-full max-w-none mx-auto space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-100 mb-2">
@@ -148,7 +190,11 @@ export default function ContactForm() {
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Jan Kowalski"
                   className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 />
@@ -159,7 +205,11 @@ export default function ContactForm() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="jan@email.pl"
                   className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 />
@@ -170,8 +220,11 @@ export default function ContactForm() {
                 </label>
                 <input
                   id="phone"
+                  name="phone"
                   type="tel"
-                  placeholder="+48 123 456 789"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="+48 601 782 517"
                   className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 />
               </div>
@@ -182,13 +235,16 @@ export default function ContactForm() {
               </label>
               <select
                 id="subject"
+                name="subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
                 className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all appearance-none cursor-pointer"
               >
-                <option>Zapytanie ogólne</option>
-                <option>Kupno nieruchomości</option>
-                <option>Współpraca deweloperska</option>
-                <option>Wycena nieruchomości</option>
-                <option>Inne</option>
+                <option value="Zapytanie ogólne">Zapytanie ogólne</option>
+                <option value="Kupno nieruchomości">Kupno nieruchomości</option>
+                <option value="Współpraca deweloperska">Współpraca deweloperska</option>
+                <option value="Wycena nieruchomości">Wycena nieruchomości</option>
+                <option value="Inne">Inne</option>
               </select>
             </div>
             <div>
@@ -197,16 +253,31 @@ export default function ContactForm() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Opisz swoje potrzeby..."
                 className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all resize-none min-h-[120px]"
               />
             </div>
+            {status === "success" && (
+              <p className="text-emerald-300 text-sm font-medium" role="status">
+                Dziękujemy — wiadomość została wysłana.
+              </p>
+            )}
+            {status === "error" && errorText && (
+              <p className="text-rose-300 text-sm font-medium" role="alert">
+                {errorText}
+              </p>
+            )}
             <button
               type="submit"
-              className="w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary-dark text-white py-4 px-10 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/35 active:scale-[0.98]"
+              disabled={status === "sending"}
+              className="w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary-dark disabled:opacity-60 disabled:pointer-events-none text-white py-4 px-10 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/35 active:scale-[0.98]"
             >
-              Wyślij wiadomość
+              {status === "sending" ? "Wysyłanie…" : "Wyślij wiadomość"}
             </button>
           </form>
         </div>
