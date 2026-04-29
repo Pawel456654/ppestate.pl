@@ -33,7 +33,7 @@ export default function HeroSlider() {
   }, [current, goTo]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative mb-44 h-[50vh] w-full overflow-visible sm:mb-28 lg:mb-12">
       {slides.map((slide, i) => {
         // Only mount the current slide and its immediate neighbors. This
         // prevents the dev server from being asked to optimize all 5 large
@@ -64,29 +64,20 @@ export default function HeroSlider() {
           </div>
         );
       })}
-
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[min(92vw,52rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-gradient-to-b from-slate-900/72 via-slate-900/52 to-slate-900/20 blur-2xl" />
-
-        <div className="relative z-10 text-center mb-12 animate-fade-in-up">
-          <p className="text-primary-light text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-            Twój zaufany doradca w nieruchomościach
-          </p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-            Znajdź swoją
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
-              wymarzoną nieruchomość
-            </span>
-          </h1>
-          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">
-            Najlepsze oferty domów, mieszkań, działek i obiektów przemysłowych.
-          </p>
+        <div className="relative z-10 flex h-[50%] aspect-square items-center justify-center animate-fade-in-up">
+          <Image
+            src="/hero-logo-clean.png"
+            alt="Logo biura nieruchomości"
+            fill
+            className="object-contain drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+            priority
+          />
         </div>
 
         {/* Search bar placeholder */}
-        <div className="relative z-10 w-full max-w-3xl animate-fade-in-up animation-delay-400">
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/10 p-3">
+        <div className="absolute z-20 left-1/2 bottom-0 w-full max-w-3xl -translate-x-1/2 translate-y-[120%] px-4 animate-fade-in-up animation-delay-400 sm:translate-y-[62%] sm:px-6">
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/25 ring-1 ring-slate-300/90 p-3">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 relative">
                 <svg
@@ -122,28 +113,46 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
-          {slides.map((slide, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`group flex items-center gap-2 transition-all duration-500 ${
-                i === current ? "opacity-100" : "opacity-50 hover:opacity-75"
-              }`}
-              aria-label={`Przejdź do: ${slide.label}`}
-            >
-              <div
-                className={`h-1 rounded-full transition-all duration-500 ${
-                  i === current
-                    ? "w-12 bg-white"
-                    : "w-6 bg-white/60 group-hover:bg-white/80"
-                }`}
-              />
-            </button>
-          ))}
+        <div className="absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2 ring-1 ring-white/20">
+          <div className="marquee-track text-sm font-semibold uppercase tracking-[0.12em] text-amber-100">
+            <div className="marquee-segment whitespace-nowrap">
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            </div>
+            <div className="marquee-segment whitespace-nowrap" aria-hidden="true">
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            </div>
+          </div>
         </div>
+
       </div>
+      <style jsx>{`
+        .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marquee 16s linear infinite;
+        }
+
+        .marquee-segment {
+          flex-shrink: 0;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }

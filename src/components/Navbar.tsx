@@ -22,14 +22,16 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 h-24 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-500">
       <div className="w-full mx-auto h-full px-10 lg:px-14 flex items-stretch justify-between">
         <Link href="/" className="flex items-center self-stretch">
-          <Image
-            src="/logo-duze.png"
-            alt="PP Estate logo"
-            width={72}
-            height={72}
-            className="h-full w-auto object-contain"
-            preload
-          />
+          <div className="relative h-full w-[clamp(180px,18vw,280px)]">
+            <Image
+              src="/logo-duze.png"
+              alt="PP Estate logo"
+              fill
+              sizes="(max-width: 768px) 180px, (max-width: 1280px) 220px, 280px"
+              className="object-contain object-left"
+              preload
+            />
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

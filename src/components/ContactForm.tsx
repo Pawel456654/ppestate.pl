@@ -127,7 +127,7 @@ export default function ContactForm() {
           </a>
 
           <a
-            href="mailto:kontakt@paweldevelopment.pl"
+            href="mailto:biuro@ppestate.pl"
             className="flex flex-col items-center justify-center gap-4 px-6 sm:px-8 lg:px-12 py-10 sm:py-14 text-center bg-blue-200/45 hover:bg-blue-300/50 transition-colors"
           >
             <div className="w-14 h-14 rounded-2xl bg-blue-300/85 text-blue-900 shadow-sm shadow-blue-300/35 flex items-center justify-center shrink-0">
@@ -138,7 +138,7 @@ export default function ContactForm() {
             <div>
               <h3 className="text-slate-800 font-semibold mb-2">Email</h3>
               <span className="text-blue-950/80 hover:text-primary transition-colors break-all">
-                kontakt@paweldevelopment.pl
+                biuro@ppestate.pl
               </span>
             </div>
           </a>

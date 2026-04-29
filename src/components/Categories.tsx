@@ -406,16 +406,16 @@ export default function Categories() {
   return (
     <section id="kategorie" className="py-24 sm:py-32 px-6">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-10 tracking-[0.04em] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-primary to-slate-800">
+          Najlepsze biuro nieruchomości we Wrocławiu
+        </h1>
         <div className="text-center mb-16">
-          <span className="text-primary text-sm font-semibold tracking-[0.15em] uppercase">
-            Nasza oferta
-          </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mt-4 mb-6">
-            Czego szukasz?
+            Nasza oferta:
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            Wybierz kategorię i przeglądaj setki ofert bezpośrednio od
-            sprawdzonych deweloperów
+            Wybierz kategorię i przeglądaj aktualne oferty nieruchomości od
+            osób prywatnych oraz firm.
           </p>
         </div>
 
