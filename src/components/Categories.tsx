@@ -330,7 +330,7 @@ function CategoryCard({
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div
-        className={`relative h-80 sm:h-96 bg-gradient-to-br ${category.gradient} ${category.hoverGradient} transition-all duration-700 p-6`}
+        className={`relative h-64 sm:h-72 bg-gradient-to-br ${category.gradient} ${category.hoverGradient} transition-all duration-700 p-5`}
       >
         {/* Decorative floating circles */}
         <div
@@ -361,7 +361,7 @@ function CategoryCard({
         </div>
 
         {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
           <div className="flex items-center gap-3 mb-3">
             <div
               className={`px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold transition-all duration-500 ${
@@ -372,15 +372,8 @@ function CategoryCard({
             </div>
           </div>
           <h3 className="text-2xl font-bold text-white mb-2">{category.title}</h3>
-          <p
-            className={`text-white/70 text-sm leading-relaxed max-w-xs transition-all duration-500 ${
-              hovered ? "text-white/90" : ""
-            }`}
-          >
-            {category.description}
-          </p>
           <div
-            className={`mt-4 flex items-center gap-2 text-white/80 text-sm font-medium transition-all duration-500 ${
+            className={`mt-2 flex items-center gap-2 text-white/80 text-sm font-medium transition-all duration-500 ${
               hovered ? "text-white gap-3" : ""
             }`}
           >

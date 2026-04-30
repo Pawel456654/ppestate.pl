@@ -79,7 +79,7 @@ export default function AboutUs() {
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-300 ${
+            className={`hidden transition-all duration-1000 delay-300 ${
               visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
