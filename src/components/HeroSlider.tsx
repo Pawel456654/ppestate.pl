@@ -6,8 +6,6 @@ import Image from "next/image";
 const slides = [
   { src: "/hero/domy.png", alt: "Piękne domy od deweloperów", label: "Domy" },
   { src: "/hero/mieszkania.png", alt: "Nowoczesne mieszkania", label: "Mieszkania" },
-  { src: "/hero/dzialki.png", alt: "Działki budowlane", label: "Działki" },
-  { src: "/hero/magazyny.png", alt: "Obiekty przemysłowe", label: "Przemysłowe" },
   { src: "/hero/biura.jpg", alt: "Nowoczesne powierzchnie biurowe", label: "Biura" },
 ];
 
@@ -33,50 +31,42 @@ export default function HeroSlider() {
   }, [current, goTo]);
 
   return (
-    <section className="relative mb-44 h-[50vh] w-full overflow-visible sm:mb-28 lg:mb-12">
-      {slides.map((slide, i) => {
-        // Only mount the current slide and its immediate neighbors. This
-        // prevents the dev server from being asked to optimize all 5 large
-        // hero images on first paint (which can OOM low-RAM machines when
-        // one of them is a 1.7 MB JPEG).
-        const isActive = i === current;
-        const isNeighbor =
-          i === (current + 1) % slides.length ||
-          i === (current - 1 + slides.length) % slides.length;
-        if (!isActive && !isNeighbor) return null;
+    <section className="relative mb-60 h-[50vh] w-full overflow-visible sm:mb-28 lg:mb-12">
+      <div className="absolute inset-0 overflow-hidden">
+        {slides.map((slide, i) => {
+          // Only mount the current slide and its immediate neighbors. This
+          // prevents the dev server from being asked to optimize all 5 large
+          // hero images on first paint (which can OOM low-RAM machines when
+          // one of them is a 1.7 MB JPEG).
+          const isActive = i === current;
+          const isNeighbor =
+            i === (current + 1) % slides.length ||
+            i === (current - 1 + slides.length) % slides.length;
+          if (!isActive && !isNeighbor) return null;
 
-        return (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              className="object-cover"
-              preload={i === 0}
-              loading={i === 0 ? "eager" : "lazy"}
-              sizes="100vw"
-            />
-          </div>
-        );
-      })}
+          return (
+            <div
+              key={slide.src}
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
+              }`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                className="object-cover"
+                preload={i === 0}
+                loading={i === 0 ? "eager" : "lazy"}
+                sizes="100vw"
+              />
+            </div>
+          );
+        })}
+      </div>
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <div className="relative z-10 flex h-[50%] aspect-square items-center justify-center animate-fade-in-up">
-          <Image
-            src="/hero-logo-clean.png"
-            alt="Logo biura nieruchomości"
-            fill
-            className="object-contain drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
-            priority
-          />
-        </div>
-
         {/* Search bar placeholder */}
-        <div className="absolute z-20 left-1/2 bottom-0 w-full max-w-3xl -translate-x-1/2 translate-y-[120%] px-4 animate-fade-in-up animation-delay-400 sm:translate-y-[62%] sm:px-6">
+        <div className="absolute z-20 left-1/2 bottom-0 w-full max-w-3xl -translate-x-1/2 translate-y-[calc(100%+5rem)] px-4 animate-fade-in-up animation-delay-400 sm:translate-y-[62%] sm:px-6">
           <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/25 ring-1 ring-slate-300/90 p-3">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 relative">
@@ -113,20 +103,20 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        <div className="absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2 ring-1 ring-white/20">
-          <div className="marquee-track text-sm font-semibold uppercase tracking-[0.12em] text-amber-100">
+        <div className="absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
+          <div className="marquee-track text-[11px] font-semibold uppercase tracking-[0.08em] text-white sm:text-sm sm:tracking-[0.12em]">
             <div className="marquee-segment whitespace-nowrap">
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-4 text-white">•</span>
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-4 text-white">•</span>
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
             </div>
             <div className="marquee-segment whitespace-nowrap" aria-hidden="true">
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-4 text-white">•</span>
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-amber-200/90">•</span>
+              <span className="inline-block px-4 text-white">•</span>
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
             </div>
           </div>
@@ -137,11 +127,17 @@ export default function HeroSlider() {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: marquee 16s linear infinite;
+          animation: marquee 20s linear infinite;
         }
 
         .marquee-segment {
           flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+          .marquee-track {
+            animation-duration: 16s;
+          }
         }
 
         @keyframes marquee {

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 px-6">
@@ -11,9 +13,8 @@ export default function Footer() {
               <span className="font-light"> Estate</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Profesjonalne pośrednictwo w obrocie nieruchomościami. Łączymy
-              deweloperów z klientami, zapewniając bezpieczne i korzystne
-              transakcje.
+              Profesjonalne pośrednictwo w obrocie nieruchomościami. Łączymy klientów
+              zapewniając bezpieczne i korzystne transakcje.
             </p>
             <div className="flex gap-3">
               {["facebook", "instagram", "linkedin"].map((social) => (
@@ -97,9 +98,9 @@ export default function Footer() {
             zastrzeżone.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link href="/polityka-prywatnosci" className="hover:text-white transition-colors">
               Polityka prywatności
-            </a>
+            </Link>
             <a href="#" className="hover:text-white transition-colors">
               Regulamin
             </a>

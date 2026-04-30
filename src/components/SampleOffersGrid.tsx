@@ -38,7 +38,7 @@ const sampleOffers = [
     offerType: "Sprzedaż",
     description:
       "Kształtna działka z dostępem do mediów i dojazdem drogą asfaltową. Atrakcyjna lokalizacja pod budowę domu jednorodzinnego lub inwestycję deweloperską.",
-    image: "/hero/dzialki.png",
+    image: "/hero/biura.jpg",
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const sampleOffers = [
     offerType: "Sprzedaż",
     description:
       "Nowoczesna hala z zapleczem biurowym, dokami przeładunkowymi i placem manewrowym. Obiekt dobrze skomunikowany z trasami szybkiego ruchu.",
-    image: "/hero/magazyny.png",
+    image: "/hero/domy.png",
   },
   {
     id: 5,

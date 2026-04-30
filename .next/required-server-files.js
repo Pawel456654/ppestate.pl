@@ -97,7 +97,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/filipborowski/Desktop/websites folder/pawel-development",
+    "outputFileTracingRoot": "/Users/filipborowski/websites/pawel-development",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -297,11 +297,11 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/filipborowski/Desktop/websites folder/pawel-development"
+      "root": "/Users/filipborowski/websites/pawel-development"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/filipborowski/Desktop/websites folder/pawel-development",
+  "appDir": "/Users/filipborowski/websites/pawel-development",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",

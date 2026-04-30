@@ -19,18 +19,43 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-24 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-500">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 h-24 transition-all duration-500 ${
+        menuOpen
+          ? "bg-[#0d3479] shadow-none md:bg-white/90 md:backdrop-blur-md md:shadow-sm"
+          : "bg-white/90 backdrop-blur-md shadow-sm"
+      }`}
+    >
       <div className="w-full mx-auto h-full px-10 lg:px-14 flex items-stretch justify-between">
         <Link href="/" className="flex items-center self-stretch">
-          <div className="relative h-full w-[clamp(180px,18vw,280px)]">
-            <Image
-              src="/logo-duze.png"
-              alt="PP Estate logo"
-              fill
-              sizes="(max-width: 768px) 180px, (max-width: 1280px) 220px, 280px"
-              className="object-contain object-left"
-              preload
-            />
+          <div className="flex items-center gap-3">
+            <div className="h-full w-16 shrink-0 flex items-center justify-center">
+              <Image
+                src="/hero-logo-mark.png"
+                alt="PP Estate symbol"
+                width={64}
+                height={64}
+                sizes="64px"
+                className="h-16 w-16 object-contain scale-[1.12] translate-y-[2px]"
+                preload
+              />
+            </div>
+            <div className="leading-none">
+              <p
+                className={`text-xl sm:text-2xl font-extrabold tracking-[0.18em] ${
+                  menuOpen ? "text-white md:text-[#0d3479]" : "text-[#0d3479]"
+                }`}
+              >
+                PP <span className={menuOpen ? "text-blue-200 md:text-primary" : "text-primary"}>ESTATE</span>
+              </p>
+              <p
+                className={`mt-1 text-[10px] sm:text-xs font-semibold tracking-[0.38em] ${
+                  menuOpen ? "text-white/80 md:text-[#0d3479]/80" : "text-[#0d3479]/80"
+                }`}
+              >
+                NIERUCHOMOSCI
+              </p>
+            </div>
           </div>
         </Link>
 
@@ -54,7 +79,9 @@ export default function Navbar() {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-slate-700 transition-colors"
+          className={`md:hidden p-2 transition-colors ${
+            menuOpen ? "text-white" : "text-slate-700"
+          }`}
           aria-label="Menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,18 +95,25 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 animate-fade-in">
-          <div className="px-6 py-4 flex flex-col gap-3">
+        <div className="md:hidden fixed inset-0 z-40 bg-[#0d3479] animate-fade-in">
+          <div className="flex h-full flex-col justify-center gap-5 px-8 pt-24 pb-8">
             {navItems.map((item) => (
               <Link
                 key={`mobile-${item.label}-${item.href}`}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-slate-700 text-sm font-medium py-2 hover:text-primary transition-colors"
+                className="text-white text-2xl font-semibold tracking-wide py-1 transition-colors hover:text-blue-200"
               >
                 {item.label}
               </Link>
             ))}
+            <a
+              href="tel:+48601782517"
+              onClick={() => setMenuOpen(false)}
+              className="mt-4 inline-flex w-fit items-center rounded-full border border-white/40 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Zadzwoń
+            </a>
           </div>
         </div>
       )}

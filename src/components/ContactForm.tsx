@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, type FormEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const CONTACT_WEBHOOK_URL =
   process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL ??
@@ -15,6 +16,7 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("Zapytanie ogólne");
   const [message, setMessage] = useState("");
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorText, setErrorText] = useState("");
 
@@ -32,6 +34,7 @@ export default function ContactForm() {
           phone: phone.trim(),
           subject,
           message: message.trim(),
+          privacyPolicyAccepted: privacyAccepted,
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -44,6 +47,7 @@ export default function ContactForm() {
       setPhone("");
       setSubject("Zapytanie ogólne");
       setMessage("");
+      setPrivacyAccepted(false);
     } catch {
       setStatus("error");
       setErrorText(
@@ -153,9 +157,7 @@ export default function ContactForm() {
             <div>
               <h3 className="text-slate-800 font-semibold mb-2">Adres</h3>
               <p className="text-indigo-950/80">
-                ul. Świdnicka 40
-                <br />
-                50-030 Wrocław
+                Aleja Kasztanowa 3A-5; 53-125 Wrocław
               </p>
             </div>
           </div>
@@ -261,6 +263,28 @@ export default function ContactForm() {
                 placeholder="Opisz swoje potrzeby..."
                 className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all resize-none min-h-[120px]"
               />
+            </div>
+            <div className="flex items-start gap-3 pt-1">
+              <input
+                id="privacy"
+                name="privacy"
+                type="checkbox"
+                required
+                checked={privacyAccepted}
+                onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 rounded border-white/40 bg-white/90 text-primary focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-slate-900/80"
+              />
+              <label htmlFor="privacy" className="text-sm text-slate-200/95 leading-relaxed cursor-pointer">
+                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i udzielenia odpowiedzi na
+                niniejsze zapytanie, zgodnie z{" "}
+                <Link
+                  href="/polityka-prywatnosci"
+                  className="text-sky-300 underline underline-offset-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-sm"
+                >
+                  polityką prywatności
+                </Link>{" "}
+                (RODO).
+              </label>
             </div>
             {status === "success" && (
               <p className="text-emerald-300 text-sm font-medium" role="status">

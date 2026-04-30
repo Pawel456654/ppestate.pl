@@ -35,7 +35,7 @@ const offers = [
     area: "1 200 m²",
     rooms: null,
     type: "Działka",
-    image: "/hero/dzialki.png",
+    image: "/hero/biura.jpg",
     badge: "Okazja",
   },
   {
@@ -46,7 +46,7 @@ const offers = [
     area: "2 500 m²",
     rooms: null,
     type: "Przemysłowe",
-    image: "/hero/magazyny.png",
+    image: "/hero/domy.png",
     badge: null,
   },
   {

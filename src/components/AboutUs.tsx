@@ -62,7 +62,7 @@ export default function AboutUs() {
               O nas
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mt-4 mb-8 leading-tight">
-              Twój zaufany partner
+              Twój zaufany doradca
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                 w świecie nieruchomości

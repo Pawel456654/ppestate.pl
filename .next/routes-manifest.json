@@ -46,6 +46,12 @@
       "regex": "^/oferty(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/oferty(?:/)?$"
+    },
+    {
+      "page": "/polityka-prywatnosci",
+      "regex": "^/polityka\\-prywatnosci(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/polityka\\-prywatnosci(?:/)?$"
     }
   ],
   "dataRoutes": [],
