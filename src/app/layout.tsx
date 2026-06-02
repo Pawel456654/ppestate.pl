@@ -39,20 +39,20 @@ export default function RootLayout({
           aria-label="Strona w budowie"
         >
           <div className="flex flex-col items-center text-center">
-            <div className="mb-5 h-24 w-24 overflow-hidden rounded-full border border-slate-200 shadow-sm">
+            <div className="mb-6 h-32 w-32 overflow-hidden rounded-full border border-slate-200 shadow-sm md:h-40 md:w-40">
               <Image
                 src="/hero-logo-mark.png"
                 alt="PP Estate logo"
-                width={96}
-                height={96}
+                width={160}
+                height={160}
                 className="h-full w-full object-contain p-3"
                 priority
               />
             </div>
-            <h1 className="text-2xl font-extrabold tracking-[0.16em] text-[#0d3479]">
+            <h1 className="text-4xl font-extrabold tracking-[0.16em] text-[#0d3479] md:text-5xl">
               PP ESTATE
             </h1>
-            <p className="mt-3 text-base font-medium text-slate-700">Strona w budowie</p>
+            <p className="mt-4 text-xl font-medium text-slate-700 md:text-2xl">Strona w budowie</p>
           </div>
         </div>
       </body>
