@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PP Estate | Nieruchomości od Deweloperów",
+  title: "PP Estate | Pośrednik nieruchomości we Wrocławiu",
   description:
-    "PP Estate - Twój zaufany pośrednik nieruchomości. Domy, mieszkania, działki i obiekty przemysłowe bezpośrednio od deweloperów. Najlepsze oferty w jednym miejscu.",
+    "Jeśli szukasz nieruchomości na sprzedaż, kupno lub wynajem — to odpowiednie miejsce.",
   keywords:
     "nieruchomości, deweloper, domy, mieszkania, działki, przemysłowe, pośrednik, PP Estate",
   icons: {
@@ -39,16 +39,14 @@ export default function RootLayout({
           aria-label="Strona w budowie"
         >
           <div className="flex flex-col items-center text-center">
-            <div className="mb-6 h-32 w-32 overflow-hidden rounded-full border border-slate-200 shadow-sm md:h-40 md:w-40">
-              <Image
-                src="/hero-logo-mark.png"
-                alt="PP Estate logo"
-                width={160}
-                height={160}
-                className="h-full w-full object-contain p-3"
-                priority
-              />
-            </div>
+            <Image
+              src="/hero-logo-mark.png"
+              alt="PP Estate logo"
+              width={160}
+              height={160}
+              className="mb-6 h-32 w-auto object-contain md:h-40"
+              priority
+            />
             <h1 className="text-4xl font-extrabold tracking-[0.16em] text-[#0d3479] md:text-5xl">
               PP ESTATE
             </h1>
