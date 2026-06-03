@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import BrandMark from "@/components/BrandMark";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +28,38 @@ export default function Navbar() {
     >
       <div className="w-full mx-auto h-full px-10 lg:px-14 flex items-stretch justify-between">
         <Link href="/" className="flex items-center self-stretch">
-          <BrandMark variant={menuOpen ? "menu" : "default"} />
+          <div className="flex items-center gap-3">
+            <div className="h-full w-16 shrink-0 flex items-center justify-center">
+              <Image
+                src="/hero-logo-mark.png"
+                alt="PP Estate symbol"
+                width={64}
+                height={64}
+                sizes="64px"
+                className="h-16 w-16 object-contain scale-[1.12] translate-y-[2px]"
+                preload
+              />
+            </div>
+            <div className="leading-none">
+              <p className="text-xl sm:text-2xl font-extrabold tracking-[0.18em]">
+                <span
+                  className={menuOpen ? "text-white md:text-logo" : "text-logo"}
+                >
+                  PP
+                </span>{" "}
+                <span className={menuOpen ? "text-blue-200 md:text-primary" : "text-primary"}>
+                  ESTATE
+                </span>
+              </p>
+              <p
+                className={`mt-1 text-[10px] sm:text-xs font-semibold tracking-[0.38em] ${
+                  menuOpen ? "text-white/80 md:text-[#0d3479]/80" : "text-[#0d3479]/80"
+                }`}
+              >
+                NIERUCHOMOSCI
+              </p>
+            </div>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
