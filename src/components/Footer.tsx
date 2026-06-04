@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           <div>
             <div className="text-2xl font-bold mb-4">
               PP
@@ -65,31 +65,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
           </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-5 text-slate-300">
-              Newsletter
-            </h3>
-            <p className="text-slate-400 text-sm mb-4">
-              Otrzymuj najnowsze oferty prosto na swoją skrzynkę
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Twój email"
-                className="flex-1 px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
-              />
-              <button
-                type="submit"
-                className="bg-primary hover:bg-primary-dark text-white px-4 py-3 rounded-xl transition-colors"
-                aria-label="Zapisz się"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </form>
-          </div>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -97,14 +72,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} PP Estate. Wszelkie prawa
             zastrzeżone.
           </p>
-          <div className="flex gap-6 text-sm text-slate-500">
-            <Link href="/polityka-prywatnosci" className="hover:text-white transition-colors">
-              Polityka prywatności
-            </Link>
-            <a href="#" className="hover:text-white transition-colors">
-              Regulamin
-            </a>
-          </div>
+          <Link
+            href="/polityka-prywatnosci"
+            className="text-sm text-slate-500 hover:text-white transition-colors"
+          >
+            Polityka prywatności
+          </Link>
         </div>
       </div>
     </footer>

@@ -6,7 +6,21 @@ import Link from "next/link";
 
 const CONTACT_WEBHOOK_URL =
   process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL ??
-  "http://localhost:5678/webhook-test/1446e493-54e0-4d34-a105-1849f129f8cf";
+  "https://hook.eu2.make.com/847nyct28g2mhovkyu8kdfaqbpuowp5k";
+
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+function isValidEmail(value: string): boolean {
+  const trimmed = value.trim();
+  return trimmed.length <= 254 && EMAIL_REGEX.test(trimmed);
+}
+
+function isValidPhone(value: string): boolean {
+  const digits = value.replace(/\D/g, "");
+  const national = digits.startsWith("48") ? digits.slice(2) : digits;
+  return national.length === 9 && /^[1-9]\d{8}$/.test(national);
+}
 
 export default function ContactForm() {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,19 +33,45 @@ export default function ContactForm() {
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorText, setErrorText] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
     setErrorText("");
+    setEmailError("");
+    setPhoneError("");
+
+    const trimmedEmail = email.trim();
+    const trimmedPhone = phone.trim();
+    let hasValidationError = false;
+
+    if (!isValidEmail(trimmedEmail)) {
+      setEmailError("Podaj poprawny adres e-mail (np. jan@email.pl).");
+      hasValidationError = true;
+    }
+    if (!trimmedPhone) {
+      setPhoneError("Numer telefonu jest wymagany.");
+      hasValidationError = true;
+    } else if (!isValidPhone(trimmedPhone)) {
+      setPhoneError("Podaj poprawny numer (9 cyfr, np. +48 601 782 517).");
+      hasValidationError = true;
+    }
+
+    if (hasValidationError) {
+      setStatus("idle");
+      return;
+    }
+
+    setStatus("sending");
     try {
       const res = await fetch(CONTACT_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name.trim(),
-          email: email.trim(),
-          phone: phone.trim(),
+          email: trimmedEmail,
+          phone: trimmedPhone,
           subject,
           message: message.trim(),
           privacyPolicyAccepted: privacyAccepted,
@@ -210,11 +250,24 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   required
+                  autoComplete="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (emailError) setEmailError("");
+                  }}
                   placeholder="jan@email.pl"
-                  className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
+                  aria-invalid={emailError ? true : undefined}
+                  aria-describedby={emailError ? "email-error" : undefined}
+                  className={`w-full px-4 py-3.5 rounded-xl bg-white/95 border text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all ${
+                    emailError ? "border-rose-400" : "border-white/25"
+                  }`}
                 />
+                {emailError && (
+                  <p id="email-error" className="mt-2 text-sm text-rose-300" role="alert">
+                    {emailError}
+                  </p>
+                )}
               </div>
               <div className="sm:col-span-2 xl:col-span-1">
                 <label htmlFor="phone" className="block text-sm font-medium text-slate-100 mb-2">
@@ -224,11 +277,25 @@ export default function ContactForm() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  required
+                  autoComplete="tel"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                    if (phoneError) setPhoneError("");
+                  }}
                   placeholder="+48 601 782 517"
-                  className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
+                  aria-invalid={phoneError ? true : undefined}
+                  aria-describedby={phoneError ? "phone-error" : undefined}
+                  className={`w-full px-4 py-3.5 rounded-xl bg-white/95 border text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all ${
+                    phoneError ? "border-rose-400" : "border-white/25"
+                  }`}
                 />
+                {phoneError && (
+                  <p id="phone-error" className="mt-2 text-sm text-rose-300" role="alert">
+                    {phoneError}
+                  </p>
+                )}
               </div>
             </div>
             <div>
