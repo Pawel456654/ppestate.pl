@@ -22,14 +22,26 @@ function isValidPhone(value: string): boolean {
   return national.length === 9 && /^[1-9]\d{8}$/.test(national);
 }
 
-export default function ContactForm() {
+type ContactFormProps = {
+  presetSubject?: string;
+  presetMessage?: string;
+  introTitle?: string;
+  introDescription?: string;
+};
+
+export default function ContactForm({
+  presetSubject,
+  presetMessage,
+  introTitle = "Porozmawiajmy",
+  introDescription = "Masz pytania dotyczące nieruchomości? Skontaktuj się z nami — chętnie pomożemy",
+}: ContactFormProps = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [subject, setSubject] = useState("Zapytanie ogólne");
-  const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState(presetSubject ?? "Zapytanie ogólne");
+  const [message, setMessage] = useState(presetMessage ?? "");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorText, setErrorText] = useState("");
@@ -134,11 +146,10 @@ export default function ContactForm() {
             Kontakt
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mt-2 mb-3">
-            Porozmawiajmy
+            {introTitle}
           </h2>
           <p className="text-sky-900/65 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Masz pytania dotyczące nieruchomości? Skontaktuj się z nami — chętnie
-            pomożemy
+            {introDescription}
           </p>
         </div>
       </div>

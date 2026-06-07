@@ -1,59 +1,67 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import {
+  buildOfferSearchQuery,
+  filtersToFormState,
+  formStateToFilters,
+  parseOfferSearchParams,
+  PROPERTY_TYPE_LABELS,
+  type OfferSearchFormState,
+} from "@/lib/offer-search";
 
-const PROPERTY_TYPES = ["Dom", "Mieszkanie", "Działka", "Komercyjne"] as const;
-
-const CATEGORY_TO_TYPE: Record<string, (typeof PROPERTY_TYPES)[number]> = {
-  domy: "Dom",
-  mieszkania: "Mieszkanie",
-  dzialki: "Działka",
-  przemyslowe: "Komercyjne",
+const EMPTY_FORM: OfferSearchFormState = {
+  offerType: "Sprzedaż",
+  propertyType: "",
+  location: "",
+  priceMin: "",
+  priceMax: "",
+  areaMin: "",
+  areaMax: "",
+  pricePerMeter: "",
+  rooms: "",
+  hasElevator: "",
+  floor: "",
+  buildYear: "",
+  marketType: "",
+  furnished: "",
+  buildingFloors: "",
 };
 
-function normalize(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
-
 export default function OffersSearch() {
+  const router = useRouter();
   const searchParams = useSearchParams();
 
-  const initialPropertyType = useMemo(() => {
-    const param = searchParams.get("typ");
-    if (!param) return "";
-    return CATEGORY_TO_TYPE[normalize(param)] ?? "";
-  }, [searchParams]);
+  const parsedFilters = useMemo(
+    () => parseOfferSearchParams(Object.fromEntries(searchParams.entries())),
+    [searchParams]
+  );
 
-  const [filters, setFilters] = useState({
-    offerType: "Sprzedaż",
-    propertyType: initialPropertyType,
-    location: "",
-    priceMin: "",
-    priceMax: "",
-    areaMin: "",
-    areaMax: "",
-    pricePerMeter: "",
-    rooms: "",
-    hasElevator: "",
-    floor: "",
-    buildYear: "",
-    marketType: "",
-    furnished: "",
-    buildingFloors: "",
-  });
+  const [filters, setFilters] = useState<OfferSearchFormState>(() =>
+    filtersToFormState(parsedFilters)
+  );
+
+  useEffect(() => {
+    setFilters(filtersToFormState(parsedFilters));
+  }, [parsedFilters]);
 
   const [advancedOpen, setAdvancedOpen] = useState(false);
 
-  function updateFilter(name: keyof typeof filters, value: string) {
+  function updateFilter(name: keyof OfferSearchFormState, value: string) {
     setFilters((prev) => ({ ...prev, [name]: value }));
   }
 
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const query = buildOfferSearchQuery(formStateToFilters(filters));
+    router.push(query ? `/oferty?${query}` : "/oferty", { scroll: false });
+    document.getElementById("wyniki-ofert")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function clearFilters() {
+    setFilters(EMPTY_FORM);
+    router.push("/oferty", { scroll: false });
   }
 
   return (
@@ -84,7 +92,7 @@ export default function OffersSearch() {
             className="h-11 rounded-xl border border-slate-200/90 bg-white/90 px-3 text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary/25"
           >
             <option value="">Wszystkie</option>
-            {PROPERTY_TYPES.map((type) => (
+            {PROPERTY_TYPE_LABELS.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -274,25 +282,7 @@ export default function OffersSearch() {
         </button>
         <button
           type="button"
-          onClick={() =>
-            setFilters({
-              offerType: "Sprzedaż",
-              propertyType: initialPropertyType,
-              location: "",
-              priceMin: "",
-              priceMax: "",
-              areaMin: "",
-              areaMax: "",
-              pricePerMeter: "",
-              rooms: "",
-              hasElevator: "",
-              floor: "",
-              buildYear: "",
-              marketType: "",
-              furnished: "",
-              buildingFloors: "",
-            })
-          }
+          onClick={clearFilters}
           className="border border-primary-lighter bg-white/80 text-slate-700 font-semibold px-7 h-11 rounded-xl hover:bg-white transition-colors"
         >
           Wyczyść filtry

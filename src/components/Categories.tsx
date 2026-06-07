@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import type { CategoryQueryType } from "@/lib/offers";
 
 const categories = [
   {
     title: "Domy",
-    queryType: "domy",
+    queryType: "domy" as const,
     description: "Komfortowe domy jednorodzinne i bliźniaki w najlepszych lokalizacjach",
-    count: 48,
     gradient: "from-blue-400 via-blue-500 to-indigo-500",
     hoverGradient: "group-hover:from-blue-500 group-hover:via-blue-600 group-hover:to-indigo-600",
     iconBg: "bg-blue-300/30",
@@ -16,9 +16,8 @@ const categories = [
   },
   {
     title: "Mieszkania",
-    queryType: "mieszkania",
+    queryType: "mieszkania" as const,
     description: "Nowoczesne apartamenty i mieszkania w prestiżowych inwestycjach",
-    count: 124,
     gradient: "from-violet-400 via-purple-500 to-indigo-500",
     hoverGradient: "group-hover:from-violet-500 group-hover:via-purple-600 group-hover:to-indigo-600",
     iconBg: "bg-violet-300/30",
@@ -26,9 +25,8 @@ const categories = [
   },
   {
     title: "Działki",
-    queryType: "dzialki",
+    queryType: "dzialki" as const,
     description: "Atrakcyjne działki budowlane, rolne i inwestycyjne",
-    count: 67,
     gradient: "from-emerald-400 via-teal-500 to-cyan-500",
     hoverGradient: "group-hover:from-emerald-500 group-hover:via-teal-600 group-hover:to-cyan-600",
     iconBg: "bg-emerald-300/30",
@@ -36,15 +34,24 @@ const categories = [
   },
   {
     title: "Komercyjne",
-    queryType: "przemyslowe",
+    queryType: "przemyslowe" as const,
     description: "Hale, magazyny i obiekty komercyjne dla Twojego biznesu",
-    count: 31,
     gradient: "from-amber-400 via-orange-400 to-rose-400",
     hoverGradient: "group-hover:from-amber-500 group-hover:via-orange-500 group-hover:to-rose-500",
     iconBg: "bg-amber-300/30",
     illustration: "warehouse",
   },
 ];
+
+function formatOfferCount(count: number): string {
+  if (count === 1) return "1 oferta";
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+    return `${count} oferty`;
+  }
+  return `${count} ofert`;
+}
 
 function HouseIllustration() {
   return (
@@ -293,9 +300,11 @@ const illustrations: Record<string, React.FC> = {
 
 function CategoryCard({
   category,
+  count,
   index,
 }: {
   category: (typeof categories)[0];
+  count: number;
   index: number;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -368,7 +377,7 @@ function CategoryCard({
                 hovered ? "bg-white/30" : ""
               }`}
             >
-              {category.count} ofert
+              {formatOfferCount(count)}
             </div>
           </div>
           <h3 className="text-2xl font-bold text-white mb-2">{category.title}</h3>
@@ -395,7 +404,30 @@ function CategoryCard({
   );
 }
 
-export default function Categories() {
+export function CategoryCards({
+  counts,
+}: {
+  counts: Record<CategoryQueryType, number>;
+}) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {categories.map((category, i) => (
+        <CategoryCard
+          key={category.title}
+          category={category}
+          count={counts[category.queryType]}
+          index={i}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function Categories({
+  counts,
+}: {
+  counts: Record<CategoryQueryType, number>;
+}) {
   return (
     <section id="kategorie" className="pt-28 pb-24 px-6 sm:pt-20 sm:pb-32">
       <div className="max-w-7xl mx-auto">
@@ -412,11 +444,7 @@ export default function Categories() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, i) => (
-            <CategoryCard key={category.title} category={category} index={i} />
-          ))}
-        </div>
+        <CategoryCards counts={counts} />
       </div>
     </section>
   );

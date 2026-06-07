@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import OffersSearch from "@/components/OffersSearch";
-import SampleOffersGrid from "@/components/SampleOffersGrid";
+import OffersGrid from "@/components/OffersGrid";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -10,7 +10,13 @@ export const metadata: Metadata = {
     "Przeglądaj oferty nieruchomości: domy, mieszkania, działki i obiekty przemysłowe. Zaawansowane filtrowanie pomaga szybko znaleźć odpowiednią ofertę.",
 };
 
-export default function OffersPage() {
+type OffersPageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function OffersPage({ searchParams }: OffersPageProps) {
+  const params = await searchParams;
+
   return (
     <>
       <main className="relative pt-16 overflow-hidden bg-gradient-to-b from-pastel-sky via-white to-pastel-blue/40">
@@ -44,7 +50,7 @@ export default function OffersPage() {
           </div>
         </section>
 
-        <SampleOffersGrid />
+        <OffersGrid searchParams={params} />
       </main>
 
       <Footer />

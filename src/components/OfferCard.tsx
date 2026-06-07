@@ -1,0 +1,169 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import type { OfferCardData } from "@/lib/offer-display";
+import { getOfferPath } from "@/lib/offer-display";
+
+export function OfferCardCompact({
+  offer,
+  index = 0,
+}: {
+  offer: OfferCardData;
+  index?: number;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Link
+      href={getOfferPath(offer.slug)}
+      ref={ref}
+      className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 border border-slate-100 hover:border-primary/20 block ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <div className="relative h-52 overflow-hidden">
+        <Image
+          src={offer.imageUrl}
+          alt={offer.title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute top-4 left-4 flex gap-2">
+          <span className="bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+            {offer.typeLabel}
+          </span>
+          {offer.badge && (
+            <span className="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+              {offer.badge}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <div className="p-5">
+        <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-2">
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          {offer.location}
+        </div>
+        <h3 className="text-slate-800 font-semibold text-base mb-3 leading-snug group-hover:text-primary transition-colors">
+          {offer.title}
+        </h3>
+        <div className="flex items-center gap-4 text-xs text-slate-500 mb-4">
+          {offer.area && (
+            <span className="flex items-center gap-1">
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                />
+              </svg>
+              {offer.area}
+            </span>
+          )}
+          {offer.rooms != null && (
+            <span className="flex items-center gap-1">
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                />
+              </svg>
+              {offer.rooms} pokoi
+            </span>
+          )}
+        </div>
+        <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+          <span className="text-primary font-bold text-lg">{offer.price}</span>
+          <span className="text-primary/70 text-sm font-medium group-hover:text-primary transition-colors flex items-center gap-1">
+            Szczegóły
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export function OfferCardWide({ offer }: { offer: OfferCardData }) {
+  return (
+    <article className="bg-gradient-to-r from-white via-pastel-sky/45 to-pastel-blue/35 rounded-2xl overflow-hidden border border-primary-lighter shadow-sm hover:shadow-lg transition-shadow">
+      <Link href={getOfferPath(offer.slug)} className="flex flex-col md:flex-row">
+        <div className="relative h-56 md:h-auto md:w-80 shrink-0">
+          <Image
+            src={offer.imageUrl}
+            alt={offer.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 320px"
+          />
+        </div>
+
+        <div className="p-5 sm:p-6 flex-1">
+          <div className="flex flex-wrap gap-2 mb-3">
+            <span className="bg-primary-lighter text-primary-dark text-xs font-semibold px-2.5 py-1 rounded-full">
+              {offer.typeLabel}
+            </span>
+            <span className="bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+              {offer.transactionLabel}
+            </span>
+          </div>
+
+          <p className="text-sm text-slate-500 mb-2">{offer.location}</p>
+          <h3 className="text-slate-800 text-xl font-semibold leading-snug mb-4">{offer.title}</h3>
+
+          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500 mb-4">
+            {offer.area && <span>{offer.area}</span>}
+            {offer.rooms != null && <span>{offer.rooms} pokoi</span>}
+          </div>
+
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-2xl font-bold">
+            {offer.price}
+          </p>
+        </div>
+      </Link>
+    </article>
+  );
+}

@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 828, 1200, 1920],
     imageSizes: [64, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "vbgqdbtpbvthzvjvzboj.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
 
   experimental: {

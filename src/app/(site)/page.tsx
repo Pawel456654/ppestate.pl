@@ -5,12 +5,21 @@ import AboutUs from "@/components/AboutUs";
 import AboutExtendedContent from "@/components/AboutExtendedContent";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import {
+  fetchCategoryOfferCounts,
+  fetchPublicOfferCities,
+} from "@/lib/public-offers";
 
-export default function Home() {
+export default async function Home() {
+  const [categoryCounts, cities] = await Promise.all([
+    fetchCategoryOfferCounts(),
+    fetchPublicOfferCities(),
+  ]);
+
   return (
     <main>
-      <HeroSlider />
-      <Categories />
+      <HeroSlider cities={cities} />
+      <Categories counts={categoryCounts} />
       <LatestOffers />
       <AboutUs />
       <AboutExtendedContent />
