@@ -66,7 +66,7 @@ export default function ContactForm({
       setPhoneError("Numer telefonu jest wymagany.");
       hasValidationError = true;
     } else if (!isValidPhone(trimmedPhone)) {
-      setPhoneError("Podaj poprawny numer (9 cyfr, np. +48 601 782 517).");
+      setPhoneError("Podaj poprawny numer (9 cyfr, np. +48 512 789 456).");
       hasValidationError = true;
     }
 
@@ -295,7 +295,7 @@ export default function ContactForm({
                     setPhone(e.target.value);
                     if (phoneError) setPhoneError("");
                   }}
-                  placeholder="+48 601 782 517"
+                  placeholder="+48 512 789 456"
                   aria-invalid={phoneError ? true : undefined}
                   aria-describedby={phoneError ? "phone-error" : undefined}
                   className={`w-full px-4 py-3.5 rounded-xl bg-white/95 border text-slate-800 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all ${

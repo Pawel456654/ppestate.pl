@@ -49,7 +49,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Mieszkania</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Działki</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Obiekty przemysłowe</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Inwestycje premium</a></li>
             </ul>
           </div>
 
@@ -62,7 +61,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Zespół</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Kariera</a></li>
               <li><a href="#kontakt" className="hover:text-white transition-colors">Kontakt</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
           </div>
         </div>
@@ -72,12 +70,20 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} PP Estate. Wszelkie prawa
             zastrzeżone.
           </p>
-          <Link
-            href="/polityka-prywatnosci"
-            className="text-sm text-slate-500 hover:text-white transition-colors"
-          >
-            Polityka prywatności
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/polityka-prywatnosci"
+              className="text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              Polityka prywatności
+            </Link>
+            <Link
+              href="/panel-admin"
+              className="text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              Panel admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -56,7 +56,7 @@ export default function Navbar() {
                   menuOpen ? "text-white/80 md:text-[#0d3479]/80" : "text-[#0d3479]/80"
                 }`}
               >
-                NIERUCHOMOSCI
+                NIERUCHOMOŚCI
               </p>
             </div>
           </div>
