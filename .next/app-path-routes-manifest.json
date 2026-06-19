@@ -1,7 +1,18 @@
 {
+  "/(site)/oferty/[slug]/page": "/oferty/[slug]",
+  "/(site)/oferty/page": "/oferty",
+  "/(site)/page": "/",
+  "/(site)/polityka-prywatnosci/page": "/polityka-prywatnosci",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
-  "/oferty/page": "/oferty",
-  "/page": "/",
-  "/polityka-prywatnosci/page": "/polityka-prywatnosci"
+  "/api/admin/images/[id]/route": "/api/admin/images/[id]",
+  "/api/admin/login/route": "/api/admin/login",
+  "/api/admin/logout/route": "/api/admin/logout",
+  "/api/admin/offers/[id]/route": "/api/admin/offers/[id]",
+  "/api/admin/offers/route": "/api/admin/offers",
+  "/api/admin/upload/route": "/api/admin/upload",
+  "/api/health/supabase/route": "/api/health/supabase",
+  "/panel-admin/page": "/panel-admin",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
 }

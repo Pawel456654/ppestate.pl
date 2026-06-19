@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
-import { getSiteUrl } from "@/lib/offer-display";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = getSiteUrl();
+  const baseUrl = "https://ppestate.pl";
 
   return {
     rules: {

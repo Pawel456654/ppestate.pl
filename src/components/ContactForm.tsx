@@ -350,18 +350,17 @@ export default function ContactForm({
                 required
                 checked={privacyAccepted}
                 onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                className="mt-1 h-4 w-4 shrink-0 rounded border-white/40 bg-white/90 text-primary focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-slate-900/80"
+                className="mt-1.5 h-4 w-4 shrink-0 rounded border-white/40 bg-white/90 text-primary focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-slate-900/80 cursor-pointer"
               />
-              <label htmlFor="privacy" className="text-sm text-slate-200/95 leading-relaxed cursor-pointer">
-                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i udzielenia odpowiedzi na
-                niniejsze zapytanie, zgodnie z{" "}
+              <label htmlFor="privacy" className="text-sm text-slate-200/95 leading-relaxed cursor-pointer select-none">
+                Wyrażam zgodę na przetwarzanie moich danych osobowych przez PP ESTATE Sp. z o.o. z siedzibą we Wrocławiu w celu udzielenia odpowiedzi na przesłane przeze mnie zapytanie za pośrednictwem formularza kontaktowego. Zapoznałem(-am) się z{" "}
                 <Link
                   href="/polityka-prywatnosci"
                   className="text-sky-300 underline underline-offset-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-sm"
                 >
-                  polityką prywatności
-                </Link>{" "}
-                (RODO).
+                  Polityką Prywatności
+                </Link>
+                .
               </label>
             </div>
             {status === "success" && (

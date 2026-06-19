@@ -1,5 +1,6 @@
 {
+  "/(site)/oferty/[slug]/page": "app/(site)/oferty/[slug]/page.js",
   "/(site)/page": "app/(site)/page.js",
-  "/api/admin/login/route": "app/api/admin/login/route.js",
-  "/panel-admin/page": "app/panel-admin/page.js"
+  "/(site)/polityka-prywatnosci/page": "app/(site)/polityka-prywatnosci/page.js",
+  "/(site)/rodo/page": "app/(site)/rodo/page.js"
 }

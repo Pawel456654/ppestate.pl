@@ -1,7 +1,18 @@
 {
+  "/(site)/oferty/[slug]/page": "app/(site)/oferty/[slug]/page.js",
+  "/(site)/oferty/page": "app/(site)/oferty/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/polityka-prywatnosci/page": "app/(site)/polityka-prywatnosci/page.js",
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/oferty/page": "app/oferty/page.js",
-  "/page": "app/page.js",
-  "/polityka-prywatnosci/page": "app/polityka-prywatnosci/page.js"
+  "/api/admin/images/[id]/route": "app/api/admin/images/[id]/route.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/admin/logout/route": "app/api/admin/logout/route.js",
+  "/api/admin/offers/[id]/route": "app/api/admin/offers/[id]/route.js",
+  "/api/admin/offers/route": "app/api/admin/offers/route.js",
+  "/api/admin/upload/route": "app/api/admin/upload/route.js",
+  "/api/health/supabase/route": "app/api/health/supabase/route.js",
+  "/panel-admin/page": "app/panel-admin/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
 }

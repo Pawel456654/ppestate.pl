@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ppestate.pl"),
   title: "PP Estate | Pośrednik nieruchomości we Wrocławiu",
   description:
     "Jeśli szukasz nieruchomości na sprzedaż, kupno lub wynajem — to odpowiednie miejsce.",
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
     icon: "/hero-logo-mark.png",
     shortcut: "/hero-logo-mark.png",
     apple: "/hero-logo-mark.png",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Oferty | PP Estate",
   description:
     "Przeglądaj oferty nieruchomości: domy, mieszkania, działki i obiekty przemysłowe. Zaawansowane filtrowanie pomaga szybko znaleźć odpowiednią ofertę.",
+  alternates: {
+    canonical: "/oferty",
+  },
 };
 
 type OffersPageProps = {

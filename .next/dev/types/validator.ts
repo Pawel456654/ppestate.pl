@@ -83,6 +83,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/(site)/rodo/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/rodo">> = Specific
+  const handler = {} as typeof import("../../../src/app/(site)/rodo/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/panel-admin/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/panel-admin">> = Specific

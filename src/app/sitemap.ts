@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { fetchPublicOfferSlugs, getSiteUrl } from "@/lib/public-offers";
+import { fetchPublicOfferSlugs } from "@/lib/public-offers";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = getSiteUrl();
+  const baseUrl = "https://ppestate.pl";
   const offers = await fetchPublicOfferSlugs();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -20,6 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/polityka-prywatnosci`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/rodo`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,

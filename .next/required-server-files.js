@@ -56,7 +56,13 @@ self.__SERVER_FILES_MANIFEST={
           "search": ""
         }
       ],
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "vbgqdbtpbvthzvjvzboj.supabase.co",
+          "pathname": "/storage/v1/object/public/**"
+        }
+      ],
       "qualities": [
         75
       ],
@@ -97,7 +103,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/filipborowski/websites/pawel-development",
+    "outputFileTracingRoot": "/Users/filipborowski/Desktop/websites/pawel-development",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -159,7 +165,7 @@ self.__SERVER_FILES_MANIFEST={
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 1,
+      "cpus": 7,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,
@@ -297,11 +303,11 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/filipborowski/websites/pawel-development"
+      "root": "/Users/filipborowski/Desktop/websites/pawel-development"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/filipborowski/websites/pawel-development",
+  "appDir": "/Users/filipborowski/Desktop/websites/pawel-development",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",

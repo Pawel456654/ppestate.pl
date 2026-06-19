@@ -77,6 +77,14 @@ export default function Footer() {
             >
               Polityka prywatności
             </Link>
+            <span className="text-slate-700 text-sm">•</span>
+            <Link
+              href="/rodo"
+              className="text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              RODO
+            </Link>
+            <span className="text-slate-700 text-sm">•</span>
             <Link
               href="/panel-admin"
               className="text-sm text-slate-500 hover:text-white transition-colors"

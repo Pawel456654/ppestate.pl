@@ -21,7 +21,32 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/api/admin/images/[id]",
+      "regex": "^/api/admin/images/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/images/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/admin/offers/[id]",
+      "regex": "^/api/admin/offers/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/offers/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/oferty/[slug]",
+      "regex": "^/oferty/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/oferty/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -42,16 +67,64 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/admin/login",
+      "regex": "^/api/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/login(?:/)?$"
+    },
+    {
+      "page": "/api/admin/logout",
+      "regex": "^/api/admin/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/logout(?:/)?$"
+    },
+    {
+      "page": "/api/admin/offers",
+      "regex": "^/api/admin/offers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/offers(?:/)?$"
+    },
+    {
+      "page": "/api/admin/upload",
+      "regex": "^/api/admin/upload(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/upload(?:/)?$"
+    },
+    {
+      "page": "/api/health/supabase",
+      "regex": "^/api/health/supabase(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/health/supabase(?:/)?$"
+    },
+    {
       "page": "/oferty",
       "regex": "^/oferty(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/oferty(?:/)?$"
     },
     {
+      "page": "/panel-admin",
+      "regex": "^/panel\\-admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/panel\\-admin(?:/)?$"
+    },
+    {
       "page": "/polityka-prywatnosci",
       "regex": "^/polityka\\-prywatnosci(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/polityka\\-prywatnosci(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
     }
   ],
   "dataRoutes": [],
