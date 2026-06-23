@@ -88,9 +88,64 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
   const selectClassName =
     "w-full px-4 py-4 rounded-xl bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary/30 appearance-none cursor-pointer";
 
+  const searchForm = (
+    <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/25 ring-1 ring-slate-300/90 p-3">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <select
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          className={selectClassName}
+          aria-label="Miasto"
+        >
+          <option value="">Miasto</option>
+          {cities.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={propertyType}
+          onChange={(e) =>
+            setPropertyType(e.target.value as CategoryQueryType | "")
+          }
+          className={selectClassName}
+          aria-label="Typ nieruchomości"
+        >
+          {HERO_PROPERTY_TYPES.map((type) => (
+            <option key={type.value || "all"} value={type.value}>
+              {type.label}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={transactionType}
+          onChange={(e) =>
+            setTransactionType(e.target.value as "kupno" | "wynajem")
+          }
+          className={selectClassName}
+          aria-label="Rodzaj transakcji"
+        >
+          <option value="kupno">Kupno</option>
+          <option value="wynajem">Wynajem</option>
+        </select>
+
+        <button
+          type="button"
+          onClick={handleSearch}
+          className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25 whitespace-nowrap"
+        >
+          Szukaj
+        </button>
+      </div>
+    </div>
+  );
+
   return (
-    <section className="relative mb-60 h-[50vh] w-full overflow-visible sm:mb-28 lg:mb-12">
-      <div className="absolute inset-0 overflow-hidden">
+    <section className="relative w-full sm:h-[50vh] sm:mb-28 lg:mb-12">
+      <div className="relative h-[45vh] sm:absolute sm:inset-0 overflow-hidden">
         {slides.map((slide, i) => {
           const isActive = i === current;
           const isNeighbor =
@@ -117,64 +172,8 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
             </div>
           );
         })}
-      </div>
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <div className="absolute z-20 left-1/2 bottom-0 w-full max-w-3xl -translate-x-1/2 translate-y-[calc(100%+5rem)] px-4 animate-fade-in-up animation-delay-400 sm:translate-y-[62%] sm:px-6">
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl shadow-black/25 ring-1 ring-slate-300/90 p-3">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <select
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className={selectClassName}
-                aria-label="Miasto"
-              >
-                <option value="">Miasto</option>
-                {cities.map((name) => (
-                  <option key={name} value={name}>
-                    {name}
-                  </option>
-                ))}
-              </select>
 
-              <select
-                value={propertyType}
-                onChange={(e) =>
-                  setPropertyType(e.target.value as CategoryQueryType | "")
-                }
-                className={selectClassName}
-                aria-label="Typ nieruchomości"
-              >
-                {HERO_PROPERTY_TYPES.map((type) => (
-                  <option key={type.value || "all"} value={type.value}>
-                    {type.label}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={transactionType}
-                onChange={(e) =>
-                  setTransactionType(e.target.value as "kupno" | "wynajem")
-                }
-                className={selectClassName}
-                aria-label="Rodzaj transakcji"
-              >
-                <option value="kupno">Kupno</option>
-                <option value="wynajem">Wynajem</option>
-              </select>
-
-              <button
-                type="button"
-                onClick={handleSearch}
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25 whitespace-nowrap"
-              >
-                Szukaj
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
+        <div className="absolute left-0 bottom-0 z-10 w-full sm:translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
           <div className="marquee-track text-[11px] font-semibold uppercase tracking-[0.08em] text-white sm:text-sm sm:tracking-[0.12em]">
             <div className="marquee-segment whitespace-nowrap">
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
@@ -192,6 +191,10 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="relative z-20 mx-auto w-full max-w-3xl px-4 pt-5 sm:absolute sm:left-1/2 sm:bottom-0 sm:px-6 sm:pt-0 sm:-translate-x-1/2 sm:translate-y-[62%] animate-fade-in-up animation-delay-400">
+        {searchForm}
       </div>
       <style jsx>{`
         .marquee-track {
