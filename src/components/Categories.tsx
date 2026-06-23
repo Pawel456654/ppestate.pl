@@ -431,7 +431,7 @@ export default function Categories({
   return (
     <section id="kategorie" className="pt-12 pb-24 px-6 sm:pt-20 sm:pb-32">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-10 tracking-[0.04em] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-primary to-slate-800">
+        <h1 className="text-center text-4xl sm:text-4xl md:text-5xl font-extrabold mb-10 tracking-[0.04em] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-primary to-slate-800">
           Zaufane biuro nieruchomości we Wrocławiu
         </h1>
         <div className="text-center mb-16">

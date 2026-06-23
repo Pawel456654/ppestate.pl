@@ -145,7 +145,7 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
 
   return (
     <section className="relative w-full sm:h-[50vh] sm:mb-28 lg:mb-12">
-      <div className="relative h-[45vh] sm:absolute sm:inset-0 overflow-hidden">
+      <div className="relative h-[45vh] sm:absolute sm:inset-0 sm:h-auto overflow-hidden">
         {slides.map((slide, i) => {
           const isActive = i === current;
           const isNeighbor =
@@ -174,28 +174,33 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
         })}
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[45vh] sm:inset-0">
-        <div className="pointer-events-auto absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
-          <div className="marquee-track text-[11px] font-semibold uppercase tracking-[0.08em] text-white sm:text-sm sm:tracking-[0.12em]">
-            <div className="marquee-segment whitespace-nowrap">
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-white">•</span>
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-white">•</span>
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-            </div>
-            <div className="marquee-segment whitespace-nowrap" aria-hidden="true">
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-white">•</span>
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-              <span className="inline-block px-4 text-white">•</span>
-              <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
-            </div>
+      {/* Blue bar — in-flow on mobile so it never gets clipped, absolute on desktop */}
+      <div className="overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20 sm:absolute sm:left-0 sm:bottom-0 sm:z-20 sm:w-full sm:translate-y-full">
+        <div className="marquee-track text-[11px] font-semibold uppercase tracking-[0.08em] text-white sm:text-sm sm:tracking-[0.12em]">
+          <div className="marquee-segment whitespace-nowrap">
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            <span className="inline-block px-4 text-white">•</span>
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            <span className="inline-block px-4 text-white">•</span>
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+          </div>
+          <div className="marquee-segment whitespace-nowrap" aria-hidden="true">
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            <span className="inline-block px-4 text-white">•</span>
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
+            <span className="inline-block px-4 text-white">•</span>
+            <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
           </div>
         </div>
       </div>
 
-      <div className="relative z-20 mx-auto w-full max-w-3xl px-4 pt-5 sm:absolute sm:left-1/2 sm:bottom-0 sm:px-6 sm:pt-0 sm:-translate-x-1/2 sm:translate-y-[62%] animate-fade-in-up animation-delay-400">
+      {/* Mobile search — in-flow, padded space between bar and categories */}
+      <div className="px-4 pt-5 pb-8 sm:hidden">
+        {searchForm}
+      </div>
+
+      {/* Desktop search — floating overlap below hero, unchanged */}
+      <div className="hidden sm:block sm:absolute sm:left-1/2 sm:bottom-0 sm:z-20 sm:w-full sm:max-w-3xl sm:px-6 sm:-translate-x-1/2 sm:translate-y-[62%] animate-fade-in-up animation-delay-400">
         {searchForm}
       </div>
       <style jsx>{`
