@@ -172,8 +172,10 @@ export default function HeroSlider({ cities = [] }: HeroSliderProps) {
             </div>
           );
         })}
+      </div>
 
-        <div className="absolute left-0 bottom-0 z-10 w-full sm:translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[45vh] sm:inset-0">
+        <div className="pointer-events-auto absolute left-0 bottom-0 z-10 w-full translate-y-full overflow-hidden bg-[#0d3479] py-2.5 ring-1 ring-white/20">
           <div className="marquee-track text-[11px] font-semibold uppercase tracking-[0.08em] text-white sm:text-sm sm:tracking-[0.12em]">
             <div className="marquee-segment whitespace-nowrap">
               <span className="inline-block px-8">Twój zaufany doradca w nieruchomościach</span>
