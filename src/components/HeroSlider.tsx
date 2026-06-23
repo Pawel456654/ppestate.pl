@@ -13,7 +13,7 @@ import type { CategoryQueryType } from "@/lib/offers";
 const slides = [
   { src: "/hero/domy.png", alt: "Piękne domy od deweloperów", label: "Domy" },
   { src: "/hero/mieszkania.png", alt: "Nowoczesne mieszkania", label: "Mieszkania" },
-  { src: "/hero/biura.jpg", alt: "Nowoczesne powierzchnie biurowe", label: "Biura" },
+  { src: "/hero/dzialki.jpg", alt: "Atrakcyjne działki budowlane", label: "Działki" },
 ];
 
 const HERO_PROPERTY_TYPES: { value: CategoryQueryType | ""; label: string }[] = [

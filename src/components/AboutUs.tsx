@@ -2,13 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const stats = [
-  { value: "500+", label: "Sprzedanych nieruchomości" },
-  { value: "12", label: "Lat doświadczenia" },
-  { value: "98%", label: "Zadowolonych klientów" },
-  { value: "50+", label: "Współpracujących deweloperów" },
-];
-
 export default function AboutUs() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -30,94 +23,79 @@ export default function AboutUs() {
   return (
     <section
       id="o-nas"
-      className="relative overflow-hidden py-24 sm:py-32 px-6 bg-gradient-to-b from-sky-100 from-[15%] via-blue-50 via-50% to-sky-200/70"
+      className="relative overflow-hidden py-14 sm:py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-sky-100 from-[15%] via-blue-50 via-50% to-sky-200/70"
     >
-      {/* Soft radial glow — wyraźniejszy pastelowy niebieski */}
       <div
-        className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[min(110%,920px)] -translate-x-1/2 rounded-full bg-sky-400/25 blur-3xl"
+        className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sky-300/25 to-transparent"
+        className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(59,130,246,0.09)_1px,transparent_1px)] bg-[length:28px_28px]"
         aria-hidden
       />
       <div
         className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/35 to-transparent"
         aria-hidden
       />
-      {/* Siatka kropek — mocniejszy niebieski */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(59,130,246,0.11)_1px,transparent_1px)] bg-[length:26px_26px]"
-        aria-hidden
-      />
 
-      <div ref={ref} className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div ref={ref} className="relative z-10 mx-auto max-w-7xl">
+        <div
+          className={`relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/45 shadow-[0_20px_60px_-20px_rgba(59,130,246,0.25)] backdrop-blur-md transition-all duration-1000 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div
-            className={`transition-all duration-1000 ${
-              visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-            }`}
-          >
-            <span className="text-primary text-sm font-semibold tracking-[0.15em] uppercase">
-              O nas
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mt-4 mb-8 leading-tight">
-              Twój zaufany doradca
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                w świecie nieruchomości
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full border border-primary/10 bg-gradient-to-br from-sky-100/80 to-transparent"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-accent/5 blur-2xl"
+            aria-hidden
+          />
+
+          <div className="relative grid gap-10 p-8 sm:p-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-14 lg:p-12 xl:p-14">
+            <div
+              className={`transition-all duration-1000 delay-100 ${
+                visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
+              }`}
+            >
+              <span className="mb-5 block text-primary text-sm font-semibold tracking-[0.15em] uppercase">
+                O nas
               </span>
-            </h2>
-            <div className="space-y-5 text-slate-600 leading-relaxed">
-              <p>
+
+              <h2 className="text-[1.75rem] font-bold leading-[1.15] sm:text-3xl md:text-[2.125rem] lg:text-4xl">
+                <span className="block whitespace-nowrap text-logo sm:whitespace-normal">
+                  Twój zaufany doradca
+                </span>
+                <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                  w świecie nieruchomości
+                </span>
+              </h2>
+            </div>
+
+            <div
+              className={`relative transition-all duration-1000 delay-300 ${
+                visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
+              }`}
+            >
+              <div
+                className="pointer-events-none absolute -left-3 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent lg:-left-5"
+                aria-hidden
+              />
+              <p className="text-slate-600 text-base leading-[1.75] sm:text-lg sm:leading-relaxed">
                 PP Estate z Wrocławia łączy klientów chcących sprzedać, kupić
-                lub wynająć nieruchomość i prowadzi kompleksowo transakcje
+                lub wynająć nieruchomość. Prowadzi kompleksowo transakcje
                 począwszy od pierwszej rozmowy po podpisanie umowy i przekazanie
                 protokolarne nieruchomości drugiej stronie.
               </p>
-            </div>
-          </div>
-
-          <div
-            className={`hidden transition-all duration-1000 delay-300 ${
-              visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-            }`}
-          >
-            <div className="grid grid-cols-2 gap-5">
-              {stats.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={`bg-white rounded-2xl p-7 shadow-sm border border-slate-100 hover:border-primary/20 hover:shadow-lg transition-all duration-500 group ${
-                    i === 1 ? "translate-y-6" : ""
-                  } ${i === 3 ? "translate-y-6" : ""}`}
-                >
-                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:scale-105 transition-transform origin-left">
-                    {stat.value}
-                  </div>
-                  <div className="text-slate-500 text-sm leading-snug">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex gap-4">
-              <div className="flex -space-x-3">
-                {[0, 1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-primary-light to-primary flex items-center justify-center text-white text-xs font-bold"
-                  >
-                    {["PD", "AK", "MN", "JW"][i]}
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm">
-                <div className="text-slate-800 font-semibold">Nasz zespół</div>
-                <div className="text-slate-400">
-                  Doświadczeni specjaliści do Twojej dyspozycji
-                </div>
-              </div>
             </div>
           </div>
         </div>

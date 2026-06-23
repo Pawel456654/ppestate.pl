@@ -1,6 +1,3 @@
 {
-  "/(site)/oferty/[slug]/page": "app/(site)/oferty/[slug]/page.js",
-  "/(site)/page": "app/(site)/page.js",
-  "/(site)/polityka-prywatnosci/page": "app/(site)/polityka-prywatnosci/page.js",
-  "/(site)/rodo/page": "app/(site)/rodo/page.js"
+  "/(site)/page": "app/(site)/page.js"
 }

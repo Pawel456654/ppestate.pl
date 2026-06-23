@@ -74,10 +74,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/(site)/polityka-cookies/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/polityka-cookies">> = Specific
+  const handler = {} as typeof import("../../src/app/(site)/polityka-cookies/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/(site)/polityka-prywatnosci/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/polityka-prywatnosci">> = Specific
   const handler = {} as typeof import("../../src/app/(site)/polityka-prywatnosci/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(site)/rodo/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/rodo">> = Specific
+  const handler = {} as typeof import("../../src/app/(site)/rodo/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

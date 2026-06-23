@@ -5,15 +5,15 @@ export default function AboutExtendedContent() {
         <div className="space-y-12 md:space-y-14">
           <div>
             <h2 className="mb-5 text-2xl font-bold leading-tight text-black md:mb-6 md:text-3xl lg:text-[2rem] lg:leading-snug">
-              Biuro nieruchomości Wrocław – PP Estate
+              Biuro nieruchomości - PP Estate
             </h2>
             <div className="space-y-4 text-base leading-[1.62] md:text-lg md:leading-relaxed">
               <p>
                 Wybór <strong>biura nieruchomości we Wrocławiu</strong> przy
                 sprzedaży, zakupie lub wynajmie ma realny wpływ na przebieg
                 transakcji. <strong>Dynamiczny rynek dolnośląski</strong> wymaga
-                znajomości lokalnych realiów — jako{" "}
-                <strong>agencja nieruchomości z Wrocławia</strong> łączymy
+                znajomości lokalnych realiów - jako{" "}
+                <strong>biuro nieruchomości z Wrocławia</strong> łączymy
                 doświadczenie rynkowe z przystępną komunikacją i stałym kontaktem
                 z Klientem.
               </p>
@@ -22,34 +22,39 @@ export default function AboutExtendedContent() {
 
           <div>
             <h2 className="mb-5 text-2xl font-bold leading-tight text-black md:mb-6 md:text-3xl lg:text-[2rem] lg:leading-snug">
-              Pośrednictwo – zakres i typy nieruchomości
+              Pośrednictwo - zakres i typy nieruchomości
             </h2>
             <div className="space-y-4 text-base leading-[1.62] md:text-lg md:leading-relaxed">
               <p>
                 W <strong>PP Estate</strong> proces ma być dla Klienta{" "}
-                <strong>prosty, przejrzysty i bezpieczny</strong>. Działamy na{" "}
-                <strong>rynku pierwotnym i wtórnym</strong> — dopasowując
-                działania do sytuacji rynkowej i celu (sprzedaż, wynajem, zakup,
+                <strong>prosty, przejrzysty a przede wszystkim bezpieczny</strong>.
+                Działamy na <strong>rynku nieruchomości</strong> dopasowując
+                działania do sytuacji rynkowej i celu (sprzedaż, zakup czy też
                 inwestycja).
               </p>
               <p>
-                <strong>W ramach współpracy m.in.:</strong>
+                <strong>W ramach współpracy nadzorujemy cały proces:</strong>
               </p>
               <ul className="list-disc space-y-1.5 pl-6 marker:text-neutral-950">
                 <li>
-                  <strong>sprzedaż i wynajem</strong> — mieszkania, domy, działki,
-                  obiekty komercyjne i przemysłowe,
+                  <strong>sprzedaży, zakupu i wynajmu</strong> - mieszkań, domów,
+                  działek, obiektów komercyjnych i przemysłowych,
                 </li>
                 <li>
-                  <strong>poszukiwanie nieruchomości na zlecenie</strong>, przygotowanie ofert i prezentacji,
+                  <strong>poszukujemy nieruchomości na zlecenie</strong>,
+                  przygotowanie ofert i prezentacji,
                 </li>
                 <li>
-                  <strong>doradztwo</strong> na etapach transakcji i negocjacji.
+                  <strong>doradzamy</strong> na etapach transakcji i negocjacji,
+                </li>
+                <li>
+                  <strong>pomagamy w pozyskaniu funduszy</strong> na zakup
+                  nieruchomości.
                 </li>
               </ul>
               <p>
-                Jeśli w aktualnej ofercie nie ma idealnego lokalu —{" "}
-                <strong>aktywnie poszukamy go dla Ciebie</strong>, analizując
+                Jeśli w aktualnej ofercie nie ma idealnej nieruchomości -{" "}
+                <strong>aktywnie poszukamy jej dla Ciebie</strong>, analizując
                 rynek we Wrocławiu i okolicach.
               </p>
             </div>
@@ -61,8 +66,9 @@ export default function AboutExtendedContent() {
             </h2>
             <div className="space-y-4 text-base leading-[1.62] md:text-lg md:leading-relaxed">
               <p>
-                Nie stosujemy jednego szablonu dla wszystkich — ważne są Twoje
-                potrzeby: szybka sprzedaż, inwestycja albo miejsce do życia.
+                Nie stosujemy jednego szablonu dla wszystkich - ważne są Twoje
+                potrzeby: możliwie szybka sprzedaż za godziwe pieniądze, inwestycja
+                albo miejsce do życia:
               </p>
               <ul className="list-disc space-y-1.5 pl-6 marker:text-neutral-950">
                 <li>
@@ -70,16 +76,14 @@ export default function AboutExtendedContent() {
                 </li>
                 <li>jasna komunikacja i zaangażowanie na każdym etapie,</li>
                 <li>
-                  dopasowanie oferty do budżetu i planów — także poza standardowymi ogłoszeniami,
+                  dopasowanie oferty do budżetu i planów - także poza standardowymi
+                  ogłoszeniami,
                 </li>
-                <li>
-                  komfortowy, możliwie spokojny przebieg transakcji.
-                </li>
+                <li>komfortowy i spokojny przebieg transakcji.</li>
               </ul>
               <p>
                 <strong>Skontaktuj się z nami</strong>, jeśli planujesz
-                nieruchomości w <strong>województwie dolnośląskim</strong> —
-                pomożemy ustalić kolejny krok.
+                nieruchomości - pomożemy ustalić kolejny krok.
               </p>
             </div>
           </div>

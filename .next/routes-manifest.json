@@ -109,6 +109,12 @@
       "namedRegex": "^/panel\\-admin(?:/)?$"
     },
     {
+      "page": "/polityka-cookies",
+      "regex": "^/polityka\\-cookies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/polityka\\-cookies(?:/)?$"
+    },
+    {
       "page": "/polityka-prywatnosci",
       "regex": "^/polityka\\-prywatnosci(?:/)?$",
       "routeKeys": {},
@@ -119,6 +125,12 @@
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/rodo",
+      "regex": "^/rodo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/rodo(?:/)?$"
     },
     {
       "page": "/sitemap.xml",

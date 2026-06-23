@@ -79,6 +79,13 @@ export default function Footer() {
             </Link>
             <span className="text-slate-700 text-sm">•</span>
             <Link
+              href="/polityka-cookies"
+              className="text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              Cookies
+            </Link>
+            <span className="text-slate-700 text-sm">•</span>
+            <Link
               href="/rodo"
               className="text-sm text-slate-500 hover:text-white transition-colors"
             >

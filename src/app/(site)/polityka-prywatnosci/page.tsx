@@ -237,6 +237,13 @@ export default function PrivacyPolicyPage() {
                   https://policies.google.com/privacy
                 </a>.
               </p>
+              <p>
+                Więcej informacji o plikach cookies stosowanych na stronie znajduje się w{" "}
+                <Link href="/polityka-cookies" className="text-primary hover:underline font-medium">
+                  Polityce cookies
+                </Link>
+                .
+              </p>
             </section>
 
             <section className="space-y-3">

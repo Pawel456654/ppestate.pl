@@ -12,7 +12,15 @@
       "static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2",
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
+    "[project]/src/app/(site)/polityka-cookies/page": [
+      "static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
     "[project]/src/app/(site)/polityka-prywatnosci/page": [
+      "static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/src/app/(site)/rodo/page": [
       "static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2",
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
