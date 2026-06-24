@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { OfferCardData } from "@/lib/offer-display";
 import { getOfferPath } from "@/lib/offer-display";
+import { isExternalImage } from "@/lib/image-source";
 
 export function OfferCardCompact({
   offer,
@@ -44,6 +45,7 @@ export function OfferCardCompact({
           src={offer.imageUrl}
           alt={offer.title}
           fill
+          unoptimized={isExternalImage(offer.imageUrl)}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -136,6 +138,7 @@ export function OfferCardWide({ offer }: { offer: OfferCardData }) {
             src={offer.imageUrl}
             alt={offer.title}
             fill
+            unoptimized={isExternalImage(offer.imageUrl)}
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 320px"
           />

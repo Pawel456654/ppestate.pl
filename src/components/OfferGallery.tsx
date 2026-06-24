@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { isExternalImage } from "@/lib/image-source";
 
 export default function OfferGallery({
   images,
@@ -24,6 +25,7 @@ export default function OfferGallery({
           alt={title}
           fill
           priority
+          unoptimized={isExternalImage(active.url)}
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 66vw"
         />
@@ -44,6 +46,7 @@ export default function OfferGallery({
                 src={image.url}
                 alt={`${title} — zdjęcie ${index + 1}`}
                 fill
+                unoptimized={isExternalImage(image.url)}
                 className="object-cover"
                 sizes="112px"
               />

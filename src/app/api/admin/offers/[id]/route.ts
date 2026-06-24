@@ -75,7 +75,9 @@ export async function DELETE(_request: Request, { params }: Params) {
     .eq("oferta_id", id);
   const zdjecia = (data ?? []) as OfertaZdjecie[];
 
-  const sciezki = zdjecia.map((z) => z.sciezka).filter(Boolean);
+  const sciezki = zdjecia
+    .map((z) => z.sciezka)
+    .filter((s): s is string => Boolean(s));
   if (sciezki.length > 0) {
     await supabase.storage.from(BUCKET).remove(sciezki);
   }

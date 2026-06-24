@@ -28,6 +28,13 @@ const nextConfig: NextConfig = {
         hostname: "vbgqdbtpbvthzvjvzboj.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
+      // Zdjęcia z EstiCRM. Hosty zewnętrzne spoza tej listy i tak działają
+      // (renderowane przez next/image z `unoptimized` — patrz lib/image-source),
+      // ale dla domen Esti włączamy optymalizację next/image.
+      {
+        protocol: "https",
+        hostname: "**.esticrm.pl",
+      },
     ],
   },
 

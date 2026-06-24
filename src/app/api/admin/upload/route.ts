@@ -78,6 +78,7 @@ export async function POST(request: Request) {
       sciezka: path,
       kolejnosc: count ?? 0,
       czy_glowne: isFirst,
+      zrodlo: "upload",
     })
     .select("*")
     .single();

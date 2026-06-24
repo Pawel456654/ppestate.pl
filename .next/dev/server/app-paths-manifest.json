@@ -1,4 +1,7 @@
 {
-  "/(site)/oferty/[slug]/page": "app/(site)/oferty/[slug]/page.js",
-  "/(site)/page": "app/(site)/page.js"
+  "/(site)/page": "app/(site)/page.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/cron/sync-esti/route": "app/api/cron/sync-esti/route.js",
+  "/api/health/supabase/route": "app/api/health/supabase/route.js",
+  "/panel-admin/page": "app/panel-admin/page.js"
 }

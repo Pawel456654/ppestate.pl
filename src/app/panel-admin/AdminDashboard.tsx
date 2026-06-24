@@ -12,8 +12,18 @@ import {
   formatCena,
 } from "@/lib/offers";
 import OfferForm from "./OfferForm";
+import SyncBar from "./SyncBar";
 
 type FormTarget = OfertaZZdjeciami | "new" | null;
+
+type StatusTab = "aktywne" | "ukryte" | "wszystkie";
+type ZrodloFilter = "all" | "esti" | "strona";
+
+const STATUS_TABS: { value: StatusTab; label: string }[] = [
+  { value: "aktywne", label: "Aktywne" },
+  { value: "ukryte", label: "Ukryte" },
+  { value: "wszystkie", label: "Wszystkie" },
+];
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -25,6 +35,8 @@ export default function AdminDashboard() {
   const [deleteConfirmText, setDeleteConfirmText] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [katFilter, setKatFilter] = useState<string>("all");
+  const [statusTab, setStatusTab] = useState<StatusTab>("aktywne");
+  const [zrodloFilter, setZrodloFilter] = useState<ZrodloFilter>("all");
   const [query, setQuery] = useState("");
 
   async function load() {
@@ -84,9 +96,22 @@ export default function AdminDashboard() {
     router.refresh();
   }
 
+  const counts = useMemo(() => {
+    let aktywne = 0;
+    let ukryte = 0;
+    for (const o of oferty) {
+      if (o.status === "ukryta") ukryte += 1;
+      else aktywne += 1;
+    }
+    return { aktywne, ukryte, wszystkie: oferty.length };
+  }, [oferty]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return oferty.filter((o) => {
+      if (statusTab === "aktywne" && o.status === "ukryta") return false;
+      if (statusTab === "ukryte" && o.status !== "ukryta") return false;
+      if (zrodloFilter !== "all" && o.zrodlo !== zrodloFilter) return false;
       if (katFilter !== "all" && o.typ_nieruchomosci !== katFilter) return false;
       if (q) {
         const hay = `${o.tytul} ${o.miasto ?? ""} ${o.dzielnica ?? ""}`.toLowerCase();
@@ -94,7 +119,7 @@ export default function AdminDashboard() {
       }
       return true;
     });
-  }, [oferty, katFilter, query]);
+  }, [oferty, statusTab, zrodloFilter, katFilter, query]);
 
   const grouped = useMemo(() => {
     const map = new Map<OfertaTypNieruchomosci, OfertaZZdjeciami[]>();
@@ -132,6 +157,41 @@ export default function AdminDashboard() {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <SyncBar onSynced={load} />
+
+        <div className="mb-4 flex flex-wrap items-center gap-1.5 rounded-lg border border-slate-200 bg-white p-1">
+          {STATUS_TABS.map((tab) => {
+            const count =
+              tab.value === "aktywne"
+                ? counts.aktywne
+                : tab.value === "ukryte"
+                  ? counts.ukryte
+                  : counts.wszystkie;
+            return (
+              <button
+                key={tab.value}
+                onClick={() => setStatusTab(tab.value)}
+                className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                  statusTab === tab.value
+                    ? "bg-primary text-white"
+                    : "text-slate-600 hover:bg-slate-100"
+                }`}
+              >
+                {tab.label}
+                <span
+                  className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[11px] font-semibold ${
+                    statusTab === tab.value
+                      ? "bg-white/25 text-white"
+                      : "bg-slate-200 text-slate-600"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <input
             value={query}
@@ -150,6 +210,15 @@ export default function AdminDashboard() {
                 {o.label}
               </option>
             ))}
+          </select>
+          <select
+            value={zrodloFilter}
+            onChange={(e) => setZrodloFilter(e.target.value as ZrodloFilter)}
+            className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+          >
+            <option value="all">Wszystkie źródła</option>
+            <option value="esti">Z Esti</option>
+            <option value="strona">Ręczne</option>
           </select>
           <span className="ml-auto text-sm text-slate-400">
             {filtered.length}{" "}
@@ -315,11 +384,22 @@ function OfferCard({
             </svg>
           </div>
         )}
-        <span
-          className={`absolute left-2 top-2 rounded-full px-2 py-0.5 text-[11px] font-semibold ${STATUS_BADGE_CLASSES[offer.status]}`}
-        >
-          {STATUS_LABELS[offer.status]}
-        </span>
+        <div className="absolute left-2 top-2 flex flex-col items-start gap-1">
+          <span
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${STATUS_BADGE_CLASSES[offer.status]}`}
+          >
+            {STATUS_LABELS[offer.status]}
+          </span>
+          <span
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+              offer.zrodlo === "esti"
+                ? "bg-sky-100 text-sky-700"
+                : "bg-slate-200 text-slate-600"
+            }`}
+          >
+            {offer.zrodlo === "esti" ? "Z Esti" : "Ręczna"}
+          </span>
+        </div>
         {offer.oferty_zdjecia.length > 0 && (
           <span className="absolute right-2 top-2 rounded-full bg-slate-900/70 px-2 py-0.5 text-[11px] font-medium text-white">
             {offer.oferty_zdjecia.length} zdj.

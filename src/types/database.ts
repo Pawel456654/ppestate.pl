@@ -19,6 +19,10 @@ export type OfertaTypTransakcji = "sprzedaz" | "wynajem";
 
 export type OfertaRynek = "pierwotny" | "wtorny";
 
+export type OfertaZdjecieZrodlo = "esti" | "upload" | "url";
+
+export type EstiSyncMode = "full" | "incremental";
+
 export type Oferta = {
   id: string;
   data_utworzenia: string;
@@ -74,10 +78,33 @@ export type OfertaZdjecie = {
   id: string;
   oferta_id: string;
   url: string;
-  sciezka: string;
+  sciezka: string | null;
   kolejnosc: number;
   czy_glowne: boolean;
+  zrodlo: OfertaZdjecieZrodlo;
   data_utworzenia: string;
+};
+
+export type EstiSyncLog = {
+  id: string;
+  started_at: string;
+  finished_at: string | null;
+  success: boolean | null;
+  mode: EstiSyncMode | string;
+  added: number;
+  updated: number;
+  hidden: number;
+  errors: number;
+  error_message: string | null;
+  details: unknown;
+};
+
+export type EstiSyncState = {
+  id: number;
+  last_successful_sync: string | null;
+  last_update_date_used: string | null;
+  is_running: boolean;
+  running_since: string | null;
 };
 
 export type OfertaZZdjeciami = Oferta & {
@@ -137,9 +164,10 @@ type OfertaZdjecieInsert = {
   id?: string;
   oferta_id: string;
   url: string;
-  sciezka: string;
+  sciezka?: string | null;
   kolejnosc?: number;
   czy_glowne?: boolean;
+  zrodlo?: OfertaZdjecieZrodlo;
   data_utworzenia?: string;
 };
 
@@ -147,10 +175,32 @@ type OfertaZdjecieUpdate = {
   id?: string;
   oferta_id?: string;
   url?: string;
-  sciezka?: string;
+  sciezka?: string | null;
   kolejnosc?: number;
   czy_glowne?: boolean;
+  zrodlo?: OfertaZdjecieZrodlo;
   data_utworzenia?: string;
+};
+
+type EstiSyncLogInsert = {
+  id?: string;
+  started_at?: string;
+  finished_at?: string | null;
+  success?: boolean | null;
+  mode: EstiSyncMode | string;
+  added?: number;
+  updated?: number;
+  hidden?: number;
+  errors?: number;
+  error_message?: string | null;
+  details?: unknown;
+};
+
+type EstiSyncStateUpdate = {
+  last_successful_sync?: string | null;
+  last_update_date_used?: string | null;
+  is_running?: boolean;
+  running_since?: string | null;
 };
 
 export type Database = {
@@ -183,6 +233,18 @@ export type Database = {
           created_at?: string;
         };
         Update: Partial<ContactInquiry>;
+        Relationships: [];
+      };
+      esti_sync_log: {
+        Row: EstiSyncLog;
+        Insert: EstiSyncLogInsert;
+        Update: Partial<EstiSyncLog>;
+        Relationships: [];
+      };
+      esti_sync_state: {
+        Row: EstiSyncState;
+        Insert: Partial<EstiSyncState> & { id?: number };
+        Update: EstiSyncStateUpdate;
         Relationships: [];
       };
     };

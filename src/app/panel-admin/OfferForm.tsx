@@ -70,9 +70,12 @@ export default function OfferForm({
   onSaved: () => void;
 }) {
   const editing = Boolean(offer);
+  const isEsti = offer?.zrodlo === "esti";
   const [fields, setFields] = useState<FieldsState>(() => initForm(offer));
   const [existingImages, setExistingImages] = useState(offer?.oferty_zdjecia ?? []);
   const [newFiles, setNewFiles] = useState<File[]>([]);
+  const [urlDraft, setUrlDraft] = useState("");
+  const [pendingUrls, setPendingUrls] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -202,6 +205,32 @@ export default function OfferForm({
     }
   }
 
+  async function uploadUrls(offerId: string) {
+    for (const url of pendingUrls) {
+      const res = await fetch("/api/admin/images", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ offerId, url }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message ?? "Błąd dodawania zdjęcia z linku.");
+      }
+    }
+  }
+
+  function addPendingUrl() {
+    const url = urlDraft.trim();
+    if (!url) return;
+    if (!/^https:\/\//i.test(url)) {
+      setError("Link do zdjęcia musi zaczynać się od https://");
+      return;
+    }
+    setPendingUrls((prev) => [...prev, url]);
+    setUrlDraft("");
+    setError("");
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
@@ -229,6 +258,9 @@ export default function OfferForm({
       const offerId: string = editing ? offer!.id : data.oferta.id;
       if (newFiles.length > 0) {
         await uploadFiles(offerId);
+      }
+      if (pendingUrls.length > 0) {
+        await uploadUrls(offerId);
       }
       onSaved();
     } catch (err) {
@@ -260,6 +292,18 @@ export default function OfferForm({
         </div>
 
         <div className="max-h-[70vh] space-y-7 overflow-y-auto px-6 py-5">
+          {isEsti && (
+            <div className="rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-800">
+              <p className="font-semibold">Oferta synchronizowana z EstiCRM</p>
+              <p className="mt-1 text-sky-700">
+                Pola opisowe (tytuł, cena, opis, lokalizacja, zdjęcia z Esti) są
+                zarządzane w EstiCRM i zostaną nadpisane przy kolejnej
+                synchronizacji. Bezpiecznie możesz tu zmieniać: wyróżnienie oraz
+                dodawać własne zdjęcia (plik lub link), które sync zachowa.
+              </p>
+            </div>
+          )}
+
           <Section title="Podstawowe">
             {text("tytul", "Tytuł *", { full: true })}
             <div className="sm:col-span-2 lg:col-span-3">
@@ -403,16 +447,51 @@ export default function OfferForm({
               {existingImages.map((img) => (
                 <div key={img.id} className="relative h-24 w-32 overflow-hidden rounded-lg border border-slate-200">
                   <img src={img.url} alt="" className="h-full w-full object-cover" />
-                  {img.czy_glowne && (
-                    <span className="absolute left-1 top-1 rounded bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                      główne
+                  <div className="absolute left-1 top-1 flex flex-col items-start gap-0.5">
+                    {img.czy_glowne && (
+                      <span className="rounded bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                        główne
+                      </span>
+                    )}
+                    <span
+                      className={`rounded px-1.5 py-0.5 text-[10px] font-semibold text-white ${
+                        img.zrodlo === "esti"
+                          ? "bg-sky-500"
+                          : img.zrodlo === "url"
+                            ? "bg-violet-500"
+                            : "bg-slate-500"
+                      }`}
+                    >
+                      {img.zrodlo === "esti"
+                        ? "Esti"
+                        : img.zrodlo === "url"
+                          ? "link"
+                          : "plik"}
                     </span>
-                  )}
+                  </div>
                   <button
                     type="button"
                     onClick={() => deleteExistingImage(img.id)}
                     className="absolute right-1 top-1 rounded-full bg-rose-600/90 p-1 text-white hover:bg-rose-700"
                     aria-label="Usuń zdjęcie"
+                  >
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+              {pendingUrls.map((url, i) => (
+                <div key={`url-${i}`} className="relative h-24 w-32 overflow-hidden rounded-lg border border-dashed border-violet-400">
+                  <img src={url} alt="" className="h-full w-full object-cover" />
+                  <span className="absolute left-1 top-1 rounded bg-violet-500 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                    link
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setPendingUrls((prev) => prev.filter((_, idx) => idx !== i))}
+                    className="absolute right-1 top-1 rounded-full bg-slate-700/90 p-1 text-white hover:bg-slate-900"
+                    aria-label="Usuń"
                   >
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
@@ -456,6 +535,35 @@ export default function OfferForm({
                 className="hidden"
                 onChange={onPickFiles}
               />
+            </div>
+
+            <div className="mt-4">
+              <label className={labelClass}>Dodaj zdjęcie z linku (URL)</label>
+              <div className="flex gap-2">
+                <input
+                  className={inputClass}
+                  value={urlDraft}
+                  placeholder="https://… (link do zdjęcia)"
+                  onChange={(e) => setUrlDraft(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      addPendingUrl();
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={addPendingUrl}
+                  className="shrink-0 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                >
+                  Dodaj link
+                </button>
+              </div>
+              <p className="mt-1.5 text-xs text-slate-400">
+                Zamiast przesyłać plik, możesz wkleić bezpośredni adres https do
+                zdjęcia. Linki zostaną zapisane po zapisaniu oferty.
+              </p>
             </div>
             {editing ? (
               <p className="mt-2 text-xs text-slate-400">
