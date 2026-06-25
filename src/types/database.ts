@@ -68,6 +68,8 @@ export type Oferta = {
   wyrozniona: boolean;
   wyrozniona_na_stronie_glownej: boolean;
 
+  status_reczny: boolean;
+
   seo_tytul: string | null;
   seo_opis: string | null;
 
@@ -155,6 +157,7 @@ type OfertaInsert = {
   agent_id?: string | null;
   wyrozniona?: boolean;
   wyrozniona_na_stronie_glownej?: boolean;
+  status_reczny?: boolean;
   seo_tytul?: string | null;
   seo_opis?: string | null;
   ostatnio_widziana_w_esti?: string | null;

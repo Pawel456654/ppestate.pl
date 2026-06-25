@@ -3,10 +3,16 @@ import { fetchPublicOffers, toOfferCardData } from "@/lib/public-offers";
 import { OfferCardCompact } from "@/components/OfferCard";
 
 export default async function LatestOffers() {
-  const offers = await fetchPublicOffers({ limit: 6, featuredOnHomepage: true });
-  const fallbackOffers =
-    offers.length > 0 ? offers : await fetchPublicOffers({ limit: 6 });
-  const cards = fallbackOffers.map(toOfferCardData).filter((card) => card !== null);
+  // Wyróżnione na stronie głównej mają pierwszeństwo; brakujące miejsca
+  // uzupełniamy najnowszymi widocznymi (w tym oferty Esti).
+  const featured = await fetchPublicOffers({ limit: 6, featuredOnHomepage: true });
+  const latest = await fetchPublicOffers({ limit: 6 });
+  const featuredIds = new Set(featured.map((o) => o.id));
+  const combined = [
+    ...featured,
+    ...latest.filter((o) => !featuredIds.has(o.id)),
+  ].slice(0, 6);
+  const cards = combined.map(toOfferCardData).filter((card) => card !== null);
 
   return (
     <section id="oferty" className="py-24 sm:py-32 px-6 bg-pastel-sky">

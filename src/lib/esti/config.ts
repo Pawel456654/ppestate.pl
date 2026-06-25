@@ -11,7 +11,7 @@ export type EstiConfig = {
 };
 
 const DEFAULT_BASE_URL = "https://app.esticrm.pl/apiClient";
-const DEFAULT_STATUS_FILTER = "3,99";
+const DEFAULT_STATUS_FILTER = "3,4,7,99";
 const DEFAULT_BATCH_SIZE = 50;
 
 /**

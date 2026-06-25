@@ -1,4 +1,11 @@
 {
   "version": 1,
-  "functions": {}
+  "functions": {
+    "/api/admin/sync-esti": {
+      "maxDuration": 60
+    },
+    "/api/cron/sync-esti": {
+      "maxDuration": 60
+    }
+  }
 }

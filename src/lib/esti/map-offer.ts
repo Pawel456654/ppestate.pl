@@ -23,7 +23,7 @@ export type MappedEstiOffer = {
   photos: MappedEstiPhoto[];
 };
 
-/** Status Esti → status oferty na stronie (sekcja 6.2 planu). */
+/** Status Esti → status oferty na stronie. */
 export function mapEstiStatus(status: number | null): OfertaStatus {
   switch (status) {
     case 3:
@@ -33,10 +33,8 @@ export function mapEstiStatus(status: number | null): OfertaStatus {
       return "rezerwacja";
     case 7:
       return "sprzedana";
-    case 9:
-      return "ukryta";
     default:
-      return "ukryta";
+      return "aktywna";
   }
 }
 

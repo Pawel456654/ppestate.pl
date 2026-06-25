@@ -39,7 +39,7 @@ export type EstiSyncResult = {
 
 type ExistingOffer = Pick<
   Oferta,
-  "id" | "esti_id" | "zrodlo" | "status" | "slug"
+  "id" | "esti_id" | "zrodlo" | "status" | "slug" | "status_reczny"
 >;
 
 /** Pola, których sync NIGDY nie nadpisuje przy aktualizacji oferty z Esti. */
@@ -91,7 +91,7 @@ async function fetchExistingEstiOffers(
   const map = new Map<string, ExistingOffer>();
   const { data, error } = await supabase
     .from("oferty")
-    .select("id, esti_id, zrodlo, status, slug")
+    .select("id, esti_id, zrodlo, status, slug, status_reczny")
     .not("esti_id", "is", null);
 
   if (error) throw new EstiError(`Błąd odczytu istniejących ofert: ${error.message}`);
@@ -176,6 +176,8 @@ async function upsertOffer(
     // Zachowaj ręcznie ustawione flagi wyróżnienia i istniejący slug (URL).
     for (const field of PRESERVED_ON_UPDATE) delete updatePayload[field];
     if (existing.slug) delete updatePayload.slug;
+    // Jeśli admin ręcznie ustawił status, sync nie nadpisuje go.
+    if (existing.status_reczny) delete updatePayload.status;
 
     const { error } = await supabase
       .from("oferty")
@@ -191,8 +193,12 @@ async function upsertOffer(
   }
 }
 
-/** Ukrywa oferty z Esti, których nie ma już na aktywnej liście. */
-async function reconcileHidden(
+/**
+ * Ukrywa oferty z Esti, które całkowicie zniknęły ze wszystkich synchronizowanych
+ * statusów (wycofane, usunięte). Oferty ze statusem sprzedana/rezerwacja pozostają
+ * widoczne — po rozszerzeniu filtra statusów są w activeEstiIds.
+ */
+async function reconcileRemovedOffers(
   supabase: AdminClient,
   activeEstiIds: Set<string>,
   existing: Map<string, ExistingOffer>
@@ -201,7 +207,8 @@ async function reconcileHidden(
   for (const [estiId, offer] of existing) {
     if (offer.zrodlo !== "esti") continue;
     if (offer.status === "ukryta") continue;
-    if (!activeEstiIds.has(estiId)) toHide.push(offer.id);
+    if (activeEstiIds.has(estiId)) continue;
+    toHide.push(offer.id);
   }
 
   if (toHide.length === 0) return 0;
@@ -298,15 +305,9 @@ export async function runEstiSync(options: {
       await upsertOffer(supabase, mapped, existing.get(mapped.estiId), counters, details);
     }
 
-    // 2. Reconciliacja — pełna lista aktywnych ID (także w trybie przyrostowym).
-    const basic = await fetchActiveBasicList(client, {
-      status: statusFilter,
-      batchSize,
-    });
-    const activeEstiIds = new Set(basic.map((b) => b.estiId));
-    // Po upsertach mapa `existing` może nie zawierać świeżo dodanych — to OK,
-    // bo nowe oferty są z definicji aktywne i nie podlegają ukrywaniu.
-    const hidden = await reconcileHidden(supabase, activeEstiIds, existing);
+    // Reconciliacja wyłączona — oferty z Esti nigdy nie są automatycznie ukrywane.
+    // Status ukryta można ustawić wyłącznie ręcznie z panelu admina.
+    const hidden = 0;
 
     // 3. Zapisz stan dla kolejnego syncu przyrostowego.
     await supabase

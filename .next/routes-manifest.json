@@ -67,6 +67,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/admin/images",
+      "regex": "^/api/admin/images(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/images(?:/)?$"
+    },
+    {
       "page": "/api/admin/login",
       "regex": "^/api/admin/login(?:/)?$",
       "routeKeys": {},
@@ -85,10 +91,22 @@
       "namedRegex": "^/api/admin/offers(?:/)?$"
     },
     {
+      "page": "/api/admin/sync-esti",
+      "regex": "^/api/admin/sync\\-esti(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/sync\\-esti(?:/)?$"
+    },
+    {
       "page": "/api/admin/upload",
       "regex": "^/api/admin/upload(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/admin/upload(?:/)?$"
+    },
+    {
+      "page": "/api/cron/sync-esti",
+      "regex": "^/api/cron/sync\\-esti(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/cron/sync\\-esti(?:/)?$"
     },
     {
       "page": "/api/health/supabase",

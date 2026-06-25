@@ -119,6 +119,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/admin/images/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/images">> = Specific
+  const handler = {} as typeof import("../../src/app/api/admin/images/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/admin/login/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/login">> = Specific
@@ -155,10 +164,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/admin/sync-esti/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/sync-esti">> = Specific
+  const handler = {} as typeof import("../../src/app/api/admin/sync-esti/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/admin/upload/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/upload">> = Specific
   const handler = {} as typeof import("../../src/app/api/admin/upload/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/api/cron/sync-esti/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/cron/sync-esti">> = Specific
+  const handler = {} as typeof import("../../src/app/api/cron/sync-esti/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

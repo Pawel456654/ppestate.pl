@@ -40,6 +40,18 @@ export async function PATCH(request: Request, { params }: Params) {
     );
   }
 
+  // Gdy admin zmienia status oferty Esti, automatycznie ustawiamy flagę ochrony
+  // przed nadpisaniem przez sync — chyba że admin explicite ją resetuje (false).
+  const isEstiOffer = (existing as Oferta).zrodlo === "esti";
+  const statusChangedByAdmin = Object.prototype.hasOwnProperty.call(body, "status");
+  const explicitReset =
+    Object.prototype.hasOwnProperty.call(body, "status_reczny") &&
+    (payload as Record<string, unknown>).status_reczny === false;
+
+  if (isEstiOffer && statusChangedByAdmin && !explicitReset) {
+    (payload as Record<string, unknown>).status_reczny = true;
+  }
+
   const updatePayload = applyGeneratedSeo(
     applyGoogleMapsLink({
       ...(existing as Oferta),

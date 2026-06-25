@@ -53,6 +53,7 @@ function initForm(o?: OfertaZZdjeciami | null): FieldsState {
       : "",
     wyrozniona: o?.wyrozniona ?? false,
     wyrozniona_na_stronie_glownej: o?.wyrozniona_na_stronie_glownej ?? false,
+    status_reczny: o?.status_reczny ?? false,
   };
 }
 
@@ -298,9 +299,23 @@ export default function OfferForm({
               <p className="mt-1 text-sky-700">
                 Pola opisowe (tytuł, cena, opis, lokalizacja, zdjęcia z Esti) są
                 zarządzane w EstiCRM i zostaną nadpisane przy kolejnej
-                synchronizacji. Bezpiecznie możesz tu zmieniać: wyróżnienie oraz
-                dodawać własne zdjęcia (plik lub link), które sync zachowa.
+                synchronizacji. Bezpiecznie możesz tu zmieniać: <strong>status</strong>,
+                wyróżnienie oraz dodawać własne zdjęcia (plik lub link), które sync zachowa.
               </p>
+              {fields.status_reczny && (
+                <div className="mt-2 flex items-center justify-between gap-3 rounded border border-amber-200 bg-amber-50 px-3 py-2">
+                  <p className="text-amber-800 text-xs font-medium">
+                    Status ustawiony ręcznie — sync Esti go nie nadpisze.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => set("status_reczny", false)}
+                    className="shrink-0 rounded bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-900 hover:bg-amber-200"
+                  >
+                    Przywróć status z Esti
+                  </button>
+                </div>
+              )}
             </div>
           )}
 

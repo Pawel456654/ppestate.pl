@@ -5,10 +5,12 @@ import {
 } from "@/lib/google-maps";
 import {
   formatCena,
+  STATUS_BADGE_CLASSES,
+  STATUS_LABELS,
   TYP_NIERUCHOMOSCI_LABELS,
   TYP_TRANSAKCJI_LABELS,
 } from "@/lib/offers";
-import type { Oferta, OfertaZZdjeciami, OfertaZdjecie } from "@/types/database";
+import type { Oferta, OfertaStatus, OfertaZZdjeciami, OfertaZdjecie } from "@/types/database";
 
 const DEFAULT_IMAGES: Record<string, string> = {
   mieszkanie: "/hero/mieszkania.png",
@@ -30,6 +32,9 @@ export type OfferCardData = {
   transactionLabel: string;
   imageUrl: string;
   badge: string | null;
+  status: OfertaStatus;
+  statusLabel: string;
+  statusBadgeClass: string;
 };
 
 export function getSiteUrl(): string {
@@ -136,6 +141,9 @@ export function toOfferCardData(offer: OfertaZZdjeciami): OfferCardData | null {
     transactionLabel: TYP_TRANSAKCJI_LABELS[offer.typ_transakcji],
     imageUrl: getMainImage(offer.oferty_zdjecia, offer.typ_nieruchomosci),
     badge: offer.wyrozniona ? "Wyróżniona" : null,
+    status: offer.status,
+    statusLabel: STATUS_LABELS[offer.status],
+    statusBadgeClass: STATUS_BADGE_CLASSES[offer.status],
   };
 }
 

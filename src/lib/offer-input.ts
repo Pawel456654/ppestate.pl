@@ -42,7 +42,7 @@ const INT_FIELDS = [
   "rok_budowy",
 ] as const;
 
-const BOOL_FIELDS = ["wyrozniona", "wyrozniona_na_stronie_glownej"] as const;
+const BOOL_FIELDS = ["wyrozniona", "wyrozniona_na_stronie_glownej", "status_reczny"] as const;
 
 const TIMESTAMP_FIELDS = ["ostatnio_widziana_w_esti"] as const;
 

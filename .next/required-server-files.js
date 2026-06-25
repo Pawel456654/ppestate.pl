@@ -61,6 +61,10 @@ self.__SERVER_FILES_MANIFEST={
           "protocol": "https",
           "hostname": "vbgqdbtpbvthzvjvzboj.supabase.co",
           "pathname": "/storage/v1/object/public/**"
+        },
+        {
+          "protocol": "https",
+          "hostname": "**.esticrm.pl"
         }
       ],
       "qualities": [

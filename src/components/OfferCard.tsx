@@ -58,6 +58,11 @@ export function OfferCardCompact({
               {offer.badge}
             </span>
           )}
+          {offer.status !== "aktywna" && (
+            <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${offer.statusBadgeClass}`}>
+              {offer.statusLabel}
+            </span>
+          )}
         </div>
       </div>
 
@@ -152,6 +157,11 @@ export function OfferCardWide({ offer }: { offer: OfferCardData }) {
             <span className="bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">
               {offer.transactionLabel}
             </span>
+            {offer.status !== "aktywna" && (
+              <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${offer.statusBadgeClass}`}>
+                {offer.statusLabel}
+              </span>
+            )}
           </div>
 
           <p className="text-sm text-slate-500 mb-2">{offer.location}</p>
