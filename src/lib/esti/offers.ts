@@ -17,12 +17,21 @@ const UPDATE_DATE_KEYS = [
   "modifiedAt",
 ];
 
+/** Normalizuje pojedynczą ofertę lub tablicę do zawsze-tablicy. */
+function normalizeToOfferArray(value: unknown): EstiRawOffer[] {
+  if (value == null) return [];
+  if (Array.isArray(value)) return value as EstiRawOffer[];
+  if (typeof value === "object") return [value as EstiRawOffer];
+  return [];
+}
+
 /** Wyciąga tablicę ofert z dowolnego wariantu koperty odpowiedzi Esti. */
 function extractOffers(payload: unknown): EstiRawOffer[] {
   if (Array.isArray(payload)) return payload as EstiRawOffer[];
   if (payload && typeof payload === "object") {
-    const env = payload as EstiListEnvelope;
-    return env.data ?? env.offers ?? env.items ?? [];
+    const env = payload as EstiListEnvelope & { data?: unknown };
+    const candidate = env.data ?? env.offers ?? env.items;
+    if (candidate !== undefined) return normalizeToOfferArray(candidate);
   }
   return [];
 }

@@ -89,18 +89,14 @@ async function requestOnce<T>(
     );
   }
 
-  // Esti często zwraca HTTP 200 z { status: false, message: "..." } zamiast błędu HTTP.
-  if (
-    payload &&
-    typeof payload === "object" &&
-    !Array.isArray(payload) &&
-    (payload as Record<string, unknown>).status === false
-  ) {
-    const msg =
-      typeof (payload as Record<string, unknown>).message === "string"
-        ? ((payload as Record<string, unknown>).message as string)
-        : "Nieznany błąd EstiCRM.";
-    throw new EstiRequestError(`EstiCRM /${path}: ${msg}`, response.status);
+  // Esti często zwraca HTTP 200 z { status/success: false, message: "..." } zamiast błędu HTTP.
+  if (payload && typeof payload === "object" && !Array.isArray(payload)) {
+    const record = payload as Record<string, unknown>;
+    if (record.status === false || record.success === false) {
+      const msg =
+        typeof record.message === "string" ? record.message : "Nieznany błąd EstiCRM.";
+      throw new EstiRequestError(`EstiCRM /${path}: ${msg}`, response.status);
+    }
   }
 
   return payload as T;

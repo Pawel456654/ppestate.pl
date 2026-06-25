@@ -19,11 +19,14 @@ export type EstiRawPhoto = string | Record<string, unknown>;
  * wszystkie warianty w kliencie.
  */
 export type EstiListEnvelope = {
-  data?: EstiRawOffer[];
-  offers?: EstiRawOffer[];
-  items?: EstiRawOffer[];
+  /** Esti zwraca tablicę lub pojedynczy obiekt, gdy count = 1. */
+  data?: EstiRawOffer[] | EstiRawOffer;
+  offers?: EstiRawOffer[] | EstiRawOffer;
+  items?: EstiRawOffer[] | EstiRawOffer;
   count?: number;
   total?: number;
+  totalCount?: number;
+  success?: boolean;
 };
 
 /** Lekki wpis z `basic-list` używany do reconciliacji ID. */
