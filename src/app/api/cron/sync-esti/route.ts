@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { runEstiSync } from "@/lib/esti/sync";
+import { revalidatePublicOfferPages } from "@/lib/revalidate-public";
 import type { EstiSyncMode } from "@/types/database";
 
 export const dynamic = "force-dynamic";
@@ -28,6 +29,7 @@ async function handle(request: Request) {
   }
 
   const result = await runEstiSync({ mode: resolveMode(request) });
+  if (result.ok) revalidatePublicOfferPages();
   return NextResponse.json(result, { status: result.ok ? 200 : 500 });
 }
 

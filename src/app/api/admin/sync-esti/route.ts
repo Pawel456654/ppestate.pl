@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/admin-auth";
 import { isEstiConfigured } from "@/lib/esti/config";
 import { getEstiSyncStatus, runEstiSync } from "@/lib/esti/sync";
+import { revalidatePublicOfferPages } from "@/lib/revalidate-public";
 import type { EstiSyncMode } from "@/types/database";
 
 export const dynamic = "force-dynamic";
@@ -31,5 +32,6 @@ export async function POST(request: Request) {
   const mode: EstiSyncMode = url.searchParams.get("mode") === "full" ? "full" : "incremental";
 
   const result = await runEstiSync({ mode });
+  if (result.ok) revalidatePublicOfferPages();
   return NextResponse.json(result, { status: result.ok ? 200 : 500 });
 }
