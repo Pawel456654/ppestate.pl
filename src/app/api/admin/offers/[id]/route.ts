@@ -4,6 +4,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { sanitizeOfferInput } from "@/lib/offer-input";
 import { applyGoogleMapsLink } from "@/lib/google-maps";
 import { applyGeneratedSeo } from "@/lib/offer-seo";
+import { revalidatePublicOfferPages } from "@/lib/revalidate-public";
 import type { Oferta, OfertaZdjecie } from "@/types/database";
 
 const BUCKET = "oferty-zdjecia";
@@ -70,6 +71,7 @@ export async function PATCH(request: Request, { params }: Params) {
     return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
   }
 
+  revalidatePublicOfferPages();
   return NextResponse.json({ ok: true, oferta: data });
 }
 

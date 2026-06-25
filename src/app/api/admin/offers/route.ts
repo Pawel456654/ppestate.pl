@@ -5,6 +5,7 @@ import { sanitizeOfferInput } from "@/lib/offer-input";
 import { applyGoogleMapsLink } from "@/lib/google-maps";
 import { applyGeneratedSeo } from "@/lib/offer-seo";
 import { buildOfferSlug } from "@/lib/offers";
+import { revalidatePublicOfferPages } from "@/lib/revalidate-public";
 import type { Database } from "@/types/database";
 
 type OfertaInsert = Database["public"]["Tables"]["oferty"]["Insert"];
@@ -80,5 +81,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
   }
 
+  revalidatePublicOfferPages();
   return NextResponse.json({ ok: true, oferta: data }, { status: 201 });
 }
