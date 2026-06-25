@@ -80,13 +80,30 @@ async function requestOnce<T>(
     return undefined as T;
   }
 
+  let payload: unknown;
   try {
-    return JSON.parse(text) as T;
+    payload = JSON.parse(text);
   } catch {
     throw new EstiParseError(
       `Nie udało się sparsować odpowiedzi JSON z /${path}: ${text.slice(0, 200)}`
     );
   }
+
+  // Esti często zwraca HTTP 200 z { status: false, message: "..." } zamiast błędu HTTP.
+  if (
+    payload &&
+    typeof payload === "object" &&
+    !Array.isArray(payload) &&
+    (payload as Record<string, unknown>).status === false
+  ) {
+    const msg =
+      typeof (payload as Record<string, unknown>).message === "string"
+        ? ((payload as Record<string, unknown>).message as string)
+        : "Nieznany błąd EstiCRM.";
+    throw new EstiRequestError(`EstiCRM /${path}: ${msg}`, response.status);
+  }
+
+  return payload as T;
 }
 
 /** Czy błąd warto ponowić (timeout / 5xx / 429). */
