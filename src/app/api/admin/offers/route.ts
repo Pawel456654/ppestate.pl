@@ -6,6 +6,7 @@ import { applyGoogleMapsLink } from "@/lib/google-maps";
 import { applyGeneratedSeo } from "@/lib/offer-seo";
 import { buildOfferSlug } from "@/lib/offers";
 import { revalidatePublicOfferPages } from "@/lib/revalidate-public";
+import { formatAdminSupabaseError } from "@/lib/supabase/admin-errors";
 import type { Database } from "@/types/database";
 
 type OfertaInsert = Database["public"]["Tables"]["oferty"]["Insert"];
@@ -23,7 +24,10 @@ export async function GET() {
     .order("kolejnosc", { referencedTable: "oferty_zdjecia", ascending: true });
 
   if (error) {
-    return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, message: formatAdminSupabaseError(error) },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ ok: true, oferty: data ?? [] });
@@ -78,7 +82,10 @@ export async function POST(request: Request) {
     .single();
 
   if (error) {
-    return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, message: formatAdminSupabaseError(error) },
+      { status: 500 }
+    );
   }
 
   revalidatePublicOfferPages();

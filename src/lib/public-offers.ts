@@ -8,8 +8,23 @@ import {
 import type { OfferSearchFilters } from "@/lib/offer-search";
 import { createPublicClient } from "@/lib/supabase/public";
 import type { OfertaTypNieruchomosci, OfertaZZdjeciami } from "@/types/database";
+import type { PostgrestError } from "@supabase/supabase-js";
 
 export type { CategoryQueryType } from "@/lib/offers";
+
+function assertNoSupabaseError(error: PostgrestError | null): void {
+  if (!error) return;
+
+  const details = [error.message, error.code, error.hint]
+    .filter(Boolean)
+    .join(" — ");
+
+  throw new Error(
+    details
+      ? `Błąd Supabase: ${details}`
+      : "Błąd Supabase: nieprawidłowy klucz API lub brak dostępu do bazy"
+  );
+}
 
 async function countPublicOffersByTypes(
   types: OfertaTypNieruchomosci[]
@@ -23,7 +38,7 @@ async function countPublicOffersByTypes(
     .not("slug", "is", null)
     .in("typ_nieruchomosci", types);
 
-  if (error) throw new Error(error.message);
+  assertNoSupabaseError(error);
   return count ?? 0;
 }
 
@@ -37,7 +52,7 @@ export async function fetchPublicOfferCities(): Promise<string[]> {
     .not("slug", "is", null)
     .not("miasto", "is", null);
 
-  if (error) throw new Error(error.message);
+  assertNoSupabaseError(error);
 
   const cities = new Set<string>();
   for (const row of data ?? []) {
@@ -139,7 +154,7 @@ export async function fetchPublicOffers(options?: {
   }
 
   const { data, error } = await query;
-  if (error) throw new Error(error.message);
+  assertNoSupabaseError(error);
   return (data ?? []) as OfertaZZdjeciami[];
 }
 
@@ -156,7 +171,7 @@ export async function fetchPublicOfferBySlug(
     .order("kolejnosc", { referencedTable: "oferty_zdjecia", ascending: true })
     .maybeSingle();
 
-  if (error) throw new Error(error.message);
+  assertNoSupabaseError(error);
   return data as OfertaZZdjeciami | null;
 }
 
@@ -171,7 +186,7 @@ export async function fetchPublicOfferSlugs(): Promise<
     .neq("status", "ukryta")
     .not("slug", "is", null);
 
-  if (error) throw new Error(error.message);
+  assertNoSupabaseError(error);
 
   return (data ?? []).filter(
     (row): row is { slug: string; data_aktualizacji: string } => Boolean(row.slug)
