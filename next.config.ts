@@ -4,6 +4,29 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
+function getSupabaseImagePattern():
+  | {
+      protocol: "https";
+      hostname: string;
+      pathname: string;
+    }
+  | undefined {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!url) return undefined;
+
+  try {
+    return {
+      protocol: "https",
+      hostname: new URL(url).hostname,
+      pathname: "/storage/v1/object/public/**",
+    };
+  } catch {
+    return undefined;
+  }
+}
+
+const supabaseImagePattern = getSupabaseImagePattern();
+
 const nextConfig: NextConfig = {
   // Pin Turbopack's root to this project so it doesn't try to crawl
   // sibling directories under "Desktop/websites folder" looking for a
@@ -23,11 +46,7 @@ const nextConfig: NextConfig = {
     imageSizes: [64, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "vbgqdbtpbvthzvjvzboj.supabase.co",
-        pathname: "/storage/v1/object/public/**",
-      },
+      ...(supabaseImagePattern ? [supabaseImagePattern] : []),
       // Zdjęcia z EstiCRM. Hosty zewnętrzne spoza tej listy i tak działają
       // (renderowane przez next/image z `unoptimized` — patrz lib/image-source),
       // ale dla domen Esti włączamy optymalizację next/image.
