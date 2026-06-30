@@ -1,6 +1,6 @@
 {
   "name": "pawel",
-  "version": "0.87.0",
+  "version": "0.99.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
