@@ -23,6 +23,7 @@ import {
   getMainImage,
   getOfferUrl,
 } from "@/lib/public-offers";
+import { getOfferUrlForRequest } from "@/lib/offer-url";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -82,6 +83,7 @@ export default async function OfferDetailPage({ params }: PageProps) {
   }
 
   const url = getOfferUrl(slug);
+  const offerLink = await getOfferUrlForRequest(slug);
   const schema = buildRealEstateSchema(offer, url);
   const fallbackImage = getMainImage([], offer.typ_nieruchomosci);
   const location = formatLocation(offer);
@@ -234,7 +236,7 @@ export default async function OfferDetailPage({ params }: PageProps) {
 
         <ContactForm
           presetSubject="Kupno nieruchomości"
-          presetMessage={`Dzień dobry,\n\nJestem zainteresowany/a ofertą: ${offer.tytul}\n${url}\n\nProszę o kontakt w sprawie tej nieruchomości.`}
+          presetMessage={`Dzień dobry,\n\nJestem zainteresowany/a ofertą: ${offer.tytul}\n${offerLink}\n\nProszę o kontakt w sprawie tej nieruchomości.`}
           introTitle="Zainteresowany tą ofertą?"
           introDescription="Napisz do nas — oddzwonimy lub odpowiemy na Twoje pytania dotyczące tej nieruchomości."
         />

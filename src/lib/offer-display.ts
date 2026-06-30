@@ -37,8 +37,36 @@ export type OfferCardData = {
   statusBadgeClass: string;
 };
 
+const DEFAULT_SITE_URL = "https://ppestate.pl";
+
+function extractSiteOrigin(value: string): string | null {
+  const match = value.match(/https?:\/\/[^/\s]+/i);
+  if (!match) return null;
+
+  try {
+    const parsed = new URL(match[0]);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return null;
+    return `${parsed.protocol}//${parsed.host}`;
+  } catch {
+    return null;
+  }
+}
+
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://ppestate.pl";
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (fromEnv) {
+    const origin = extractSiteOrigin(fromEnv);
+    if (origin && !origin.includes(".supabase.co")) {
+      return origin;
+    }
+  }
+
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  if (vercelUrl) {
+    return `https://${vercelUrl}`;
+  }
+
+  return DEFAULT_SITE_URL;
 }
 
 export function getOfferPath(slug: string): string {
