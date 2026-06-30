@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ppestate.pl"),
   title: "PP Estate | Pośrednik nieruchomości we Wrocławiu",
   description:
-    "Jeśli szukasz nieruchomości na sprzedaż, kupno lub wynajem — to odpowiednie miejsce.",
+    "Jeśli szukasz nieruchomości na sprzedaż, kupno lub wynajem, to odpowiednie miejsce.",
   keywords:
     "nieruchomości, deweloper, domy, mieszkania, działki, przemysłowe, pośrednik, PP Estate",
   icons: {

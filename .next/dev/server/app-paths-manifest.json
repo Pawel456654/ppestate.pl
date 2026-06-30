@@ -1,7 +1,5 @@
 {
+  "/(site)/kariera/page": "app/(site)/kariera/page.js",
   "/(site)/page": "app/(site)/page.js",
-  "/api/admin/login/route": "app/api/admin/login/route.js",
-  "/api/cron/sync-esti/route": "app/api/cron/sync-esti/route.js",
-  "/api/health/supabase/route": "app/api/health/supabase/route.js",
-  "/panel-admin/page": "app/panel-admin/page.js"
+  "/api/health/supabase/route": "app/api/health/supabase/route.js"
 }

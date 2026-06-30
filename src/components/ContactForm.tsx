@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const CONTACT_WEBHOOK_URL =
   process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL ??
-  "https://hook.eu2.make.com/847nyct28g2mhovkyu8kdfaqbpuowp5k";
+  "https://hook.eu1.make.com/fbxfvqy9r66hsm4b9whyovsy4k5f1uf4";
 
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
@@ -27,13 +27,15 @@ type ContactFormProps = {
   presetMessage?: string;
   introTitle?: string;
   introDescription?: string;
+  successMessage?: string;
 };
 
 export default function ContactForm({
   presetSubject,
   presetMessage,
   introTitle = "Porozmawiajmy",
-  introDescription = "Masz pytania dotyczące nieruchomości? Skontaktuj się z nami — chętnie pomożemy",
+  introDescription = "Masz pytania dotyczące nieruchomości? Skontaktuj się z nami. Chętnie pomożemy",
+  successMessage = "Dziękujemy. Wiadomość została wysłana.",
 }: ContactFormProps = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -324,6 +326,7 @@ export default function ContactForm({
                 <option value="Kupno nieruchomości">Kupno nieruchomości</option>
                 <option value="Współpraca deweloperska">Współpraca deweloperska</option>
                 <option value="Wycena nieruchomości">Wycena nieruchomości</option>
+                <option value="Rekrutacja">Rekrutacja</option>
                 <option value="Inne">Inne</option>
               </select>
             </div>
@@ -365,7 +368,7 @@ export default function ContactForm({
             </div>
             {status === "success" && (
               <p className="text-emerald-300 text-sm font-medium" role="status">
-                Dziękujemy — wiadomość została wysłana.
+                {successMessage}
               </p>
             )}
             {status === "error" && errorText && (

@@ -1,4 +1,5 @@
 {
+  "/(site)/kariera/page": "/kariera",
   "/(site)/oferty/[slug]/page": "/oferty/[slug]",
   "/(site)/oferty/page": "/oferty",
   "/(site)/page": "/",
