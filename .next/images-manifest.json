@@ -37,7 +37,7 @@
     "remotePatterns": [
       {
         "protocol": "https",
-        "hostname": "^(?:^(?:vbgqdbtpbvthzvjvzboj\\.supabase\\.co)$)$",
+        "hostname": "^(?:^(?:weczukwunsjzgwmpyahv\\.supabase\\.co)$)$",
         "pathname": "^(?:\\/storage\\/v1\\/object\\/public(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
       },
       {

@@ -11,6 +11,16 @@ const CONTACT_WEBHOOK_URL =
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
+const CONTACT_SUBJECTS = [
+  "Sprzedaż nieruchomości",
+  "Kupno nieruchomości",
+  "Wynajem nieruchomości",
+  "Współpraca deweloperska",
+  "Rekrutacja",
+] as const;
+
+const DEFAULT_CONTACT_SUBJECT = CONTACT_SUBJECTS[0];
+
 function isValidEmail(value: string): boolean {
   const trimmed = value.trim();
   return trimmed.length <= 254 && EMAIL_REGEX.test(trimmed);
@@ -42,7 +52,7 @@ export default function ContactForm({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [subject, setSubject] = useState(presetSubject ?? "Zapytanie ogólne");
+  const [subject, setSubject] = useState(presetSubject ?? DEFAULT_CONTACT_SUBJECT);
   const [message, setMessage] = useState(presetMessage ?? "");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -99,7 +109,7 @@ export default function ContactForm({
       setName("");
       setEmail("");
       setPhone("");
-      setSubject("Zapytanie ogólne");
+      setSubject(DEFAULT_CONTACT_SUBJECT);
       setMessage("");
       setPrivacyAccepted(false);
     } catch {
@@ -322,12 +332,11 @@ export default function ContactForm({
                 onChange={(e) => setSubject(e.target.value)}
                 className="w-full px-4 py-3.5 rounded-xl bg-white/95 border border-white/25 text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all appearance-none cursor-pointer"
               >
-                <option value="Zapytanie ogólne">Zapytanie ogólne</option>
-                <option value="Kupno nieruchomości">Kupno nieruchomości</option>
-                <option value="Współpraca deweloperska">Współpraca deweloperska</option>
-                <option value="Wycena nieruchomości">Wycena nieruchomości</option>
-                <option value="Rekrutacja">Rekrutacja</option>
-                <option value="Inne">Inne</option>
+                {CONTACT_SUBJECTS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
               </select>
             </div>
             <div>

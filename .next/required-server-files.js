@@ -59,7 +59,7 @@ self.__SERVER_FILES_MANIFEST={
       "remotePatterns": [
         {
           "protocol": "https",
-          "hostname": "vbgqdbtpbvthzvjvzboj.supabase.co",
+          "hostname": "weczukwunsjzgwmpyahv.supabase.co",
           "pathname": "/storage/v1/object/public/**"
         },
         {
@@ -169,7 +169,7 @@ self.__SERVER_FILES_MANIFEST={
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 1,
+      "cpus": 7,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,

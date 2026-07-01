@@ -16,7 +16,7 @@ const BENEFITS = [
   {
     title: "Atrakcyjne wynagrodzenie",
     description:
-      "Podstawa plus wysokie, nielimitowane prowizje od realizowanych transakcji.",
+      "Wynagrodzenie prowizyjne adekwatne do przeprowadzonych transakcji. Zarobki bez górnego limitu.",
   },
   {
     title: "Elastyczny czas pracy",
@@ -41,7 +41,7 @@ const BENEFITS = [
   {
     title: "Przyjazna atmosfera",
     description:
-      "Mały, zgrany zespół, w którym liczy się człowiek i wzajemna pomoc.",
+      "Zgrany zespół, w którym liczy się człowiek i wzajemna pomoc.",
   },
 ];
 
