@@ -2,6 +2,7 @@ import "server-only";
 
 import { buildOfferSlug, TYP_NIERUCHOMOSCI_LABELS } from "@/lib/offers";
 import { applyGeneratedSeo } from "@/lib/offer-seo";
+import { formatOfferDescription } from "@/lib/offer-text";
 import type {
   Database,
   OfertaRynek,
@@ -230,11 +231,13 @@ export function mapEstiOfferToSupabase(
 
   const tytul = buildTitleFromEsti(offer, typ);
 
+  const rawOpis = readString(offer, ["description", "opis", "descriptionWebsite"]);
+
   const baseInsert: OfertaInsert = {
     esti_id: estiId,
     zrodlo: "esti",
     tytul,
-    opis: readString(offer, ["description", "opis", "descriptionWebsite"]),
+    opis: rawOpis ? formatOfferDescription(rawOpis) : null,
     status,
     typ_nieruchomosci: typ,
     typ_transakcji,

@@ -12,6 +12,7 @@ import {
 } from "@/lib/offers";
 import { parseGoogleMapsUrl } from "@/lib/google-maps";
 import { generateOfferSeo } from "@/lib/offer-seo";
+import { formatOfferDescription } from "@/lib/offer-text";
 import { getYouTubeThumbnailFromUrl, isYouTubeUrl } from "@/lib/youtube";
 
 type FieldsState = Record<string, string | boolean>;
@@ -29,7 +30,7 @@ function numStr(n: number | null | undefined): string {
 function initForm(o?: OfertaZZdjeciami | null): FieldsState {
   return {
     tytul: o?.tytul ?? "",
-    opis: o?.opis ?? "",
+    opis: o?.opis ? formatOfferDescription(o.opis) : "",
     status: o?.status ?? "aktywna",
     typ_nieruchomosci: o?.typ_nieruchomosci ?? "",
     typ_transakcji: o?.typ_transakcji ?? "sprzedaz",

@@ -24,6 +24,7 @@ import {
   getOfferUrl,
 } from "@/lib/public-offers";
 import { getOfferUrlForRequest } from "@/lib/offer-url";
+import { formatOfferDescription } from "@/lib/offer-text";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = offer.seo_tytul ?? `${offer.tytul} | PP Estate`;
   const description =
     offer.seo_opis ??
-    offer.opis?.slice(0, 160) ??
+    (offer.opis ? formatOfferDescription(offer.opis).slice(0, 160) : null) ??
     `${TYP_NIERUCHOMOSCI_LABELS[offer.typ_nieruchomosci]} — ${formatLocation(offer)}. ${formatOfferPrice(offer)}.`;
 
   const imageUrl = getMainImage(offer.oferty_zdjecia, offer.typ_nieruchomosci);
@@ -88,6 +89,7 @@ export default async function OfferDetailPage({ params }: PageProps) {
   const fallbackImage = getMainImage([], offer.typ_nieruchomosci);
   const location = formatLocation(offer);
   const area = formatPowierzchnia(offer);
+  const formattedOpis = offer.opis ? formatOfferDescription(offer.opis) : null;
 
   const details = [
     { label: "Typ nieruchomości", value: TYP_NIERUCHOMOSCI_LABELS[offer.typ_nieruchomosci] },
@@ -204,13 +206,13 @@ export default async function OfferDetailPage({ params }: PageProps) {
             </div>
 
             <div className="mt-10 flex flex-col gap-8">
-              {offer.opis && (
+              {formattedOpis && (
                 <section className="rounded-2xl border border-slate-100 bg-white/90 p-6 sm:p-8 shadow-sm">
                   <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-5">
                     Opis nieruchomości
                   </h2>
                   <div className="max-w-4xl text-slate-600 text-base leading-relaxed whitespace-pre-line">
-                    {offer.opis}
+                    {formattedOpis}
                   </div>
                 </section>
               )}

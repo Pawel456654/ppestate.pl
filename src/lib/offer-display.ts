@@ -11,6 +11,7 @@ import {
   TYP_TRANSAKCJI_LABELS,
 } from "@/lib/offers";
 import type { Oferta, OfertaStatus, OfertaZZdjeciami, OfertaZdjecie } from "@/types/database";
+import { formatOfferDescription } from "@/lib/offer-text";
 
 const DEFAULT_IMAGES: Record<string, string> = {
   mieszkanie: "/hero/mieszkania.png",
@@ -186,7 +187,9 @@ export function buildRealEstateSchema(offer: OfertaZZdjeciami, url: string) {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     name: offer.tytul,
-    description: offer.opis ?? offer.seo_opis ?? undefined,
+    description: offer.opis
+      ? formatOfferDescription(offer.opis)
+      : offer.seo_opis ?? undefined,
     url,
     datePosted: offer.data_utworzenia,
     image: images.length > 0 ? images : undefined,
