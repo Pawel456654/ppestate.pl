@@ -123,6 +123,7 @@ async function replaceEstiPhotos(
         kolejnosc: p.kolejnosc,
         czy_glowne: false,
         zrodlo: "esti" as const,
+        typ: "zdjecie" as const,
       }))
     );
   }
@@ -130,7 +131,7 @@ async function replaceEstiPhotos(
   // Upewnij się, że oferta ma dokładnie jedno zdjęcie główne.
   const { data: all } = await supabase
     .from("oferty_zdjecia")
-    .select("id, czy_glowne, kolejnosc")
+    .select("id, czy_glowne, kolejnosc, typ")
     .eq("oferta_id", ofertaId)
     .order("kolejnosc", { ascending: true });
 
@@ -138,12 +139,15 @@ async function replaceEstiPhotos(
     id: string;
     czy_glowne: boolean;
     kolejnosc: number;
+    typ: string;
   }[];
-  if (rows.length > 0 && !rows.some((r) => r.czy_glowne)) {
+  const hasMainImage = rows.some((r) => r.czy_glowne && r.typ === "zdjecie");
+  const firstImage = rows.find((r) => r.typ === "zdjecie");
+  if (firstImage && !hasMainImage) {
     await supabase
       .from("oferty_zdjecia")
       .update({ czy_glowne: true })
-      .eq("id", rows[0].id);
+      .eq("id", firstImage.id);
   }
 }
 

@@ -2,7 +2,7 @@
 "use client";
 
 import { useMemo, useRef, useState, type ReactNode } from "react";
-import type { OfertaZZdjeciami } from "@/types/database";
+import type { OfertaZdjecie, OfertaZZdjeciami } from "@/types/database";
 import {
   RYNEK_OPTIONS,
   STATUS_OPTIONS,
@@ -12,8 +12,15 @@ import {
 } from "@/lib/offers";
 import { parseGoogleMapsUrl } from "@/lib/google-maps";
 import { generateOfferSeo } from "@/lib/offer-seo";
+import { getYouTubeThumbnailFromUrl, isYouTubeUrl } from "@/lib/youtube";
 
 type FieldsState = Record<string, string | boolean>;
+
+type MediaItem =
+  | { key: string; kind: "existing"; item: OfertaZdjecie }
+  | { key: string; kind: "file"; file: File }
+  | { key: string; kind: "url"; url: string }
+  | { key: string; kind: "youtube"; url: string };
 
 function numStr(n: number | null | undefined): string {
   return n == null ? "" : String(n);
@@ -61,6 +68,55 @@ const inputClass =
   "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30";
 const labelClass = "block text-xs font-semibold text-slate-600 mb-1.5";
 
+function initMediaItems(offer?: OfertaZZdjeciami | null): MediaItem[] {
+  return [...(offer?.oferty_zdjecia ?? [])]
+    .sort((a, b) => a.kolejnosc - b.kolejnosc)
+    .map((item) => ({ key: item.id, kind: "existing" as const, item }));
+}
+
+function isPhotoItem(item: MediaItem): boolean {
+  if (item.kind === "existing") return (item.item.typ ?? "zdjecie") !== "film";
+  return item.kind === "file" || item.kind === "url";
+}
+
+function mediaPreviewUrl(item: MediaItem): string {
+  if (item.kind === "existing") {
+    if ((item.item.typ ?? "zdjecie") === "film") {
+      return getYouTubeThumbnailFromUrl(item.item.url) ?? item.item.url;
+    }
+    return item.item.url;
+  }
+  if (item.kind === "youtube") {
+    return getYouTubeThumbnailFromUrl(item.url) ?? item.url;
+  }
+  if (item.kind === "file") {
+    return URL.createObjectURL(item.file);
+  }
+  return item.url;
+}
+
+function mediaBadge(item: MediaItem): { label: string; className: string } {
+  if (item.kind === "youtube") {
+    return { label: "YouTube", className: "bg-rose-500" };
+  }
+  if (item.kind === "url") {
+    return { label: "link", className: "bg-violet-500" };
+  }
+  if (item.kind === "file") {
+    return { label: "nowe", className: "bg-amber-500" };
+  }
+  if ((item.item.typ ?? "zdjecie") === "film") {
+    return { label: "YouTube", className: "bg-rose-500" };
+  }
+  if (item.item.zrodlo === "esti") {
+    return { label: "Esti", className: "bg-sky-500" };
+  }
+  if (item.item.zrodlo === "url") {
+    return { label: "link", className: "bg-violet-500" };
+  }
+  return { label: "plik", className: "bg-slate-500" };
+}
+
 export default function OfferForm({
   offer,
   onClose,
@@ -73,13 +129,18 @@ export default function OfferForm({
   const editing = Boolean(offer);
   const isEsti = offer?.zrodlo === "esti";
   const [fields, setFields] = useState<FieldsState>(() => initForm(offer));
-  const [existingImages, setExistingImages] = useState(offer?.oferty_zdjecia ?? []);
-  const [newFiles, setNewFiles] = useState<File[]>([]);
+  const [mediaItems, setMediaItems] = useState<MediaItem[]>(() => initMediaItems(offer));
   const [urlDraft, setUrlDraft] = useState("");
-  const [pendingUrls, setPendingUrls] = useState<string[]>([]);
+  const [youtubeDraft, setYoutubeDraft] = useState("");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const mediaKeyRef = useRef(0);
+
+  const mainImageKey = useMemo(() => {
+    const firstPhoto = mediaItems.find((item) => isPhotoItem(item));
+    return firstPhoto?.key ?? null;
+  }, [mediaItems]);
 
   const mapsPreview = useMemo(() => {
     const link = String(fields.link_google_maps ?? "").trim();
@@ -180,42 +241,94 @@ export default function OfferForm({
     );
   }
 
+  function nextMediaKey(prefix: string) {
+    mediaKeyRef.current += 1;
+    return `${prefix}-${mediaKeyRef.current}`;
+  }
+
   function onPickFiles(e: React.ChangeEvent<HTMLInputElement>) {
     const picked = Array.from(e.target.files ?? []);
-    setNewFiles((prev) => [...prev, ...picked]);
+    setMediaItems((prev) => [
+      ...prev,
+      ...picked.map((file) => ({ key: nextMediaKey("file"), kind: "file" as const, file })),
+    ]);
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
-  async function deleteExistingImage(id: string) {
-    const res = await fetch(`/api/admin/images/${id}`, { method: "DELETE" });
-    if (res.ok) {
-      setExistingImages((prev) => prev.filter((img) => img.id !== id));
-    }
-  }
-
-  async function uploadFiles(offerId: string) {
-    for (const file of newFiles) {
-      const form = new FormData();
-      form.append("offerId", offerId);
-      form.append("file", file);
-      const res = await fetch("/api/admin/upload", { method: "POST", body: form });
+  async function removeMediaItem(item: MediaItem) {
+    if (item.kind === "existing") {
+      const res = await fetch(`/api/admin/images/${item.item.id}`, { method: "DELETE" });
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.message ?? "Błąd przesyłania zdjęcia.");
+        setError("Nie udało się usunąć medium.");
+        return;
       }
     }
+    setMediaItems((prev) => prev.filter((entry) => entry.key !== item.key));
+    setError("");
   }
 
-  async function uploadUrls(offerId: string) {
-    for (const url of pendingUrls) {
+  function moveMedia(index: number, direction: -1 | 1) {
+    const target = index + direction;
+    if (target < 0 || target >= mediaItems.length) return;
+    setMediaItems((prev) => {
+      const next = [...prev];
+      [next[index], next[target]] = [next[target], next[index]];
+      return next;
+    });
+  }
+
+  async function saveMediaItems(offerId: string) {
+    const finalIds: string[] = [];
+
+    for (const item of mediaItems) {
+      if (item.kind === "existing") {
+        finalIds.push(item.item.id);
+        continue;
+      }
+
+      if (item.kind === "file") {
+        const form = new FormData();
+        form.append("offerId", offerId);
+        form.append("file", item.file);
+        const res = await fetch("/api/admin/upload", { method: "POST", body: form });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          throw new Error(data.message ?? "Błąd przesyłania zdjęcia.");
+        }
+        finalIds.push(data.zdjecie.id);
+        continue;
+      }
+
       const res = await fetch("/api/admin/images", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ offerId, url }),
+        body: JSON.stringify({
+          offerId,
+          url: item.url,
+          typ: item.kind === "youtube" ? "film" : "zdjecie",
+        }),
       });
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.message ?? "Błąd dodawania zdjęcia z linku.");
+        throw new Error(
+          data.message ??
+            (item.kind === "youtube"
+              ? "Błąd dodawania filmu YouTube."
+              : "Błąd dodawania zdjęcia z linku.")
+        );
+      }
+      finalIds.push(data.zdjecie.id);
+    }
+
+    if (finalIds.length > 0) {
+      const res = await fetch("/api/admin/images/reorder", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ offerId, ids: finalIds }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.message ?? "Błąd zmiany kolejności mediów.");
       }
     }
   }
@@ -227,8 +340,24 @@ export default function OfferForm({
       setError("Link do zdjęcia musi zaczynać się od https://");
       return;
     }
-    setPendingUrls((prev) => [...prev, url]);
+    if (isYouTubeUrl(url)) {
+      setError("Link YouTube dodaj w polu filmu poniżej.");
+      return;
+    }
+    setMediaItems((prev) => [...prev, { key: nextMediaKey("url"), kind: "url", url }]);
     setUrlDraft("");
+    setError("");
+  }
+
+  function addPendingYoutube() {
+    const url = youtubeDraft.trim();
+    if (!url) return;
+    if (!isYouTubeUrl(url)) {
+      setError("Podaj prawidłowy link do filmu YouTube.");
+      return;
+    }
+    setMediaItems((prev) => [...prev, { key: nextMediaKey("youtube"), kind: "youtube", url }]);
+    setYoutubeDraft("");
     setError("");
   }
 
@@ -257,12 +386,7 @@ export default function OfferForm({
         throw new Error(data.message ?? "Nie udało się zapisać oferty.");
       }
       const offerId: string = editing ? offer!.id : data.oferta.id;
-      if (newFiles.length > 0) {
-        await uploadFiles(offerId);
-      }
-      if (pendingUrls.length > 0) {
-        await uploadUrls(offerId);
-      }
+      await saveMediaItems(offerId);
       onSaved();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Wystąpił błąd.");
@@ -456,86 +580,96 @@ export default function OfferForm({
 
           <div>
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-slate-400">
-              Zdjęcia
+              Zdjęcia i filmy
             </h3>
+            {mediaItems.length > 0 && (
+              <p className="mb-3 text-xs text-slate-400">
+                Użyj strzałek, aby zmienić kolejność. Pierwsze zdjęcie będzie
+                zdjęciem głównym na listach ofert.
+              </p>
+            )}
             <div className="flex flex-wrap gap-3">
-              {existingImages.map((img) => (
-                <div key={img.id} className="relative h-24 w-32 overflow-hidden rounded-lg border border-slate-200">
-                  <img src={img.url} alt="" className="h-full w-full object-cover" />
-                  <div className="absolute left-1 top-1 flex flex-col items-start gap-0.5">
-                    {img.czy_glowne && (
-                      <span className="rounded bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                        główne
+              {mediaItems.map((item, index) => {
+                const badge = mediaBadge(item);
+                const isFilm =
+                  item.kind === "youtube" ||
+                  (item.kind === "existing" && (item.item.typ ?? "zdjecie") === "film");
+
+                return (
+                  <div
+                    key={item.key}
+                    className="relative h-28 w-36 overflow-hidden rounded-lg border border-slate-200 bg-slate-50"
+                  >
+                    <img
+                      src={mediaPreviewUrl(item)}
+                      alt=""
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute left-1 top-1 flex flex-col items-start gap-0.5">
+                      {item.key === mainImageKey && (
+                        <span className="rounded bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                          główne
+                        </span>
+                      )}
+                      <span
+                        className={`rounded px-1.5 py-0.5 text-[10px] font-semibold text-white ${badge.className}`}
+                      >
+                        {badge.label}
+                      </span>
+                    </div>
+                    {isFilm && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-slate-900/30">
+                        <svg
+                          className="h-7 w-7 text-white drop-shadow"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
                       </span>
                     )}
-                    <span
-                      className={`rounded px-1.5 py-0.5 text-[10px] font-semibold text-white ${
-                        img.zrodlo === "esti"
-                          ? "bg-sky-500"
-                          : img.zrodlo === "url"
-                            ? "bg-violet-500"
-                            : "bg-slate-500"
-                      }`}
+                    <div className="absolute bottom-1 left-1 flex gap-0.5">
+                      <button
+                        type="button"
+                        onClick={() => moveMedia(index, -1)}
+                        disabled={index === 0}
+                        className="rounded bg-white/90 p-1 text-slate-600 shadow hover:bg-white disabled:opacity-40"
+                        aria-label="Przesuń w lewo"
+                      >
+                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => moveMedia(index, 1)}
+                        disabled={index === mediaItems.length - 1}
+                        className="rounded bg-white/90 p-1 text-slate-600 shadow hover:bg-white disabled:opacity-40"
+                        aria-label="Przesuń w prawo"
+                      >
+                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => removeMediaItem(item)}
+                      className="absolute right-1 top-1 rounded-full bg-rose-600/90 p-1 text-white hover:bg-rose-700"
+                      aria-label="Usuń"
                     >
-                      {img.zrodlo === "esti"
-                        ? "Esti"
-                        : img.zrodlo === "url"
-                          ? "link"
-                          : "plik"}
-                    </span>
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => deleteExistingImage(img.id)}
-                    className="absolute right-1 top-1 rounded-full bg-rose-600/90 p-1 text-white hover:bg-rose-700"
-                    aria-label="Usuń zdjęcie"
-                  >
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
-              {pendingUrls.map((url, i) => (
-                <div key={`url-${i}`} className="relative h-24 w-32 overflow-hidden rounded-lg border border-dashed border-violet-400">
-                  <img src={url} alt="" className="h-full w-full object-cover" />
-                  <span className="absolute left-1 top-1 rounded bg-violet-500 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                    link
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setPendingUrls((prev) => prev.filter((_, idx) => idx !== i))}
-                    className="absolute right-1 top-1 rounded-full bg-slate-700/90 p-1 text-white hover:bg-slate-900"
-                    aria-label="Usuń"
-                  >
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
-              {newFiles.map((file, i) => (
-                <div key={i} className="relative h-24 w-32 overflow-hidden rounded-lg border border-dashed border-primary/50">
-                  <img src={URL.createObjectURL(file)} alt="" className="h-full w-full object-cover" />
-                  <span className="absolute left-1 top-1 rounded bg-amber-500 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                    nowe
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setNewFiles((prev) => prev.filter((_, idx) => idx !== i))}
-                    className="absolute right-1 top-1 rounded-full bg-slate-700/90 p-1 text-white hover:bg-slate-900"
-                    aria-label="Usuń"
-                  >
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
+                );
+              })}
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex h-24 w-32 flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed border-slate-300 text-slate-400 hover:border-primary hover:text-primary"
+                className="flex h-28 w-36 flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed border-slate-300 text-slate-400 hover:border-primary hover:text-primary"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -575,20 +709,37 @@ export default function OfferForm({
                   Dodaj link
                 </button>
               </div>
+            </div>
+
+            <div className="mt-4">
+              <label className={labelClass}>Dodaj film z YouTube</label>
+              <div className="flex gap-2">
+                <input
+                  className={inputClass}
+                  value={youtubeDraft}
+                  placeholder="https://www.youtube.com/watch?v=…"
+                  onChange={(e) => setYoutubeDraft(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      addPendingYoutube();
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={addPendingYoutube}
+                  className="shrink-0 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                >
+                  Dodaj film
+                </button>
+              </div>
               <p className="mt-1.5 text-xs text-slate-400">
-                Zamiast przesyłać plik, możesz wkleić bezpośredni adres https do
-                zdjęcia. Linki zostaną zapisane po zapisaniu oferty.
+                Film pojawi się w galerii na stronie oferty. Kolejność możesz
+                zmienić strzałkami — zostanie zapisana po kliknięciu „Zapisz
+                zmiany”.
               </p>
             </div>
-            {editing ? (
-              <p className="mt-2 text-xs text-slate-400">
-                Nowe zdjęcia zostaną przesłane po zapisaniu.
-              </p>
-            ) : (
-              <p className="mt-2 text-xs text-slate-400">
-                Zdjęcia zostaną przesłane po utworzeniu oferty.
-              </p>
-            )}
           </div>
         </div>
 

@@ -140,6 +140,14 @@ export default function AdminDashboard() {
             <p className="text-xs text-slate-400">PP Estate</p>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
+            >
+              Podgląd strony
+            </a>
             <button
               onClick={() => setForm("new")}
               className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
@@ -370,7 +378,11 @@ function OfferCard({
   onDelete: () => void;
 }) {
   const main =
-    offer.oferty_zdjecia.find((z) => z.czy_glowne) ?? offer.oferty_zdjecia[0];
+    offer.oferty_zdjecia
+      .filter((z) => (z.typ ?? "zdjecie") !== "film")
+      .find((z) => z.czy_glowne) ??
+    offer.oferty_zdjecia.find((z) => (z.typ ?? "zdjecie") !== "film") ??
+    offer.oferty_zdjecia[0];
 
   return (
     <article className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">

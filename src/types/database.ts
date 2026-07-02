@@ -21,6 +21,8 @@ export type OfertaRynek = "pierwotny" | "wtorny";
 
 export type OfertaZdjecieZrodlo = "esti" | "upload" | "url";
 
+export type OfertaZdjecieTyp = "zdjecie" | "film";
+
 export type EstiSyncMode = "full" | "incremental";
 
 export type Oferta = {
@@ -84,6 +86,7 @@ export type OfertaZdjecie = {
   kolejnosc: number;
   czy_glowne: boolean;
   zrodlo: OfertaZdjecieZrodlo;
+  typ: OfertaZdjecieTyp;
   data_utworzenia: string;
 };
 
@@ -171,6 +174,7 @@ type OfertaZdjecieInsert = {
   kolejnosc?: number;
   czy_glowne?: boolean;
   zrodlo?: OfertaZdjecieZrodlo;
+  typ?: OfertaZdjecieTyp;
   data_utworzenia?: string;
 };
 
@@ -182,6 +186,7 @@ type OfertaZdjecieUpdate = {
   kolejnosc?: number;
   czy_glowne?: boolean;
   zrodlo?: OfertaZdjecieZrodlo;
+  typ?: OfertaZdjecieTyp;
   data_utworzenia?: string;
 };
 

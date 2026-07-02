@@ -30,12 +30,13 @@ export async function DELETE(_request: Request, { params }: Params) {
     return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
   }
 
-  // Jeśli usunięto zdjęcie główne, ustaw nowe główne (pierwsze pozostałe)
+  // Jeśli usunięto zdjęcie główne, ustaw nowe główne (pierwsze pozostałe zdjęcie)
   if (zdjecie?.czy_glowne && zdjecie.oferta_id) {
     const { data: nextRows } = await supabase
       .from("oferty_zdjecia")
       .select("id")
       .eq("oferta_id", zdjecie.oferta_id)
+      .eq("typ", "zdjecie")
       .order("kolejnosc", { ascending: true })
       .limit(1);
     const nextId = (nextRows?.[0] as Pick<OfertaZdjecie, "id"> | undefined)?.id;

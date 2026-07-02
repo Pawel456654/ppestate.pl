@@ -152,7 +152,11 @@ export default async function OfferDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
               <div className="lg:col-span-2">
                 <OfferGallery
-                  images={offer.oferty_zdjecia.map((z) => ({ id: z.id, url: z.url }))}
+                  images={offer.oferty_zdjecia.map((z) => ({
+                    id: z.id,
+                    url: z.url,
+                    typ: z.typ ?? "zdjecie",
+                  }))}
                   title={offer.tytul}
                   fallbackImage={fallbackImage}
                 />

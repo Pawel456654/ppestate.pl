@@ -68,7 +68,15 @@ export async function POST(request: Request) {
     .select("id", { count: "exact", head: true })
     .eq("oferta_id", offerId);
 
-  const isFirst = (count ?? 0) === 0;
+  const { data: existingMain } = await supabase
+    .from("oferty_zdjecia")
+    .select("id")
+    .eq("oferta_id", offerId)
+    .eq("czy_glowne", true)
+    .eq("typ", "zdjecie")
+    .limit(1);
+
+  const hasMainImage = (existingMain ?? []).length > 0;
 
   const { data: row, error: insertError } = await supabase
     .from("oferty_zdjecia")
@@ -77,8 +85,9 @@ export async function POST(request: Request) {
       url: pub.publicUrl,
       sciezka: path,
       kolejnosc: count ?? 0,
-      czy_glowne: isFirst,
+      czy_glowne: !hasMainImage,
       zrodlo: "upload",
+      typ: "zdjecie",
     })
     .select("*")
     .single();

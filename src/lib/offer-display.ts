@@ -81,7 +81,8 @@ export function getMainImage(
   images: OfertaZdjecie[],
   typNieruchomosci: Oferta["typ_nieruchomosci"]
 ): string {
-  const main = images.find((z) => z.czy_glowne) ?? images[0];
+  const photos = images.filter((z) => (z.typ ?? "zdjecie") !== "film");
+  const main = photos.find((z) => z.czy_glowne) ?? photos[0];
   return main?.url ?? DEFAULT_IMAGES[typNieruchomosci] ?? "/hero/mieszkania.png";
 }
 
@@ -176,7 +177,9 @@ export function toOfferCardData(offer: OfertaZZdjeciami): OfferCardData | null {
 }
 
 export function buildRealEstateSchema(offer: OfertaZZdjeciami, url: string) {
-  const images = offer.oferty_zdjecia.map((z) => z.url);
+  const images = offer.oferty_zdjecia
+    .filter((z) => (z.typ ?? "zdjecie") !== "film")
+    .map((z) => z.url);
   const addressParts = [offer.ulica, offer.dzielnica, offer.miasto].filter(Boolean);
 
   return {
