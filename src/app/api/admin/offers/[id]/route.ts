@@ -82,6 +82,12 @@ export async function DELETE(_request: Request, { params }: Params) {
   const { id } = await params;
   const supabase = createAdminClient();
 
+  const { data: offer } = await supabase
+    .from("oferty")
+    .select("slug")
+    .eq("id", id)
+    .single();
+
   // Usuń pliki ze storage, zanim skasujemy ofertę (rekordy zdjęć znikną kaskadowo)
   const { data } = await supabase
     .from("oferty_zdjecia")
@@ -101,5 +107,6 @@ export async function DELETE(_request: Request, { params }: Params) {
     return NextResponse.json({ ok: false, message: error.message }, { status: 500 });
   }
 
+  revalidatePublicOfferPages(offer?.slug);
   return NextResponse.json({ ok: true });
 }
