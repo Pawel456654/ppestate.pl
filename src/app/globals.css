@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background: var(--color-background);
+  background: #ffffff;
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
