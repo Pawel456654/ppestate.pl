@@ -1,12 +1,17 @@
-import type { Metadata } from "next";
-import UnderConstruction from "@/components/UnderConstruction";
+import Navbar from "@/components/Navbar";
+import CookieBanner from "@/components/CookieBanner";
+import { CookieConsentProvider } from "@/components/CookieConsentProvider";
 
-export const metadata: Metadata = {
-  title: "PP Estate | Strona w budowie",
-  description: "Strona PP Estate jest obecnie w budowie.",
-  robots: { index: false, follow: false },
-};
-
-export default function SiteLayout() {
-  return <UnderConstruction />;
+export default function SiteLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <CookieConsentProvider>
+      <Navbar />
+      {children}
+      <CookieBanner />
+    </CookieConsentProvider>
+  );
 }
