@@ -73,6 +73,12 @@
       "namedRegex": "^/api/admin/images(?:/)?$"
     },
     {
+      "page": "/api/admin/images/reorder",
+      "regex": "^/api/admin/images/reorder(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/images/reorder(?:/)?$"
+    },
+    {
       "page": "/api/admin/login",
       "regex": "^/api/admin/login(?:/)?$",
       "routeKeys": {},

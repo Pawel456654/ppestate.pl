@@ -1,5 +1,5 @@
 {
-  "/(site)/kariera/page": "app/(site)/kariera/page.js",
-  "/(site)/oferty/page": "app/(site)/oferty/page.js",
-  "/(site)/page": "app/(site)/page.js"
+  "/(site)/oferty/[slug]/page": "app/(site)/oferty/[slug]/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
