@@ -6,5 +6,6 @@ import { revalidatePath } from "next/cache";
 export function revalidatePublicOfferPages(slug?: string | null): void {
   revalidatePath("/");
   revalidatePath("/oferty");
+  revalidatePath("/sitemap.xml");
   if (slug) revalidatePath(`/oferty/${slug}`);
 }
