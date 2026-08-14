@@ -97,49 +97,50 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} PP Estate. Wszelkie prawa
-            zastrzeżone.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/polityka-prywatnosci"
-              className="text-sm text-slate-500 hover:text-white transition-colors"
-            >
-              Polityka prywatności
-            </Link>
-            <span className="text-slate-700 text-sm">•</span>
-            <Link
-              href="/polityka-cookies"
-              className="text-sm text-slate-500 hover:text-white transition-colors"
-            >
-              Cookies
-            </Link>
-            <span className="text-slate-700 text-sm">•</span>
-            <Link
-              href="/rodo"
-              className="text-sm text-slate-500 hover:text-white transition-colors"
-            >
-              RODO
-            </Link>
-            <span className="text-slate-700 text-sm">•</span>
-            <Link
-              href="/panel-admin"
-              className="text-sm text-slate-500 hover:text-white transition-colors"
-            >
-              Panel admin
-            </Link>
-            <span className="text-slate-700 text-sm">•</span>
-            <a
-              href="https://fbragency.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-slate-500 hover:text-white transition-colors"
-            >
-              wykonanie — FBR Agency👽
-            </a>
+        <div className="border-t border-slate-800 pt-8 flex flex-col gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-slate-500 text-sm text-center sm:text-left">
+              &copy; {new Date().getFullYear()} PP Estate. Wszelkie prawa
+              zastrzeżone.
+            </p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-3 gap-y-2">
+              <Link
+                href="/polityka-prywatnosci"
+                className="text-sm text-slate-500 hover:text-white transition-colors"
+              >
+                Polityka prywatności
+              </Link>
+              <span className="text-slate-700 text-sm">•</span>
+              <Link
+                href="/polityka-cookies"
+                className="text-sm text-slate-500 hover:text-white transition-colors"
+              >
+                Cookies
+              </Link>
+              <span className="text-slate-700 text-sm">•</span>
+              <Link
+                href="/rodo"
+                className="text-sm text-slate-500 hover:text-white transition-colors"
+              >
+                RODO
+              </Link>
+              <span className="text-slate-700 text-sm">•</span>
+              <Link
+                href="/panel-admin"
+                className="text-sm text-slate-500 hover:text-white transition-colors"
+              >
+                Panel admin
+              </Link>
+            </div>
           </div>
+          <a
+            href="https://fbragency.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-slate-500 hover:text-white transition-colors text-center sm:text-right"
+          >
+            Wykonanie - FBR Agency👽
+          </a>
         </div>
       </div>
     </footer>
