@@ -45,10 +45,26 @@ export default function Footer() {
               Oferta
             </h3>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Domy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Mieszkania</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Działki</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Obiekty przemysłowe</a></li>
+              <li>
+                <Link href="/oferty?typ=domy" className="hover:text-white transition-colors">
+                  Domy
+                </Link>
+              </li>
+              <li>
+                <Link href="/oferty?typ=mieszkania" className="hover:text-white transition-colors">
+                  Mieszkania
+                </Link>
+              </li>
+              <li>
+                <Link href="/oferty?typ=dzialki" className="hover:text-white transition-colors">
+                  Działki
+                </Link>
+              </li>
+              <li>
+                <Link href="/oferty?typ=przemyslowe" className="hover:text-white transition-colors">
+                  Obiekty przemysłowe
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -57,10 +73,26 @@ export default function Footer() {
               Firma
             </h3>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><a href="#o-nas" className="hover:text-white transition-colors">O nas</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Zespół</a></li>
-              <li><Link href="/kariera" className="hover:text-white transition-colors">Kariera</Link></li>
-              <li><a href="#kontakt" className="hover:text-white transition-colors">Kontakt</a></li>
+              <li>
+                <Link href="/#o-nas" className="hover:text-white transition-colors">
+                  O nas
+                </Link>
+              </li>
+              <li>
+                <Link href="/#o-nas" className="hover:text-white transition-colors">
+                  Zespół
+                </Link>
+              </li>
+              <li>
+                <Link href="/kariera" className="hover:text-white transition-colors">
+                  Kariera
+                </Link>
+              </li>
+              <li>
+                <Link href="/#kontakt" className="hover:text-white transition-colors">
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -98,6 +130,15 @@ export default function Footer() {
             >
               Panel admin
             </Link>
+            <span className="text-slate-700 text-sm">•</span>
+            <a
+              href="https://fbragency.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              wykonanie — FBR Agency👽
+            </a>
           </div>
         </div>
       </div>
